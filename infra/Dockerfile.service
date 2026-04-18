@@ -1,0 +1,38 @@
+# AETHERMOOR — Python service base image
+# Targets arm64 (Raspberry Pi) + amd64 via multi-arch buildx
+# Security: non-root user, no shell in final image layer
+
+ARG PYTHON_VERSION=3.12
+FROM python:${PYTHON_VERSION}-slim AS base
+
+# System hardening
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1
+
+WORKDIR /app
+
+# Install curl for healthcheck (only binary needed, removed after build via multi-stage if desired)
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Dependencies layer (cached unless requirements.txt changes)
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# App source
+COPY . .
+
+# Non-root user
+RUN addgroup --system appgroup \
+    && adduser --system --ingroup appgroup appuser \
+    && chown -R appuser:appgroup /app
+USER appuser
+
+# The PORT env var is set per-service in docker-compose.yml via CMD
+# Default 8000; each service overrides via docker-compose `command:`
+EXPOSE 8000
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

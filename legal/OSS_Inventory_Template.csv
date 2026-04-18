@@ -1,0 +1,13 @@
+dependency,version,license,license_source,copyleft,notes,risk,action
+react,18.3.1,MIT,manifest,No,Frontend UI library,Low,Verify attribution notices in package.json and LICENSEs
+react-dom,18.3.1,MIT,manifest,No,Frontend UI library,Low,Verify attribution notices in package.json and LICENSEs
+phaser,3.88.2,MIT,manifest,No,Game engine,Low,Verify attribution notices in LICENSE
+nipplejs,0.10.2,MIT,manifest,No,Input handling library,Low,Verify attribution notices in LICENSE
+zustand,5.0.3,MIT,manifest,No,State management,Low,Verify attribution notices in LICENSE
+paperclip-plugin-telegram,0.3.0,Unknown,manifest,Unknown,Plugin dependency,Low/Med,Obtain license from repository
+pydantic,2.10.4,MIT,registry,No,Python data validation,Low,Verify attribution in NOTICE
+fastapi,0.115.6,MPL-2.0/MIT? (various),registry,Yes,Web framework,Low,Check exact license text
+uvicorn,0.32.1,BSD-3-Clause,registry,Yes,ASGI server,Low,Check license text
+sqlalchemy,2.0.36,BSD-3-Clause,registry,Yes,ORM,Low,Ensure notices are included
+httpx,0.28.1,BSD-3-Clause,registry,Yes,HTTP client,Low,Ensure notices are included
+redis,5.2.1,MIT/Apache-2.0,registry,Yes,Redis client,Low,Verify notices

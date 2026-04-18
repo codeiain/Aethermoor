@@ -1,0 +1,37 @@
+# Secrets — never commit
+.env
+infra/.env
+**/.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Node / frontend
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Docker
+*.tar
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Grafana runtime data (large, not source)
+infra/grafana-data/
+infra/loki-data/
+infra/prometheus-data/
+# Added by code-review-graph
+.code-review-graph/

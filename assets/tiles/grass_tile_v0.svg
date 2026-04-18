@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="Grass Tile Preview">
+  <!-- Starter grass tile placeholder (32x32) -->
+  <defs>
+    <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4CAF50"/>
+      <stop offset="100%" stop-color="#2E8B57"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" fill="url(#grass)"/>
+  <!-- subtle texture specks -->
+  <circle cx="6" cy="6" r="1.2" fill="#6BCB7B" opacity="0.6"/>
+  <circle cx="18" cy="9" r="1.4" fill="#86D89D" opacity="0.6"/>
+  <circle cx="24" cy="22" r="1.2" fill="#56C96F" opacity="0.6"/>
+  <!-- guidelines: tile edges should align seamlessly in a 32px grid -->
+</svg>

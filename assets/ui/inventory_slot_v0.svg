@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="Inventory Slot Placeholder">
+  <!-- Inventory slot placeholder with subtle bevel -->
+  <defs>
+    <linearGradient id="slotGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2C1F12"/>
+      <stop offset="100%" stop-color="#5A3D2E"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="30" height="30" rx="4" fill="url(#slotGrad)"/>
+  <rect x="3" y="3" width="26" height="24" rx="3" fill="none" stroke="#8A5A2A" stroke-width="2"/>
+  <!-- subtle cross indicating empty slot -->
+  <line x1="8" y1="16" x2="24" y2="16" stroke="#CBAA8C" stroke-width="1"/>
+  <line x1="16" y1="8" x2="16" y2="24" stroke="#CBAA8C" stroke-width="1"/>
+</svg>

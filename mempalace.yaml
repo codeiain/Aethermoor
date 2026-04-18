@@ -1,0 +1,234 @@
+wing: aethermoor
+rooms:
+- name: services
+  description: Python FastAPI microservices (auth, character, world, gateway, etc.)
+  keywords:
+  - fastapi
+  - uvicorn
+  - python
+  - api
+  - microservice
+  - authentication
+  - character
+  - world
+  - gateway
+  - zero-trust
+- name: frontend
+  description: React TypeScript frontend application
+  keywords:
+  - react
+  - typescript
+  - vite
+  - frontend
+  - ui
+- name: infrastructure
+  description: Docker, docker-compose, nginx, monitoring (Prometheus, Grafana, Loki)
+  keywords:
+  - docker
+  - docker-compose
+  - nginx
+  - prometheus
+  - grafana
+  - loki
+  - observability
+  - monitoring
+- name: shared
+  description: Shared Python packages and utilities
+  keywords:
+  - shared
+  - utilities
+  - common
+- name: region-aethermoor-hub
+  description: 'Region 1: City of Aethermoor Hub (Level 1-10). Starting area including Millhaven (starter town), Millhaven Fields, Southern Road, City of Aethermoor (main hub), and Undercity Warrens. Contains tutorial dungeons: Ruins of the First Aethermoor and Waterlogged Crypts.'
+  keywords:
+  - millhaven
+  - aethermoor-city
+  - undercity
+  - starter-zone
+  - tutorial
+  - level-1-10
+  - hub
+  - auction-house
+  - bank
+  - guild-hall
+  - fast-travel
+  - millhaven-fields
+  - southern-road
+  - ruins
+  - crypts
+  - tide-rune
+- name: region-thornwood
+  description: 'Region 2: Thornwood Forest (Level 5-12). Forest region with Thornwood Edge (Verdant Pact camp), Thornwood Heart, Thornwood Crossroads (PvP zone), and Elder Root Approach. Contains Bramble Maze and Elder Root Vault dungeons. Verdant Pact stronghold at Thornhaven.'
+  keywords:
+  - thornwood
+  - forest
+  - level-5-12
+  - verdant-pact
+  - thornhaven
+  - bramble-maze
+  - elder-root-vault
+  - pvp-zone
+  - thornwood-crossroads
+  - herbs
+  - lumber
+  - treant
+- name: region-crystal-goblin
+  description: 'Region 3: Crystal Caves & Goblin Wastelands (Level 7-15). Badlands and underground regions including Goblin Wastes Border, Goblin Wastelands Deep, Crystal Approach, Crystal Caves Main, and Crystal Spire Depths. Contains Resonance Chamber (drops Silence Rune) and Fractured Spire (drops Aetherhook Gadget) dungeons.'
+  keywords:
+  - crystal-caves
+  - goblin-wastelands
+  - level-7-15
+  - badlands
+  - underground
+  - resonance-chamber
+  - fractured-spire
+  - silence-rune
+  - aetherhook-gadget
+  - crystal-ore
+  - void-crystal
+  - goblin-chieftain
+  - iron-ore
+  - gold-veins
+- name: region-frostpeak
+  description: 'Region 4: Frostpeak Mountains (Level 9-17). Snow and mountain regions including Frostpeak Footpath, Frosthold (town), Frosthold Pass, Frostpeak Summit, Crystal Summit (PvP), and Sky Bridge Approach. Contains Frost Tomb and Sky Bridge Ruins dungeons. Aetheric Order stronghold. Requires Cold Weather gear (Fur Cloak).'
+  keywords:
+  - frostpeak
+  - mountains
+  - snow
+  - level-9-17
+  - frosthold
+  - aetheric-order
+  - frost-tomb
+  - sky-bridge-ruins
+  - crystal-summit-pvp
+  - cold-weather-gear
+  - fur-cloak
+  - froststone-ore
+  - aether-crystal
+  - storm-drake
+  - frost-giant
+- name: region-ember-sunken
+  description: 'Region 5: Ember Plains & Sunken Harbor (Level 11-18). Volcanic plains and coastal regions including Ember Plains North/South, Emberton (town), Sunken Docks (PvP), Sunken Harbor (town), and Ashen Road. Contains Ember Forge and Ashen Catacombs dungeons. Ship charter to Sky Archipelago unlocks at Level 15.'
+  keywords:
+  - ember-plains
+  - sunken-harbor
+  - level-11-18
+  - volcanic
+  - coastal
+  - emberton
+  - ember-forge
+  - ashen-catacombs
+  - sunken-docks-pvp
+  - emberstone
+  - volcanic-ash
+  - fishing
+  - ship-charter
+  - black-market
+- name: region-verdant-jungle
+  description: 'Region 6: Verdant Jungle (Level 13-20). Jungle regions including Jungle Approach, Verdant Pass (PvP), Verdant Canopy (with village), Jungle Depths, and Path of the Deep. Contains Bloom Sanctum and Sunken Archives (requires Tide Rune) dungeons. Verdant Pact deep stronghold. Leads to Temple of the Deep raid.'
+  keywords:
+  - verdant-jungle
+  - jungle
+  - level-13-20
+  - verdant-canopy-village
+  - bloom-sanctum
+  - sunken-archives
+  - verdant-pass-pvp
+  - tide-rune
+  - dragonvine
+  - jungle-hardwood
+  - treeline-puzzles
+  - temple-approach
+  - rootbinder-herald
+- name: region-aether-sky
+  description: 'Region 7: Aether Wastes & Sky Archipelago (Level 15-20). Endgame wasteland and aerial regions including Eastern Aether Road, Aether Wastes Border/Deep, Aether Nexus (PvP with server-wide bonus), Sky Docks (Sky Station town), and Sky Archipelago Islands. Contains Aether Rift Delve and Shattered Observatory (Season 4 raid) dungeons.'
+  keywords:
+  - aether-wastes
+  - sky-archipelago
+  - level-15-20
+  - endgame
+  - sky-station
+  - aether-rift-delve
+  - shattered-observatory
+  - aether-nexus-pvp
+  - void-shard
+  - sky-aether-crystal
+  - legendary-fish
+  - rift-incursion
+  - server-wide-bonus
+- name: region-temple-raid
+  description: 'Region 8: Temple of the Deep (Level 18-20). 16-player raid zone with Temple Antechamber (raid lobby) and Temple of the First Root interior. Final boss: The Rootbinder (Awakened). Act 4 story climax with 3-choice ending. Requires Tide Rune and Level 18. Drops Legendary class-specific loot and Worldshaper title.'
+  keywords:
+  - temple-of-the-deep
+  - raid
+  - level-18-20
+  - 16-player
+  - rootbinder
+  - act-4
+  - legendary-loot
+  - worldshaper-title
+  - tide-rune-required
+  - three-choice-ending
+- name: dungeons
+  description: '15 dungeons total (1-4 player instances): Tutorial dungeons (Ruins, Crypts), Forest dungeons (Bramble Maze, Elder Root Vault), Crystal dungeons (Resonance Chamber, Fractured Spire), Mountain dungeons (Frost Tomb, Sky Bridge Ruins), Plains dungeons (Ember Forge, Ashen Catacombs), Jungle dungeons (Bloom Sanctum, Sunken Archives), Endgame dungeon (Aether Rift Delve), and 2 raids (Temple of First Root, Shattered Observatory). Key unlocks: Tide Rune, Silence Rune, Aetherhook Gadget.'
+  keywords:
+  - dungeons
+  - instanced
+  - 1-4-player
+  - raids
+  - 16-player
+  - tide-rune
+  - silence-rune
+  - aetherhook-gadget
+  - traversal-unlocks
+  - boss-mechanics
+  - loot-tiers
+  - challenge-mode
+  - weekly-bonus
+- name: towns
+  description: '7 major towns: Millhaven (starter, Level 1-5), City of Aethermoor (main hub, all services), Thornhaven (Verdant Pact), Frosthold (Aetheric Order, cold gear), Emberton (Aetheric Order, fire gear), Sunken Harbor (neutral, ship charter), Verdant Canopy Village (Verdant Pact endgame), Sky Station (endgame hub). All have inns/respawn, most have fast travel.'
+  keywords:
+  - towns
+  - hubs
+  - services
+  - inn
+  - respawn
+  - fast-travel
+  - blacksmith
+  - auction-house
+  - bank
+  - guild-hall
+  - faction-vendors
+  - quest-givers
+  - crafting
+- name: pvp-zones
+  description: '5 contested PvP territories (Aetheric Order vs Verdant Pact): Thornwood Crossroads (lumber/herbs), Crystal Summit (aether crystals), Sunken Docks (fishing/black market), Verdant Pass (spice road/poison flowers), Aether Nexus (server-wide stat bonus). Territory control via capture points. Opt-in PvP flag system.'
+  keywords:
+  - pvp
+  - contested-territory
+  - aetheric-order
+  - verdant-pact
+  - capture-points
+  - faction-bonuses
+  - resource-control
+  - thornwood-crossroads
+  - crystal-summit
+  - sunken-docks
+  - verdant-pass
+  - aether-nexus
+  - server-wide-bonus
+- name: world-systems
+  description: 'Core world systems: 8 regions with 40+ zones, level-based progression (1-20), zone connections and traversal, fast travel waypoint network, persistent shared zones with max player limits, private dungeon instances, fishing locations (9 spots with rarity tiers), resource nodes (ores, herbs, lumber), world events (timed spawns), environmental hazards, traversal unlocks (Tide Rune, Silence Rune, Aetherhook Gadget).'
+  keywords:
+  - world-design
+  - zone-system
+  - progression
+  - level-1-20
+  - traversal
+  - fast-travel
+  - fishing
+  - resources
+  - world-events
+  - environmental-hazards
+  - gating-mechanics
+  - MMO-architecture
