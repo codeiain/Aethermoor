@@ -13,11 +13,13 @@ from database import get_db
 from dnd import xp_to_level
 from models import BackpackItem, Character, CharacterPosition
 from schemas import (
+    AbilityScores,
     ApplyCraftRequest,
     BackpackItemQuantity,
     BackpackItemResponse,
     BackpackResponse,
     CharacterDetailResponse,
+    CombatStatsResponse,
     MessageResponse,
     UpdatePositionRequest,
     UpdateStatsRequest,
@@ -235,3 +237,93 @@ async def apply_craft(
 
     await db.commit()
     return MessageResponse(message="Craft applied")
+
+
+# ── Weapon derivation helper ─────────────────────────────────────────────────
+
+_ITEM_TO_WEAPON: dict[str, str] = {
+    "basic_sword": "longsword",
+    "iron_sword": "longsword",
+    "greatsword": "greatsword",
+    "dagger": "dagger",
+    "iron_dagger": "dagger",
+    "handaxe": "handaxe",
+    "greataxe": "greataxe",
+    "shortbow": "shortbow",
+    "longbow": "longbow",
+    "hand_crossbow": "hand_crossbow",
+    "quarterstaff": "quarterstaff",
+    "iron_staff": "quarterstaff",
+    "arcane_staff": "arcane_staff",
+    "shortsword": "shortsword",
+}
+
+
+def _item_id_to_weapon(item_id: str | None) -> str:
+    if item_id is None:
+        return "longsword"
+    weapon = _ITEM_TO_WEAPON.get(item_id)
+    if weapon:
+        return weapon
+    lower = item_id.lower()
+    for key, wtype in _ITEM_TO_WEAPON.items():
+        if key in lower:
+            return wtype
+    return "longsword"
+
+
+@router.get(
+    "/{character_id}/combat-stats",
+    response_model=CombatStatsResponse,
+    dependencies=[Depends(require_service_token)],
+)
+async def get_combat_stats(
+    character_id: str,
+    user_id: str,
+    db: AsyncSession = Depends(get_db),
+) -> CombatStatsResponse:
+    """Return a character's combat stats for initiating a battle.
+
+    Internal: called by the world service when a player engages an NPC.
+    Validates that character_id belongs to user_id (ownership check).
+    AC = 10 + DEX modifier. Weapon derived from main_hand equipment slot.
+    """
+    result = await db.execute(
+        select(Character)
+        .options(selectinload(Character.equipment))
+        .where(Character.id == character_id, Character.is_deleted.is_(False))
+    )
+    char = result.scalar_one_or_none()
+    if char is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Character not found")
+    if char.user_id != user_id:
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Access denied")
+
+    dex_mod = (char.dexterity - 10) // 2
+    ac = 10 + dex_mod
+
+    main_hand_item: str | None = None
+    for slot in char.equipment:
+        if slot.slot_name.value == "main_hand":
+            main_hand_item = slot.item_id
+            break
+    weapon = _item_id_to_weapon(main_hand_item)
+
+    return CombatStatsResponse(
+        character_id=char.id,
+        name=char.name,
+        character_class=char.character_class.value,
+        level=char.level,
+        current_hp=char.current_hp,
+        max_hp=char.max_hp,
+        ac=ac,
+        weapon=weapon,
+        stats=AbilityScores(
+            strength=char.strength,
+            dexterity=char.dexterity,
+            constitution=char.constitution,
+            intelligence=char.intelligence,
+            wisdom=char.wisdom,
+            charisma=char.charisma,
+        ),
+    )

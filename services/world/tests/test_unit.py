@@ -13,6 +13,7 @@ os.environ.setdefault("REDIS_URL", "redis://localhost:6379/15")
 os.environ.setdefault("SERVICE_TOKEN", "test-token")
 os.environ.setdefault("AUTH_SERVICE_URL", "http://auth:8001")
 os.environ.setdefault("CHARACTER_SERVICE_URL", "http://character:8002")
+os.environ.setdefault("COMBAT_SERVICE_URL", "http://combat:8007")
 
 import pytest
 
@@ -152,3 +153,76 @@ class TestZeroTrust:
         ts = int(time.time()) // 60
         with pytest.raises(ServiceTokenError, match="invalid"):
             verify_service_token_value(f"{ts}:wrongdigest")
+
+
+class TestNpcCatalogue:
+    def test_known_npc_types_present(self):
+        from npc_catalogue import NPC_CATALOGUE
+        for npc_type in ("wolf", "skeleton", "guard", "merchant", "goblin", "orc", "bandit"):
+            assert npc_type in NPC_CATALOGUE, f"Missing npc_type: {npc_type}"
+
+    def test_hostile_monsters(self):
+        from npc_catalogue import NPC_CATALOGUE
+        for npc_type in ("wolf", "skeleton", "goblin", "orc", "bandit"):
+            assert NPC_CATALOGUE[npc_type].is_hostile, f"{npc_type} should be hostile"
+
+    def test_friendly_npcs(self):
+        from npc_catalogue import NPC_CATALOGUE
+        for npc_type in ("guard", "merchant"):
+            assert not NPC_CATALOGUE[npc_type].is_hostile, f"{npc_type} should be friendly"
+
+    def test_stat_blocks_have_required_ability_scores(self):
+        from npc_catalogue import NPC_CATALOGUE
+        required = {"strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"}
+        for npc_type, block in NPC_CATALOGUE.items():
+            assert set(block.npc_stats.keys()) == required, f"{npc_type} missing ability scores"
+
+    def test_stat_blocks_positive_hp_ac(self):
+        from npc_catalogue import NPC_CATALOGUE
+        for npc_type, block in NPC_CATALOGUE.items():
+            assert block.hp > 0, f"{npc_type} hp must be > 0"
+            assert block.max_hp >= block.hp, f"{npc_type} max_hp must be >= hp"
+            assert block.ac > 0, f"{npc_type} ac must be > 0"
+
+    def test_get_stat_block_returns_default_for_unknown(self):
+        from npc_catalogue import DEFAULT_STAT_BLOCK, get_stat_block
+        result = get_stat_block("totally_unknown_npc_type_xyz")
+        assert result is DEFAULT_STAT_BLOCK
+
+    def test_get_stat_block_returns_catalogue_entry(self):
+        from npc_catalogue import NPC_CATALOGUE, get_stat_block
+        assert get_stat_block("wolf") is NPC_CATALOGUE["wolf"]
+
+    def test_friendly_npcs_have_dialogue(self):
+        from npc_catalogue import NPC_CATALOGUE
+        for npc_type in ("guard", "merchant"):
+            block = NPC_CATALOGUE[npc_type]
+            assert block.dialogue is not None, f"{npc_type} should have dialogue"
+            assert "greeting" in block.dialogue
+
+    def test_merchant_zero_gold_drop(self):
+        from npc_catalogue import NPC_CATALOGUE
+        merchant = NPC_CATALOGUE["merchant"]
+        assert merchant.gold_drop_min == 0
+        assert merchant.gold_drop_max == 0
+
+
+class TestCharacterClientWeaponDerivation:
+    def test_none_item_returns_default(self):
+        from character_client import _item_id_to_weapon
+        assert _item_id_to_weapon(None) == "longsword"
+
+    def test_known_exact_match(self):
+        from character_client import _item_id_to_weapon
+        assert _item_id_to_weapon("basic_sword") == "longsword"
+        assert _item_id_to_weapon("shortbow") == "shortbow"
+        assert _item_id_to_weapon("dagger") == "dagger"
+
+    def test_substring_fallback(self):
+        from character_client import _item_id_to_weapon
+        assert _item_id_to_weapon("enchanted_dagger_of_doom") == "dagger"
+        assert _item_id_to_weapon("master_longbow_+1") == "longbow"
+
+    def test_unknown_item_returns_default(self):
+        from character_client import _item_id_to_weapon
+        assert _item_id_to_weapon("mysterious_orb_xyz") == "longsword"

@@ -144,3 +144,16 @@ class ApplyCraftRequest(BaseModel):
 
 class BackpackResponse(BaseModel):
     items: list[BackpackItemResponse]
+
+
+class CombatStatsResponse(BaseModel):
+    """Character stats needed to start a combat session. Internal use only."""
+    character_id: str
+    name: str
+    character_class: str
+    level: int
+    current_hp: int
+    max_hp: int
+    ac: int       # 10 + DEX modifier (unarmored base)
+    weapon: str   # derived from main_hand equipment slot item_id
+    stats: AbilityScores

@@ -124,6 +124,52 @@ class WorldConfigResponse(BaseModel):
     value: str
 
 
+# ── NPC management schemas ───────────────────────────────────────────────────
+
+class NpcTemplateDetail(BaseModel):
+    """Full NPC template including combat stats. Returned by internal endpoint."""
+    id: str
+    zone_id: str
+    npc_type: str
+    name: str
+    spawn_x: int
+    spawn_y: int
+    patrol_path: list[dict[str, int]]
+    respawn_timer_sec: int
+    hp: int
+    max_hp: int
+    ac: int
+    cr: float
+    weapon: str
+    npc_stats: dict[str, int]
+    gold_drop_min: int
+    gold_drop_max: int
+    is_hostile: bool
+    dialogue: dict | None = None
+
+
+class NpcEngageRequest(BaseModel):
+    """Player request to engage an NPC in combat."""
+    character_id: str
+
+
+class NpcEngageResponse(BaseModel):
+    """Returned when a combat session is successfully started."""
+    combat_id: str
+    npc_id: str
+    npc_name: str
+    zone_id: str
+
+
+class NpcInteractResponse(BaseModel):
+    """Returned when a player talks to a friendly NPC."""
+    npc_id: str
+    npc_name: str
+    npc_type: str
+    zone_id: str
+    dialogue: dict
+
+
 # ── Utility ──────────────────────────────────────────────────────────────────
 
 class MessageResponse(BaseModel):

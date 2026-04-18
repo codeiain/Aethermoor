@@ -18,6 +18,7 @@ os.environ.setdefault("REDIS_URL", "redis://localhost:6379/15")  # DB 15: test i
 os.environ.setdefault("SERVICE_TOKEN", "test-service-token-for-world-tests")
 os.environ.setdefault("AUTH_SERVICE_URL", "http://auth:8001")
 os.environ.setdefault("CHARACTER_SERVICE_URL", "http://character:8002")
+os.environ.setdefault("COMBAT_SERVICE_URL", "http://combat:8004")
 
 from httpx import ASGITransport, AsyncClient
 from redis.asyncio import Redis

@@ -36,7 +36,7 @@ ACTIVE_REQUESTS = Gauge('world_active_requests', 'Active requests in progress')
 
 import cache as redis_cache
 from database import AsyncSessionLocal, Base, engine
-from routers import events, internal, presence, zones
+from routers import events, internal, npcs, presence, zones
 from seed import seed_zones
 from zero_trust import make_service_token
 
@@ -219,6 +219,7 @@ app.include_router(zones.router)
 app.include_router(events.router)
 app.include_router(internal.router)
 app.include_router(presence.router)
+app.include_router(npcs.router)
 
 
 @app.get("/health", tags=["ops"])

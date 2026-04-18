@@ -10,6 +10,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 
 from models import Biome, NpcTemplate, Zone
+from npc_catalogue import get_stat_block
 
 
 def _make_tilemap(width: int, height: int, collision_tiles: list[int] | None = None) -> dict:
@@ -187,7 +188,21 @@ async def seed_zones(db: AsyncSession) -> int:
         await db.flush()  # get zone.id
 
         for tmpl_data in npc_templates_data:
-            tmpl = NpcTemplate(zone_id=zone.id, **tmpl_data)
+            stats = get_stat_block(tmpl_data["npc_type"])
+            tmpl = NpcTemplate(
+                zone_id=zone.id,
+                hp=stats.hp,
+                max_hp=stats.max_hp,
+                ac=stats.ac,
+                cr=stats.cr,
+                weapon=stats.weapon,
+                npc_stats=stats.npc_stats,
+                gold_drop_min=stats.gold_drop_min,
+                gold_drop_max=stats.gold_drop_max,
+                is_hostile=stats.is_hostile,
+                dialogue=stats.dialogue,
+                **tmpl_data,
+            )
             db.add(tmpl)
 
         added += 1

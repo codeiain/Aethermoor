@@ -12,6 +12,7 @@ from sqlalchemy import (
     Boolean,
     DateTime,
     Enum,
+    Float,
     ForeignKey,
     Integer,
     SmallInteger,
@@ -76,7 +77,7 @@ class NpcTemplate(Base):
     """Persistent definition of an NPC in a zone.
 
     Runtime state (position, alive/dead/respawning) lives in Redis.
-    This record defines the NPC's identity, patrol route, and respawn config.
+    This record defines the NPC's identity, combat stats, patrol route, and respawn config.
     """
 
     __tablename__ = "npc_templates"
@@ -95,6 +96,24 @@ class NpcTemplate(Base):
     patrol_path: Mapped[list] = mapped_column(JSONB, nullable=False, default=list)
     respawn_timer_sec: Mapped[int] = mapped_column(Integer, nullable=False, default=30)
     is_active: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
+
+    # ── Combat stats ──────────────────────────────────────────────────────────
+    # HP resets to max_hp at each respawn; combat service owns HP during a fight.
+    hp: Mapped[int] = mapped_column(Integer, nullable=False, default=10)
+    max_hp: Mapped[int] = mapped_column(Integer, nullable=False, default=10)
+    ac: Mapped[int] = mapped_column(Integer, nullable=False, default=10)
+    # D&D challenge rating (0.125, 0.25, 0.5, 1, 2, …)
+    cr: Mapped[float] = mapped_column(Float, nullable=False, default=0.25)
+    # Weapon type string matching combat service WeaponType enum
+    weapon: Mapped[str] = mapped_column(String(32), nullable=False, default="claws")
+    # D&D ability scores: {"strength": 10, "dexterity": 10, ...}
+    npc_stats: Mapped[dict] = mapped_column(JSONB, nullable=False, default=dict)
+    gold_drop_min: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    gold_drop_max: Mapped[int] = mapped_column(Integer, nullable=False, default=5)
+    # False for friendly NPCs (merchants, guards); True for monsters
+    is_hostile: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
+    # Optional dialogue tree: {"greeting": "...", "farewell": "...", "quest_giver_id": "..."}
+    dialogue: Mapped[dict | None] = mapped_column(JSONB, nullable=True, default=None)
 
     zone: Mapped["Zone"] = relationship(back_populates="npc_templates")
 
