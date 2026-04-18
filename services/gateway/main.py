@@ -99,6 +99,10 @@ _UPSTREAMS: dict[str, tuple[str, str]] = {
     "combat": (os.environ.get("COMBAT_SERVICE_URL", "http://combat:8004"), "/combat"),
     "crafting": (os.environ.get("CRAFTING_SERVICE_URL", "http://crafting:8013"), "/crafting"),
     "inventory": (os.environ.get("INVENTORY_SERVICE_URL", "http://inventory:8006"), "/inventory"),
+    "quests": (os.environ.get("QUEST_SERVICE_URL", "http://quest:8007"), "/quests"),
+    "economy": (os.environ.get("ECONOMY_SERVICE_URL", "http://economy:8008"), "/economy"),
+    "social": (os.environ.get("SOCIAL_SERVICE_URL", "http://social:8012"), "/social"),
+    "party": (os.environ.get("PARTY_SERVICE_URL", "http://party:8011"), "/party"),
 }
 
 # ── Rate limiting — in-memory sliding window ─────────────────────────────────
@@ -251,6 +255,13 @@ async def services_status() -> dict:
         ("auth", _UPSTREAMS["auth"][0], "/health"),
         ("character", _UPSTREAMS["players"][0], "/health"),
         ("world", _UPSTREAMS["world"][0], "/health"),
+        ("combat", _UPSTREAMS["combat"][0], "/health"),
+        ("crafting", _UPSTREAMS["crafting"][0], "/health"),
+        ("inventory", _UPSTREAMS["inventory"][0], "/health"),
+        ("quest", _UPSTREAMS["quests"][0], "/health"),
+        ("economy", _UPSTREAMS["economy"][0], "/health"),
+        ("social", _UPSTREAMS["social"][0], "/health"),
+        ("party", _UPSTREAMS["party"][0], "/health"),
     ]
 
     results = []
@@ -380,4 +391,28 @@ async def proxy_crafting(path: str, request: Request) -> Response:
 @app.api_route("/inventory/{path:path}", methods=_METHODS)
 async def proxy_inventory(path: str, request: Request) -> Response:
     base, prefix = _UPSTREAMS["inventory"]
+    return await _proxy(request, f"{base}{prefix}/{path}")
+
+
+@app.api_route("/quests/{path:path}", methods=_METHODS)
+async def proxy_quests(path: str, request: Request) -> Response:
+    base, prefix = _UPSTREAMS["quests"]
+    return await _proxy(request, f"{base}{prefix}/{path}")
+
+
+@app.api_route("/economy/{path:path}", methods=_METHODS)
+async def proxy_economy(path: str, request: Request) -> Response:
+    base, prefix = _UPSTREAMS["economy"]
+    return await _proxy(request, f"{base}{prefix}/{path}")
+
+
+@app.api_route("/social/{path:path}", methods=_METHODS)
+async def proxy_social(path: str, request: Request) -> Response:
+    base, prefix = _UPSTREAMS["social"]
+    return await _proxy(request, f"{base}{prefix}/{path}")
+
+
+@app.api_route("/party/{path:path}", methods=_METHODS)
+async def proxy_party(path: str, request: Request) -> Response:
+    base, prefix = _UPSTREAMS["party"]
     return await _proxy(request, f"{base}{prefix}/{path}")

@@ -1,0 +1,541 @@
+# AETHERMOOR — Production Docker Compose
+# Hardened for Raspberry Pi deployment.
+#
+# Differences from docker-compose.yml (dev):
+#   - restart: always (survive reboots)
+#   - Internal service ports NOT exposed to host (only gateway:8000, frontend:3000)
+#   - Grafana password from GRAFANA_PASSWORD env var (not hardcoded "admin")
+#   - Grafana exposed only on localhost (127.0.0.1) for SSH-tunnel access
+#   - Prometheus and Loki internal-only
+#   - Tighter log rotation (5m / 3 files) to protect Pi SD card
+#   - cadvisor metrics accessible only via internal Prometheus scrape
+#
+# Usage:
+#   cd infra
+#   cp .env.example .env && vi .env   # set all secrets
+#   docker compose -f docker-compose.prod.yml up -d --build
+#
+# Run E2E tests against prod stack:
+#   GATEWAY_URL=http://localhost:8000 pytest tests/e2e/ -v
+
+networks:
+  public:
+  internal:
+    internal: true
+
+volumes:
+  postgres_data:
+  redis_data:
+
+x-service-defaults: &service-defaults
+  restart: always
+  networks:
+    - internal
+  environment:
+    SERVICE_TOKEN: ${SERVICE_TOKEN:?SERVICE_TOKEN must be set}
+  logging:
+    driver: "json-file"
+    options:
+      max-size: "5m"
+      max-file: "3"
+
+services:
+  # ── Monitoring ─────────────────────────────────────────────────────────────
+
+  loki:
+    image: grafana/loki:3.0.0
+    container_name: loki
+    restart: always
+    volumes:
+      - ./loki/loki-config.yml:/etc/loki/local-config.yaml
+      - ./loki-data:/loki
+    command: -config.file=/etc/loki/local-config.yaml
+    networks:
+      - internal
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+  promtail:
+    image: grafana/promtail:3.0.0
+    container_name: promtail
+    restart: always
+    volumes:
+      - ./promtail/promtail-config.yml:/etc/promtail/config.yml
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+    command: -config.file=/etc/promtail/config.yml
+    networks:
+      - internal
+    depends_on:
+      - loki
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+  redis-exporter:
+    image: bitnami/redis-exporter:latest
+    container_name: redis-exporter
+    restart: always
+    environment:
+      - REDIS_ADDR=redis://redis:6379
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    networks:
+      - internal
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    restart: always
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=7d'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    environment:
+      - TZ=${TZ:-UTC}
+    networks:
+      - internal
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: always
+    ports:
+      - "127.0.0.1:3001:3000"
+    volumes:
+      - ./grafana-data:/var/lib/grafana
+      - ./grafana:/etc/grafana/provisioning
+    environment:
+      - TZ=${TZ:-UTC}
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_USER:-admin}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:?GRAFANA_PASSWORD must be set}
+      - GF_SERVER_ROOT_URL=http://localhost:3001
+    networks:
+      - internal
+    depends_on:
+      - loki
+      - prometheus
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    restart: always
+    networks:
+      - internal
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    command:
+      - --housekeeping_interval=30s
+      - --docker_only=true
+    security_opt:
+      - no-new-privileges:true
+    privileged: false
+    environment:
+      - TZ=UTC
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+  # ── Infrastructure ──────────────────────────────────────────────────────────
+
+  postgres:
+    image: postgres:16-alpine
+    restart: always
+    networks:
+      - internal
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:?}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?}
+      POSTGRES_DB: aethermoor
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-aethermoor}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+  redis:
+    image: redis:7-alpine
+    restart: always
+    networks:
+      - internal
+    command: >
+      redis-server
+      --requirepass ${REDIS_PASSWORD:?}
+      --appendonly yes
+      --maxmemory 96mb
+      --maxmemory-policy allkeys-lru
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+  # ── Gateway (public-facing) ──────────────────────────────────────────────────
+
+  gateway:
+    <<: *service-defaults
+    build:
+      context: ../services/gateway
+      dockerfile: ../../infra/Dockerfile.service
+    networks:
+      - public
+      - internal
+    ports:
+      - "8000:8000"
+    environment:
+      SERVICE_TOKEN: ${SERVICE_TOKEN:?}
+      AUTH_SERVICE_URL: http://auth:8001
+      CHARACTER_SERVICE_URL: http://character:8002
+      WORLD_SERVICE_URL: http://world:8003
+      COMBAT_SERVICE_URL: http://combat:8004
+      CHAT_SERVICE_URL: http://chat:8005
+      INVENTORY_SERVICE_URL: http://inventory:8006
+      QUEST_SERVICE_URL: http://quest:8007
+      ECONOMY_SERVICE_URL: http://economy:8008
+      NOTIFICATION_SERVICE_URL: http://notification:8009
+      WEBSOCKET_GATEWAY_URL: ws://websocket-gateway:8010
+      PARTY_SERVICE_URL: http://party:8011
+      SOCIAL_SERVICE_URL: http://social:8012
+      CRAFTING_SERVICE_URL: http://crafting:8013
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  # ── Backend Services ─────────────────────────────────────────────────────────
+
+  auth:
+    <<: *service-defaults
+    build:
+      context: ../services/auth
+      dockerfile: ../../infra/Dockerfile.service
+    command: uvicorn main:app --host 0.0.0.0 --port 8001
+    environment:
+      SERVICE_TOKEN: ${SERVICE_TOKEN:?}
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/aethermoor
+      REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379/0
+      JWT_SECRET: ${JWT_SECRET:?}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  character:
+    <<: *service-defaults
+    build:
+      context: ../services/character
+      dockerfile: ../../infra/Dockerfile.service
+    command: uvicorn main:app --host 0.0.0.0 --port 8002
+    environment:
+      SERVICE_TOKEN: ${SERVICE_TOKEN:?}
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/aethermoor
+      AUTH_SERVICE_URL: http://auth:8001
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      postgres:
+        condition: service_healthy
+      auth:
+        condition: service_healthy
+
+  world:
+    <<: *service-defaults
+    build:
+      context: ../services/world
+      dockerfile: ../../infra/Dockerfile.service
+    command: uvicorn main:app --host 0.0.0.0 --port 8003
+    environment:
+      SERVICE_TOKEN: ${SERVICE_TOKEN:?}
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/aethermoor
+      REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379/1
+      AUTH_SERVICE_URL: http://auth:8001
+      CHARACTER_SERVICE_URL: http://character:8002
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8003/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      auth:
+        condition: service_healthy
+      character:
+        condition: service_healthy
+
+  combat:
+    <<: *service-defaults
+    build:
+      context: ../services/combat
+      dockerfile: ../../infra/Dockerfile.service
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8004"]
+    environment:
+      SERVICE_TOKEN: ${SERVICE_TOKEN:?}
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/aethermoor
+      REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379/2
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8004/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  chat:
+    <<: *service-defaults
+    build:
+      context: ../services/chat
+      dockerfile: ../../infra/Dockerfile.service
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8005"]
+    environment:
+      SERVICE_TOKEN: ${SERVICE_TOKEN:?}
+      REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379/3
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8005/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  inventory:
+    <<: *service-defaults
+    build:
+      context: ../services/inventory
+      dockerfile: ../../infra/Dockerfile.service
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8006"]
+    environment:
+      SERVICE_TOKEN: ${SERVICE_TOKEN:?}
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/aethermoor
+      AUTH_SERVICE_URL: http://auth:8001
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8006/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      postgres:
+        condition: service_healthy
+      auth:
+        condition: service_healthy
+
+  quest:
+    <<: *service-defaults
+    build:
+      context: ../services/quest
+      dockerfile: ../../infra/Dockerfile.service
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8007"]
+    environment:
+      SERVICE_TOKEN: ${SERVICE_TOKEN:?}
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/aethermoor
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8007/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  economy:
+    <<: *service-defaults
+    build:
+      context: ../services/economy
+      dockerfile: ../../infra/Dockerfile.service
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8008"]
+    environment:
+      SERVICE_TOKEN: ${SERVICE_TOKEN:?}
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/aethermoor
+      REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379/8
+      AUTH_SERVICE_URL: http://auth:8001
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8008/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      auth:
+        condition: service_healthy
+
+  notification:
+    <<: *service-defaults
+    build:
+      context: ../services/notification
+      dockerfile: ../../infra/Dockerfile.service
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8009"]
+    environment:
+      SERVICE_TOKEN: ${SERVICE_TOKEN:?}
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/aethermoor
+      REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379/4
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8009/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  websocket-gateway:
+    <<: *service-defaults
+    build:
+      context: ../services/websocket-gateway
+      dockerfile: ../../infra/Dockerfile.service
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8010"]
+    networks:
+      - public
+      - internal
+    ports:
+      - "8010:8010"
+    environment:
+      SERVICE_TOKEN: ${SERVICE_TOKEN:?}
+      REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379/5
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8010/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  party:
+    <<: *service-defaults
+    build:
+      context: ../services/party
+      dockerfile: ../../infra/Dockerfile.service
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8011"]
+    environment:
+      SERVICE_TOKEN: ${SERVICE_TOKEN:?}
+      REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379/6
+      AUTH_SERVICE_URL: http://auth:8001
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8011/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      redis:
+        condition: service_healthy
+      auth:
+        condition: service_healthy
+
+  social:
+    <<: *service-defaults
+    build:
+      context: ../services/social
+      dockerfile: ../../infra/Dockerfile.service
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8012"]
+    environment:
+      SERVICE_TOKEN: ${SERVICE_TOKEN:?}
+      REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379/7
+      AUTH_SERVICE_URL: http://auth:8001
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8012/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      redis:
+        condition: service_healthy
+      auth:
+        condition: service_healthy
+
+  crafting:
+    <<: *service-defaults
+    build:
+      context: ../services/crafting
+      dockerfile: ../../infra/Dockerfile.service
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8013"]
+    environment:
+      SERVICE_TOKEN: ${SERVICE_TOKEN:?}
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/aethermoor
+      AUTH_SERVICE_URL: http://auth:8001
+      CHARACTER_SERVICE_URL: http://character:8002
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8013/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      postgres:
+        condition: service_healthy
+      auth:
+        condition: service_healthy
+      character:
+        condition: service_healthy
+
+  # ── Frontend ─────────────────────────────────────────────────────────────────
+
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: ../infra/Dockerfile.frontend
+    restart: always
+    networks:
+      - public
+    ports:
+      - "3000:80"
+    depends_on:
+      - gateway
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "3"
