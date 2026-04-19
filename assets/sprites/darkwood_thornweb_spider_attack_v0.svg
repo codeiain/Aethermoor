@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="32" viewBox="0 0 96 32" role="img" aria-label="Thornweb Spider Attack Animation — 3 frames">
+  <!-- E-2 Thornweb Spider — attack animation, 3×32x32 sprite sheet -->
+  <!-- Palette: body #2A1A08/#3A2A12, blight purple #7B4FC8, eyes #D06FD0/#FF80FF -->
+  <!-- Phaser frame strip: frame 0 x=0, frame 1 x=32, frame 2 x=64 -->
+
+  <!-- Frame 0: Wind-up — front legs raised, fangs extended, body poised to strike -->
+  <g transform="translate(0,0)">
+    <!-- Web anchors -->
+    <line x1="16" y1="27" x2="4"  y2="32" stroke="#3A2A10" stroke-width="1" opacity="0.6"/>
+    <line x1="16" y1="27" x2="28" y2="32" stroke="#3A2A10" stroke-width="1" opacity="0.6"/>
+    <!-- Abdomen — raised slightly -->
+    <ellipse cx="16" cy="21" rx="9" ry="6" fill="#2A1A08"/>
+    <ellipse cx="16" cy="21" rx="7" ry="4" fill="#3A2A12"/>
+    <rect x="10" y="19" width="12" height="1" fill="#1A0E04" opacity="0.7"/>
+    <rect x="11" y="22" width="10" height="1" fill="#1A0E04" opacity="0.6"/>
+    <rect x="14" y="18" width="2"  height="6" fill="#4A3860" opacity="0.55"/>
+    <!-- Thorax — raised in wind-up -->
+    <ellipse cx="16" cy="11" rx="5" ry="5" fill="#2A1A08"/>
+    <!-- Front two legs raised high in wind-up, rear legs braced -->
+    <line x1="11" y1="9"  x2="2"  y2="2"  stroke="#3A2A12" stroke-width="2"/>
+    <line x1="11" y1="10" x2="1"  y2="7"  stroke="#3A2A12" stroke-width="2"/>
+    <line x1="11" y1="13" x2="1"  y2="19" stroke="#3A2A12" stroke-width="2"/>
+    <line x1="11" y1="14" x2="2"  y2="24" stroke="#3A2A12" stroke-width="2"/>
+    <line x1="21" y1="9"  x2="30" y2="2"  stroke="#3A2A12" stroke-width="2"/>
+    <line x1="21" y1="10" x2="31" y2="7"  stroke="#3A2A12" stroke-width="2"/>
+    <line x1="21" y1="13" x2="31" y2="19" stroke="#3A2A12" stroke-width="2"/>
+    <line x1="21" y1="14" x2="30" y2="24" stroke="#3A2A12" stroke-width="2"/>
+    <!-- Eyes — brightening pre-strike -->
+    <rect x="13" y="8"  width="1" height="1" fill="#D06FD0"/>
+    <rect x="15" y="7"  width="1" height="1" fill="#D06FD0"/>
+    <rect x="17" y="7"  width="1" height="1" fill="#D06FD0"/>
+    <rect x="19" y="8"  width="1" height="1" fill="#D06FD0"/>
+    <rect x="14" y="10" width="1" height="1" fill="#E880E8"/>
+    <rect x="18" y="10" width="1" height="1" fill="#E880E8"/>
+    <!-- Fangs extended downward -->
+    <rect x="14" y="15" width="2" height="4" fill="#3A2A12"/>
+    <rect x="16" y="15" width="2" height="4" fill="#2A1A08"/>
+    <circle cx="15" cy="19" r="1" fill="#7B4FC8" opacity="0.85"/>
+    <circle cx="17" cy="19" r="1" fill="#7B4FC8" opacity="0.85"/>
+  </g>
+
+  <!-- Frame 1: Strike — body lunged down, fangs plunging, web spraying -->
+  <g transform="translate(32,0)">
+    <!-- Web spray lines from attack -->
+    <line x1="16" y1="19" x2="0"  y2="9"  stroke="#5A4020" stroke-width="1.5" opacity="0.9"/>
+    <line x1="16" y1="19" x2="32" y2="9"  stroke="#5A4020" stroke-width="1.5" opacity="0.9"/>
+    <line x1="16" y1="19" x2="6"  y2="0"  stroke="#3A2A10" stroke-width="1"   opacity="0.6"/>
+    <line x1="16" y1="19" x2="26" y2="0"  stroke="#3A2A10" stroke-width="1"   opacity="0.6"/>
+    <!-- Abdomen — lunged lower -->
+    <ellipse cx="16" cy="24" rx="9" ry="6" fill="#2A1A08"/>
+    <ellipse cx="16" cy="24" rx="7" ry="4" fill="#3A2A12"/>
+    <rect x="10" y="22" width="12" height="1" fill="#1A0E04" opacity="0.7"/>
+    <rect x="11" y="25" width="10" height="1" fill="#1A0E04" opacity="0.6"/>
+    <rect x="14" y="21" width="2"  height="6" fill="#4A3860" opacity="0.65"/>
+    <!-- Thorax — lunged forward/down -->
+    <ellipse cx="16" cy="15" rx="5" ry="5" fill="#2A1A08"/>
+    <!-- All legs spread wide and gripping during strike -->
+    <line x1="11" y1="13" x2="0"  y2="5"  stroke="#3A2A12" stroke-width="2"/>
+    <line x1="11" y1="14" x2="0"  y2="14" stroke="#3A2A12" stroke-width="2"/>
+    <line x1="11" y1="16" x2="1"  y2="23" stroke="#3A2A12" stroke-width="2"/>
+    <line x1="11" y1="17" x2="2"  y2="29" stroke="#3A2A12" stroke-width="2"/>
+    <line x1="21" y1="13" x2="32" y2="5"  stroke="#3A2A12" stroke-width="2"/>
+    <line x1="21" y1="14" x2="32" y2="14" stroke="#3A2A12" stroke-width="2"/>
+    <line x1="21" y1="16" x2="31" y2="23" stroke="#3A2A12" stroke-width="2"/>
+    <line x1="21" y1="17" x2="30" y2="29" stroke="#3A2A12" stroke-width="2"/>
+    <!-- Eyes — maximum blight-glow at moment of strike -->
+    <rect x="13" y="12" width="1" height="1" fill="#FF88FF"/>
+    <rect x="15" y="11" width="1" height="1" fill="#FF88FF"/>
+    <rect x="17" y="11" width="1" height="1" fill="#FF88FF"/>
+    <rect x="19" y="12" width="1" height="1" fill="#FF88FF"/>
+    <rect x="14" y="14" width="1" height="1" fill="#FF88FF"/>
+    <rect x="18" y="14" width="1" height="1" fill="#FF88FF"/>
+    <!-- Fangs fully plunged -->
+    <rect x="14" y="19" width="2" height="5" fill="#3A2A12"/>
+    <rect x="16" y="19" width="2" height="5" fill="#2A1A08"/>
+    <circle cx="15" cy="25" r="1.5" fill="#9B5FC8" opacity="0.95"/>
+    <circle cx="17" cy="25" r="1.5" fill="#9B5FC8" opacity="0.95"/>
+  </g>
+
+  <!-- Frame 2: Recoil — spider pulling back, web trail left -->
+  <g transform="translate(64,0)">
+    <!-- Web trail from the attack -->
+    <line x1="16" y1="25" x2="4"  y2="32" stroke="#3A2A10" stroke-width="1" opacity="0.5"/>
+    <line x1="16" y1="25" x2="28" y2="32" stroke="#3A2A10" stroke-width="1" opacity="0.5"/>
+    <line x1="9"  y1="17" x2="0"  y2="8"  stroke="#3A2A10" stroke-width="1" opacity="0.35"/>
+    <!-- Abdomen returning to rest -->
+    <ellipse cx="16" cy="22" rx="9" ry="7" fill="#2A1A08"/>
+    <ellipse cx="16" cy="22" rx="7" ry="5" fill="#3A2A12"/>
+    <rect x="10" y="20" width="12" height="1" fill="#1A0E04" opacity="0.7"/>
+    <rect x="11" y="23" width="10" height="1" fill="#1A0E04" opacity="0.6"/>
+    <rect x="14" y="19" width="2"  height="6" fill="#4A3860" opacity="0.5"/>
+    <!-- Thorax returning -->
+    <ellipse cx="16" cy="13" rx="5" ry="5" fill="#2A1A08"/>
+    <!-- Legs settling back to idle stance -->
+    <line x1="11" y1="12" x2="1"  y2="7"  stroke="#3A2A12" stroke-width="2"/>
+    <line x1="11" y1="13" x2="0"  y2="13" stroke="#3A2A12" stroke-width="2"/>
+    <line x1="11" y1="14" x2="1"  y2="20" stroke="#3A2A12" stroke-width="2"/>
+    <line x1="11" y1="15" x2="2"  y2="25" stroke="#3A2A12" stroke-width="2"/>
+    <line x1="21" y1="12" x2="31" y2="7"  stroke="#3A2A12" stroke-width="2"/>
+    <line x1="21" y1="13" x2="32" y2="13" stroke="#3A2A12" stroke-width="2"/>
+    <line x1="21" y1="14" x2="31" y2="20" stroke="#3A2A12" stroke-width="2"/>
+    <line x1="21" y1="15" x2="30" y2="25" stroke="#3A2A12" stroke-width="2"/>
+    <!-- Eyes settling to normal glow -->
+    <rect x="13" y="10" width="1" height="1" fill="#B04FB0"/>
+    <rect x="15" y="9"  width="1" height="1" fill="#B04FB0"/>
+    <rect x="17" y="9"  width="1" height="1" fill="#B04FB0"/>
+    <rect x="19" y="10" width="1" height="1" fill="#B04FB0"/>
+    <rect x="14" y="12" width="1" height="1" fill="#C84FC8" opacity="0.8"/>
+    <rect x="18" y="12" width="1" height="1" fill="#C84FC8" opacity="0.8"/>
+    <!-- Fangs returning to rest -->
+    <rect x="14" y="17" width="2" height="3" fill="#3A2A12"/>
+    <rect x="16" y="17" width="2" height="3" fill="#2A1A08"/>
+  </g>
+</svg>

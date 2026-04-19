@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="32" viewBox="0 0 96 32" role="img" aria-label="Corrupted Treant Sprout Attack Animation — 3 frames">
+  <!-- E-3 Corrupted Treant Sprout — attack animation, 3×32x32 sprite sheet -->
+  <!-- Palette: bark #1C1004/#2B1A08, corruption fissures #7B4FC8, leaves #1A2A0A -->
+  <!-- Phaser frame strip: frame 0 x=0, frame 1 x=32, frame 2 x=64 -->
+
+  <!-- Frame 0: Wind-up — right arm raised high, corruption glowing brighter -->
+  <g transform="translate(0,0)">
+    <!-- Root anchors -->
+    <rect x="6"  y="28" width="5"  height="4" rx="1" fill="#1A0E04"/>
+    <rect x="21" y="28" width="5"  height="4" rx="1" fill="#1A0E04"/>
+    <rect x="13" y="30" width="6"  height="2" rx="1" fill="#1A0E04"/>
+    <!-- Leg stumps -->
+    <rect x="8"  y="22" width="6"  height="8" rx="1" fill="#1C1004"/>
+    <rect x="18" y="22" width="6"  height="8" rx="1" fill="#1C1004"/>
+    <!-- Trunk body -->
+    <rect x="9"  y="8"  width="14" height="16" rx="2" fill="#1C1004"/>
+    <!-- Corruption fissures brighter in wind-up -->
+    <rect x="11" y="10" width="2"  height="12" fill="#9B6FE8" opacity="0.55"/>
+    <rect x="20" y="12" width="1"  height="8"  fill="#9B6FE8" opacity="0.45"/>
+    <rect x="14" y="9"  width="1"  height="14" fill="#7B4FC8" opacity="0.4"/>
+    <!-- Bark plates -->
+    <rect x="9"  y="10" width="14" height="3"  fill="#2B1A08" opacity="0.8"/>
+    <rect x="9"  y="17" width="14" height="3"  fill="#2B1A08" opacity="0.7"/>
+    <!-- Left arm steady -->
+    <rect x="1"  y="14" width="9"  height="5"  rx="1" fill="#1C1004"/>
+    <rect x="0"  y="12" width="3"  height="3"  fill="#1A2A0A"/>
+    <rect x="0"  y="18" width="3"  height="3"  fill="#1A2A0A"/>
+    <rect x="3"  y="11" width="3"  height="3"  fill="#1A2A0A"/>
+    <!-- Right arm raised high in wind-up -->
+    <rect x="22" y="4"  width="9"  height="5"  rx="1" fill="#1C1004"/>
+    <rect x="29" y="2"  width="3"  height="3"  fill="#1A2A0A"/>
+    <rect x="29" y="8"  width="3"  height="3"  fill="#1A2A0A"/>
+    <rect x="26" y="1"  width="3"  height="3"  fill="#1A2A0A"/>
+    <!-- Glow on raised arm — powered up -->
+    <rect x="22" y="4"  width="9"  height="5"  fill="#7B4FC8" opacity="0.15"/>
+    <!-- Head -->
+    <rect x="10" y="2"  width="12" height="8"  rx="2" fill="#1C1004"/>
+    <!-- Eye sockets glowing brighter -->
+    <rect x="12" y="4"  width="3"  height="3"  fill="#9B6FE8" opacity="0.95"/>
+    <rect x="18" y="4"  width="3"  height="3"  fill="#9B6FE8" opacity="0.95"/>
+    <rect x="12" y="4"  width="3"  height="1"  fill="#0A0604"/>
+    <rect x="18" y="4"  width="3"  height="1"  fill="#0A0604"/>
+    <!-- Mouth open in attack roar -->
+    <rect x="11" y="8"  width="10" height="2"  fill="#0A0604"/>
+  </g>
+
+  <!-- Frame 1: Impact — arm slams down, bark spikes erupting from ground -->
+  <g transform="translate(32,0)">
+    <!-- Ground impact shockwave lines -->
+    <line x1="16" y1="32" x2="0"  y2="28" stroke="#2B1A08" stroke-width="1.5" opacity="0.8"/>
+    <line x1="16" y1="32" x2="32" y2="28" stroke="#2B1A08" stroke-width="1.5" opacity="0.8"/>
+    <!-- Bark spike erupting from ground -->
+    <rect x="0"  y="24" width="4"  height="8"  rx="1" fill="#2B1A08"/>
+    <rect x="28" y="24" width="4"  height="8"  rx="1" fill="#2B1A08"/>
+    <rect x="5"  y="26" width="3"  height="6"  rx="1" fill="#1A2A0A"/>
+    <rect x="24" y="26" width="3"  height="6"  rx="1" fill="#1A2A0A"/>
+    <!-- Blight energy ripple at ground level -->
+    <ellipse cx="16" cy="32" rx="14" ry="2" fill="#5A3A80" opacity="0.45"/>
+    <!-- Root stumps -->
+    <rect x="6"  y="28" width="5"  height="4" rx="1" fill="#1A0E04"/>
+    <rect x="21" y="28" width="5"  height="4" rx="1" fill="#1A0E04"/>
+    <rect x="13" y="30" width="6"  height="2" rx="1" fill="#1A0E04"/>
+    <!-- Leg stumps -->
+    <rect x="8"  y="22" width="6"  height="8" rx="1" fill="#1C1004"/>
+    <rect x="18" y="22" width="6"  height="8" rx="1" fill="#1C1004"/>
+    <!-- Trunk body — slightly hunched from impact force -->
+    <rect x="9"  y="9"  width="14" height="15" rx="2" fill="#1C1004"/>
+    <!-- Corruption fissures at peak brightness -->
+    <rect x="11" y="11" width="2"  height="11" fill="#BB8FFF" opacity="0.7"/>
+    <rect x="20" y="13" width="1"  height="7"  fill="#BB8FFF" opacity="0.55"/>
+    <rect x="14" y="10" width="1"  height="13" fill="#9B6FE8" opacity="0.5"/>
+    <!-- Bark plates -->
+    <rect x="9"  y="11" width="14" height="3"  fill="#2B1A08" opacity="0.8"/>
+    <rect x="9"  y="18" width="14" height="3"  fill="#2B1A08" opacity="0.7"/>
+    <!-- Left arm braced outward -->
+    <rect x="0"  y="15" width="10" height="5"  rx="1" fill="#1C1004"/>
+    <rect x="0"  y="13" width="3"  height="3"  fill="#1A2A0A"/>
+    <rect x="0"  y="19" width="3"  height="3"  fill="#1A2A0A"/>
+    <!-- Right arm slammed down — low position -->
+    <rect x="22" y="18" width="10" height="5"  rx="1" fill="#1C1004"/>
+    <rect x="29" y="16" width="3"  height="3"  fill="#1A2A0A"/>
+    <rect x="29" y="22" width="3"  height="3"  fill="#1A2A0A"/>
+    <rect x="26" y="23" width="3"  height="3"  fill="#1A2A0A"/>
+    <!-- Bark spike under slammed arm -->
+    <rect x="21" y="22" width="3"  height="6"  fill="#2B1A08" opacity="0.9"/>
+    <!-- Head -->
+    <rect x="10" y="3"  width="12" height="8"  rx="2" fill="#1C1004"/>
+    <!-- Eyes max glow at impact -->
+    <rect x="12" y="5"  width="3"  height="3"  fill="#BB8FFF"/>
+    <rect x="18" y="5"  width="3"  height="3"  fill="#BB8FFF"/>
+    <rect x="12" y="5"  width="3"  height="1"  fill="#0A0604"/>
+    <rect x="18" y="5"  width="3"  height="1"  fill="#0A0604"/>
+    <!-- Mouth fully open -->
+    <rect x="11" y="9"  width="10" height="2"  fill="#0A0604"/>
+  </g>
+
+  <!-- Frame 2: Recoil — arm returning, spikes fading, settling back -->
+  <g transform="translate(64,0)">
+    <!-- Fading spike remnants -->
+    <rect x="0"  y="27" width="3"  height="5"  rx="1" fill="#2B1A08" opacity="0.5"/>
+    <rect x="29" y="27" width="3"  height="5"  rx="1" fill="#2B1A08" opacity="0.5"/>
+    <!-- Root anchors -->
+    <rect x="6"  y="28" width="5"  height="4" rx="1" fill="#1A0E04"/>
+    <rect x="21" y="28" width="5"  height="4" rx="1" fill="#1A0E04"/>
+    <rect x="13" y="30" width="6"  height="2" rx="1" fill="#1A0E04"/>
+    <!-- Leg stumps -->
+    <rect x="8"  y="22" width="6"  height="8" rx="1" fill="#1C1004"/>
+    <rect x="18" y="22" width="6"  height="8" rx="1" fill="#1C1004"/>
+    <!-- Trunk returning to upright -->
+    <rect x="9"  y="8"  width="14" height="16" rx="2" fill="#1C1004"/>
+    <!-- Corruption fissures returning to normal intensity -->
+    <rect x="11" y="10" width="2"  height="12" fill="#7B4FC8" opacity="0.35"/>
+    <rect x="20" y="12" width="1"  height="8"  fill="#7B4FC8" opacity="0.3"/>
+    <rect x="14" y="9"  width="1"  height="14" fill="#5A3A80" opacity="0.25"/>
+    <!-- Bark plates -->
+    <rect x="9"  y="10" width="14" height="3"  fill="#2B1A08" opacity="0.8"/>
+    <rect x="9"  y="17" width="14" height="3"  fill="#2B1A08" opacity="0.7"/>
+    <!-- Left arm resting -->
+    <rect x="1"  y="12" width="9"  height="5"  rx="1" fill="#1C1004"/>
+    <rect x="0"  y="10" width="3"  height="3"  fill="#1A2A0A"/>
+    <rect x="0"  y="16" width="3"  height="3"  fill="#1A2A0A"/>
+    <rect x="3"  y="9"  width="3"  height="3"  fill="#1A2A0A"/>
+    <!-- Right arm returning to side -->
+    <rect x="22" y="12" width="9"  height="5"  rx="1" fill="#1C1004"/>
+    <rect x="29" y="10" width="3"  height="3"  fill="#1A2A0A"/>
+    <rect x="29" y="16" width="3"  height="3"  fill="#1A2A0A"/>
+    <rect x="26" y="9"  width="3"  height="3"  fill="#1A2A0A"/>
+    <!-- Head settled -->
+    <rect x="10" y="2"  width="12" height="8"  rx="2" fill="#1C1004"/>
+    <rect x="12" y="4"  width="3"  height="3"  fill="#7B4FC8" opacity="0.8"/>
+    <rect x="18" y="4"  width="3"  height="3"  fill="#7B4FC8" opacity="0.8"/>
+    <rect x="12" y="4"  width="3"  height="1"  fill="#0A0604"/>
+    <rect x="18" y="4"  width="3"  height="1"  fill="#0A0604"/>
+    <!-- Mouth closing back to the ragged gash -->
+    <rect x="12" y="8"  width="8"  height="2"  fill="#0A0604"/>
+  </g>
+</svg>

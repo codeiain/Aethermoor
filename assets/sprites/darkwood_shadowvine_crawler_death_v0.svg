@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="32" viewBox="0 0 96 32" role="img" aria-label="Shadowvine Crawler Death Animation — 3 frames">
+  <!-- E-4 Shadowvine Crawler — death animation, 3×32x32 sprite sheet -->
+  <!-- Palette: vines #1A1A08/#2A2A0E, blight #7B4FC8 dimming to #3A1A50, eyes extinguishing -->
+  <!-- Phaser frame strip: frame 0 x=0, frame 1 x=32, frame 2 x=64 -->
+
+  <!-- Frame 0: Dimming — tendrils drooping, eyes fading, core flickering -->
+  <g transform="translate(0,0)">
+    <!-- Outer tendrils starting to droop downward -->
+    <line x1="16" y1="16" x2="4"  y2="10" stroke="#1A1A08" stroke-width="1.5" opacity="0.7"/>
+    <line x1="16" y1="16" x2="28" y2="10" stroke="#1A1A08" stroke-width="1.5" opacity="0.7"/>
+    <line x1="16" y1="16" x2="2"  y2="18" stroke="#1A1A08" stroke-width="1.5" opacity="0.65"/>
+    <line x1="16" y1="16" x2="30" y2="18" stroke="#1A1A08" stroke-width="1.5" opacity="0.65"/>
+    <!-- Lower tendrils going limp toward ground -->
+    <line x1="16" y1="16" x2="6"  y2="28" stroke="#1A1A08" stroke-width="1.5" opacity="0.75"/>
+    <line x1="16" y1="16" x2="26" y2="28" stroke="#1A1A08" stroke-width="1.5" opacity="0.75"/>
+    <line x1="16" y1="16" x2="12" y2="30" stroke="#1A1A08" stroke-width="1"   opacity="0.6"/>
+    <line x1="16" y1="16" x2="20" y2="30" stroke="#1A1A08" stroke-width="1"   opacity="0.6"/>
+    <!-- Vine tips dragging -->
+    <circle cx="4"  cy="10" r="1.5" fill="#1A2A0A" opacity="0.7"/>
+    <circle cx="28" cy="10" r="1.5" fill="#1A2A0A" opacity="0.7"/>
+    <circle cx="2"  cy="18" r="1.5" fill="#1A2A0A" opacity="0.6"/>
+    <circle cx="30" cy="18" r="1.5" fill="#1A2A0A" opacity="0.6"/>
+    <!-- Mid loops going slack -->
+    <ellipse cx="16" cy="16" rx="9" ry="7"  fill="none" stroke="#2A2A0E" stroke-width="2"   opacity="0.5"/>
+    <ellipse cx="16" cy="16" rx="6" ry="4"  fill="none" stroke="#1A1A08" stroke-width="1.5" opacity="0.6" transform="rotate(20,16,16)"/>
+    <!-- Core still present — energy flickering -->
+    <ellipse cx="16" cy="16" rx="6"  ry="5"  fill="#1A1A08"/>
+    <ellipse cx="16" cy="16" rx="4"  ry="3.5" fill="#2A2A10"/>
+    <!-- Blight threads flickering -->
+    <rect x="13" y="14" width="6" height="1" fill="#5A3A80" opacity="0.45"/>
+    <rect x="14" y="16" width="4" height="1" fill="#5A3A80" opacity="0.4"/>
+    <rect x="15" y="13" width="1" height="6" fill="#5A3A80" opacity="0.35"/>
+    <!-- Eyes dimming — one out, one barely flickering -->
+    <circle cx="14" cy="15" r="1.5" fill="#5A3870" opacity="0.5"/>
+    <circle cx="18" cy="15" r="1.5" fill="#7B4FC8" opacity="0.5"/>
+    <circle cx="16" cy="18" r="1"   fill="#5A3A80" opacity="0.4"/>
+  </g>
+
+  <!-- Frame 1: Collapsing — tendrils falling flat, core shrinking, eyes out -->
+  <g transform="translate(32,0)">
+    <!-- Tendrils wilted flat, mostly at bottom of frame -->
+    <line x1="16" y1="22" x2="4"  y2="26" stroke="#1A1A08" stroke-width="1.5" opacity="0.7"/>
+    <line x1="16" y1="22" x2="28" y2="26" stroke="#1A1A08" stroke-width="1.5" opacity="0.7"/>
+    <line x1="16" y1="22" x2="2"  y2="24" stroke="#1A1A08" stroke-width="1.5" opacity="0.6"/>
+    <line x1="16" y1="22" x2="30" y2="24" stroke="#1A1A08" stroke-width="1.5" opacity="0.6"/>
+    <line x1="16" y1="22" x2="8"  y2="30" stroke="#1A1A08" stroke-width="1.5" opacity="0.7"/>
+    <line x1="16" y1="22" x2="24" y2="30" stroke="#1A1A08" stroke-width="1.5" opacity="0.7"/>
+    <!-- A few limp tendrils hanging limply upward (near-dead droop) -->
+    <line x1="16" y1="22" x2="8"  y2="16" stroke="#1A1A08" stroke-width="1"   opacity="0.4"/>
+    <line x1="16" y1="22" x2="24" y2="16" stroke="#1A1A08" stroke-width="1"   opacity="0.4"/>
+    <!-- Vine nodes on ground -->
+    <circle cx="4"  cy="26" r="1.5" fill="#1A2A0A" opacity="0.6"/>
+    <circle cx="28" cy="26" r="1.5" fill="#1A2A0A" opacity="0.6"/>
+    <circle cx="8"  cy="30" r="1.5" fill="#1A2A0A" opacity="0.65"/>
+    <circle cx="24" cy="30" r="1.5" fill="#1A2A0A" opacity="0.65"/>
+    <!-- Core collapsing inward — smaller, lower -->
+    <ellipse cx="16" cy="22" rx="5"  ry="4"  fill="#1A1A08"/>
+    <ellipse cx="16" cy="22" rx="3"  ry="2.5" fill="#1E1E08"/>
+    <!-- Blight almost gone -->
+    <rect x="14" y="21" width="4" height="1" fill="#3A2060" opacity="0.3"/>
+    <rect x="15" y="20" width="1" height="4" fill="#3A2060" opacity="0.25"/>
+    <!-- Eyes fully extinguished -->
+    <circle cx="14" cy="21" r="1.5" fill="#1A1A08"/>
+    <circle cx="18" cy="21" r="1.5" fill="#1A1A08"/>
+    <!-- Last wisp of blight escaping upward -->
+    <circle cx="16" cy="15" r="2" fill="#5A3A80" opacity="0.3"/>
+    <circle cx="16" cy="10" r="1.5" fill="#4A2A70" opacity="0.2"/>
+  </g>
+
+  <!-- Frame 2: Dead — withered heap of vines, no glow, all dark -->
+  <g transform="translate(64,0)">
+    <!-- Flat withered vine mass on ground -->
+    <!-- Outer vines lying flat -->
+    <line x1="16" y1="27" x2="2"  y2="28" stroke="#1A1A08" stroke-width="1.5" opacity="0.7"/>
+    <line x1="16" y1="27" x2="30" y2="28" stroke="#1A1A08" stroke-width="1.5" opacity="0.7"/>
+    <line x1="16" y1="27" x2="4"  y2="32" stroke="#1A1A08" stroke-width="1.5" opacity="0.65"/>
+    <line x1="16" y1="27" x2="28" y2="32" stroke="#1A1A08" stroke-width="1.5" opacity="0.65"/>
+    <line x1="16" y1="27" x2="6"  y2="30" stroke="#1A1A08" stroke-width="1"   opacity="0.5"/>
+    <line x1="16" y1="27" x2="26" y2="30" stroke="#1A1A08" stroke-width="1"   opacity="0.5"/>
+    <!-- Shrivelled vine nodes -->
+    <circle cx="2"  cy="28" r="1.5" fill="#1A2A0A" opacity="0.5"/>
+    <circle cx="30" cy="28" r="1.5" fill="#1A2A0A" opacity="0.5"/>
+    <circle cx="4"  cy="32" r="1.5" fill="#1A2A0A" opacity="0.5"/>
+    <circle cx="28" cy="32" r="1.5" fill="#1A2A0A" opacity="0.5"/>
+    <!-- Withered mass of tangled vines -->
+    <ellipse cx="16" cy="28" rx="8"  ry="4"  fill="none" stroke="#1A1A08" stroke-width="2" opacity="0.7"/>
+    <ellipse cx="16" cy="28" rx="5"  ry="2.5" fill="none" stroke="#1A1A08" stroke-width="1.5" opacity="0.6" transform="rotate(20,16,28)"/>
+    <!-- Dead core — very small dark mass -->
+    <ellipse cx="16" cy="27" rx="4"  ry="3"  fill="#111108"/>
+    <ellipse cx="16" cy="27" rx="2.5" ry="2" fill="#0E0E06"/>
+    <!-- No eyes, no blight — completely dark -->
+    <!-- Very faint residual blight trace — barely visible -->
+    <rect x="15" y="26" width="2" height="2" fill="#2A1040" opacity="0.25"/>
+    <!-- Dried leaf debris -->
+    <rect x="8"  y="29" width="2" height="2" fill="#1A1A04" opacity="0.5" transform="rotate(-5,9,30)"/>
+    <rect x="22" y="29" width="2" height="2" fill="#1A1A04" opacity="0.5" transform="rotate(8,23,30)"/>
+    <rect x="12" y="31" width="3" height="1" fill="#1A1A04" opacity="0.4"/>
+  </g>
+</svg>

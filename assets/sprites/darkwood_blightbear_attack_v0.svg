@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="32" viewBox="0 0 96 32" role="img" aria-label="Blightbear Attack Animation — 3 frames">
+  <!-- E-6 Blightbear — attack animation, 3×32x32 sprite sheet (mini-boss) -->
+  <!-- GDD: Cave bear 2× normal size. Blight-fused skeleton: armour plating on back/shoulders. -->
+  <!-- Palette: body #1A0E04/#2B1808, armour plates #0E0804, blight seams #7B4FC8, eyes #D06000 (amber) -->
+  <!-- Attack: swipe with massive claw — 2d10+6 slashing damage -->
+  <!-- Phaser frame strip: frame 0 x=0, frame 1 x=32, frame 2 x=64 -->
+
+  <!-- Frame 0: Wind-up — rearing up on haunches, right claw raised -->
+  <g transform="translate(0,0)">
+    <!-- Hind legs braced wide -->
+    <rect x="5"  y="22" width="6"  height="10" rx="1" fill="#1A0E04"/>
+    <rect x="21" y="22" width="6"  height="10" rx="1" fill="#1A0E04"/>
+    <!-- Clawed hind paws -->
+    <rect x="4"  y="29" width="8"  height="3"  rx="1" fill="#0E0804"/>
+    <rect x="20" y="29" width="8"  height="3"  rx="1" fill="#0E0804"/>
+    <!-- Main body — massive, filling the frame -->
+    <rect x="6"  y="12" width="20" height="14" rx="3" fill="#1A0E04"/>
+    <!-- Shoulder armour plates (blight-fused bone) -->
+    <rect x="4"  y="11" width="8"  height="6"  rx="1" fill="#0E0804"/>
+    <rect x="20" y="11" width="8"  height="6"  rx="1" fill="#0E0804"/>
+    <!-- Blight seams glowing in armour plates -->
+    <line x1="6"  y1="12" x2="10" y2="16" stroke="#7B4FC8" stroke-width="1" opacity="0.7"/>
+    <line x1="22" y1="12" x2="26" y2="16" stroke="#7B4FC8" stroke-width="1" opacity="0.7"/>
+    <!-- Back plating -->
+    <rect x="8"  y="10" width="16" height="5"  rx="1" fill="#0E0804"/>
+    <line x1="10" y1="11" x2="22" y2="11" stroke="#7B4FC8" stroke-width="1" opacity="0.5"/>
+    <line x1="10" y1="13" x2="22" y2="13" stroke="#5A3A80" stroke-width="1" opacity="0.4"/>
+    <!-- Left forelimb bracing ground -->
+    <rect x="2"  y="17" width="7"  height="10" rx="1" fill="#1A0E04"/>
+    <rect x="1"  y="25" width="8"  height="3"  rx="1" fill="#0E0804"/>
+    <!-- Claw tips on left paw -->
+    <rect x="1"  y="26" width="2"  height="4"  fill="#0A0604"/>
+    <rect x="4"  y="27" width="2"  height="4"  fill="#0A0604"/>
+    <!-- Right forelimb raised high (wind-up) -->
+    <rect x="23" y="4"  width="7"  height="10" rx="1" fill="#1A0E04"/>
+    <!-- Claw tips on raised paw — menacing -->
+    <rect x="23" y="2"  width="2"  height="5"  fill="#0A0604"/>
+    <rect x="26" y="1"  width="2"  height="5"  fill="#0A0604"/>
+    <rect x="29" y="2"  width="2"  height="4"  fill="#0A0604"/>
+    <!-- Shoulder armour blight glow brightening on raised side -->
+    <line x1="22" y1="12" x2="26" y2="16" stroke="#9B6FE8" stroke-width="1.5" opacity="0.85"/>
+    <!-- Head — massive bear skull -->
+    <rect x="8"  y="3"  width="14" height="10" rx="3" fill="#1A0E04"/>
+    <!-- Snout -->
+    <rect x="20" y="7"  width="7"  height="5"  rx="2" fill="#2B1808"/>
+    <!-- Nostrils -->
+    <rect x="21" y="8"  width="2"  height="2"  fill="#0A0604"/>
+    <rect x="24" y="8"  width="2"  height="2"  fill="#0A0604"/>
+    <!-- Ears — small on large skull -->
+    <rect x="9"  y="2"  width="4"  height="4"  rx="1" fill="#1A0E04"/>
+    <rect x="19" y="2"  width="4"  height="4"  rx="1" fill="#1A0E04"/>
+    <!-- Eyes — amber/orange predator glow -->
+    <rect x="11" y="6"  width="3"  height="3"  fill="#D06000"/>
+    <rect x="16" y="6"  width="3"  height="3"  fill="#D06000"/>
+    <!-- Eye highlight -->
+    <rect x="12" y="6"  width="1"  height="1"  fill="#FF9020" opacity="0.7"/>
+    <rect x="17" y="6"  width="1"  height="1"  fill="#FF9020" opacity="0.7"/>
+    <!-- Open mouth showing teeth -->
+    <rect x="20" y="10" width="7"  height="3"  rx="1" fill="#0A0604"/>
+    <rect x="21" y="10" width="2"  height="2"  fill="#E8D0B0" opacity="0.8"/>
+    <rect x="24" y="10" width="2"  height="2"  fill="#E8D0B0" opacity="0.8"/>
+  </g>
+
+  <!-- Frame 1: Strike — claw slashing downward, blight energy flaring -->
+  <g transform="translate(32,0)">
+    <!-- Blight energy shockwave from the swipe -->
+    <line x1="26" y1="14" x2="32" y2="8"  stroke="#9B6FE8" stroke-width="1.5" opacity="0.7"/>
+    <line x1="26" y1="16" x2="32" y2="16" stroke="#BB8FFF" stroke-width="2"   opacity="0.65"/>
+    <line x1="26" y1="18" x2="32" y2="24" stroke="#9B6FE8" stroke-width="1.5" opacity="0.7"/>
+    <!-- Hind legs planted wide — absorbing impact force -->
+    <rect x="5"  y="22" width="6"  height="10" rx="1" fill="#1A0E04"/>
+    <rect x="21" y="22" width="6"  height="10" rx="1" fill="#1A0E04"/>
+    <rect x="4"  y="29" width="8"  height="3"  rx="1" fill="#0E0804"/>
+    <rect x="20" y="29" width="8"  height="3"  rx="1" fill="#0E0804"/>
+    <!-- Main body -->
+    <rect x="6"  y="12" width="20" height="14" rx="3" fill="#1A0E04"/>
+    <!-- Shoulder armour — right side blazing with blight at impact -->
+    <rect x="4"  y="12" width="8"  height="6"  rx="1" fill="#0E0804"/>
+    <rect x="20" y="10" width="8"  height="6"  rx="1" fill="#0E0804"/>
+    <line x1="6"  y1="13" x2="10" y2="17" stroke="#7B4FC8" stroke-width="1"   opacity="0.6"/>
+    <line x1="22" y1="11" x2="26" y2="14" stroke="#BB8FFF" stroke-width="1.5" opacity="0.9"/>
+    <!-- Back plating -->
+    <rect x="8"  y="10" width="16" height="5"  rx="1" fill="#0E0804"/>
+    <line x1="10" y1="11" x2="22" y2="11" stroke="#7B4FC8" stroke-width="1" opacity="0.5"/>
+    <!-- Left forelimb grounding -->
+    <rect x="2"  y="18" width="7"  height="10" rx="1" fill="#1A0E04"/>
+    <rect x="1"  y="26" width="8"  height="3"  rx="1" fill="#0E0804"/>
+    <rect x="1"  y="27" width="2"  height="4"  fill="#0A0604"/>
+    <rect x="4"  y="28" width="2"  height="4"  fill="#0A0604"/>
+    <!-- Right forelimb slashing DOWN — fully extended at slash angle -->
+    <rect x="22" y="14" width="8"  height="7"  rx="1" fill="#1A0E04" transform="rotate(35,26,17)"/>
+    <!-- Claw tips at impact point -->
+    <rect x="26" y="20" width="2"  height="5"  fill="#0A0604"/>
+    <rect x="29" y="18" width="2"  height="5"  fill="#0A0604"/>
+    <rect x="24" y="22" width="2"  height="4"  fill="#0A0604"/>
+    <!-- Head — snarling, lunging forward -->
+    <rect x="9"  y="4"  width="14" height="10" rx="3" fill="#1A0E04"/>
+    <rect x="21" y="7"  width="7"  height="5"  rx="2" fill="#2B1808"/>
+    <rect x="22" y="8"  width="2"  height="2"  fill="#0A0604"/>
+    <rect x="25" y="8"  width="2"  height="2"  fill="#0A0604"/>
+    <rect x="9"  y="3"  width="4"  height="4"  rx="1" fill="#1A0E04"/>
+    <rect x="19" y="3"  width="4"  height="4"  rx="1" fill="#1A0E04"/>
+    <!-- Eyes flaring at peak of attack -->
+    <rect x="12" y="6"  width="3"  height="3"  fill="#FF8000"/>
+    <rect x="17" y="6"  width="3"  height="3"  fill="#FF8000"/>
+    <rect x="13" y="6"  width="1"  height="1"  fill="#FFBE40" opacity="0.9"/>
+    <rect x="18" y="6"  width="1"  height="1"  fill="#FFBE40" opacity="0.9"/>
+    <!-- Mouth wide open — roaring -->
+    <rect x="21" y="10" width="7"  height="4"  rx="1" fill="#0A0604"/>
+    <rect x="22" y="10" width="2"  height="2"  fill="#E8D0B0" opacity="0.9"/>
+    <rect x="25" y="10" width="2"  height="2"  fill="#E8D0B0" opacity="0.9"/>
+  </g>
+
+  <!-- Frame 2: Recovery — claw returning, blight settling, landing back on all fours -->
+  <g transform="translate(64,0)">
+    <!-- Hind legs bearing weight as bear lands -->
+    <rect x="5"  y="22" width="6"  height="10" rx="1" fill="#1A0E04"/>
+    <rect x="21" y="22" width="6"  height="10" rx="1" fill="#1A0E04"/>
+    <rect x="4"  y="29" width="8"  height="3"  rx="1" fill="#0E0804"/>
+    <rect x="20" y="29" width="8"  height="3"  rx="1" fill="#0E0804"/>
+    <!-- Main body lowered back down -->
+    <rect x="6"  y="14" width="20" height="14" rx="3" fill="#1A0E04"/>
+    <!-- Shoulder plates -->
+    <rect x="4"  y="13" width="8"  height="6"  rx="1" fill="#0E0804"/>
+    <rect x="20" y="13" width="8"  height="6"  rx="1" fill="#0E0804"/>
+    <line x1="6"  y1="14" x2="10" y2="18" stroke="#7B4FC8" stroke-width="1" opacity="0.65"/>
+    <line x1="22" y1="14" x2="26" y2="18" stroke="#7B4FC8" stroke-width="1" opacity="0.65"/>
+    <!-- Back plating -->
+    <rect x="8"  y="12" width="16" height="5"  rx="1" fill="#0E0804"/>
+    <line x1="10" y1="13" x2="22" y2="13" stroke="#7B4FC8" stroke-width="1" opacity="0.5"/>
+    <line x1="10" y1="15" x2="22" y2="15" stroke="#5A3A80" stroke-width="1" opacity="0.4"/>
+    <!-- Both forelimbs on ground in resting pose -->
+    <rect x="2"  y="18" width="7"  height="10" rx="1" fill="#1A0E04"/>
+    <rect x="1"  y="26" width="8"  height="3"  rx="1" fill="#0E0804"/>
+    <rect x="1"  y="27" width="2"  height="4"  fill="#0A0604"/>
+    <rect x="4"  y="28" width="2"  height="4"  fill="#0A0604"/>
+    <rect x="23" y="18" width="7"  height="10" rx="1" fill="#1A0E04"/>
+    <rect x="23" y="26" width="8"  height="3"  rx="1" fill="#0E0804"/>
+    <rect x="29" y="27" width="2"  height="4"  fill="#0A0604"/>
+    <rect x="26" y="28" width="2"  height="4"  fill="#0A0604"/>
+    <!-- Head lowering back to ground level -->
+    <rect x="8"  y="6"  width="14" height="10" rx="3" fill="#1A0E04"/>
+    <rect x="20" y="9"  width="6"  height="5"  rx="2" fill="#2B1808"/>
+    <rect x="21" y="10" width="2"  height="2"  fill="#0A0604"/>
+    <rect x="24" y="10" width="2"  height="2"  fill="#0A0604"/>
+    <rect x="9"  y="5"  width="4"  height="4"  rx="1" fill="#1A0E04"/>
+    <rect x="19" y="5"  width="4"  height="4"  rx="1" fill="#1A0E04"/>
+    <!-- Eyes settling back to normal amber glow -->
+    <rect x="11" y="8"  width="3"  height="3"  fill="#D06000"/>
+    <rect x="16" y="8"  width="3"  height="3"  fill="#D06000"/>
+    <rect x="12" y="8"  width="1"  height="1"  fill="#FF9020" opacity="0.6"/>
+    <rect x="17" y="8"  width="1"  height="1"  fill="#FF9020" opacity="0.6"/>
+    <!-- Mouth closing -->
+    <rect x="20" y="12" width="6"  height="2"  rx="1" fill="#0A0604"/>
+    <!-- Fading blight energy on right paw -->
+    <circle cx="28" cy="24" r="2" fill="#5A3A80" opacity="0.3"/>
+  </g>
+</svg>
