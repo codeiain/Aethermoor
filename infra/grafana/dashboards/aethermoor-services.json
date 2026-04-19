@@ -1,0 +1,200 @@
+{
+  "title": "Aethermoor — Services Overview",
+  "uid": "aethermoor-services",
+  "schemaVersion": 36,
+  "version": 1,
+  "refresh": "30s",
+  "time": { "from": "now-1h", "to": "now" },
+  "tags": ["aethermoor", "services"],
+  "panels": [
+    {
+      "id": 1,
+      "title": "Request Throughput (req/s)",
+      "type": "timeseries",
+      "gridPos": { "x": 0, "y": 0, "w": 12, "h": 8 },
+      "targets": [
+        { "expr": "rate(gateway_request_count[5m])", "legendFormat": "gateway" },
+        { "expr": "rate(auth_request_count[5m])", "legendFormat": "auth" },
+        { "expr": "rate(character_request_count[5m])", "legendFormat": "character" },
+        { "expr": "rate(world_request_count[5m])", "legendFormat": "world" },
+        { "expr": "rate(combat_request_count[5m])", "legendFormat": "combat" },
+        { "expr": "rate(chat_request_count[5m])", "legendFormat": "chat" },
+        { "expr": "rate(inventory_request_count[5m])", "legendFormat": "inventory" },
+        { "expr": "rate(quest_request_count[5m])", "legendFormat": "quest" },
+        { "expr": "rate(economy_request_count[5m])", "legendFormat": "economy" },
+        { "expr": "rate(notification_request_count[5m])", "legendFormat": "notification" },
+        { "expr": "rate(party_request_count[5m])", "legendFormat": "party" },
+        { "expr": "rate(social_request_count[5m])", "legendFormat": "social" },
+        { "expr": "rate(crafting_request_count[5m])", "legendFormat": "crafting" }
+      ],
+      "fieldConfig": {
+        "defaults": { "unit": "reqps", "custom": { "lineWidth": 2 } }
+      }
+    },
+    {
+      "id": 2,
+      "title": "5xx Error Rate (%)",
+      "type": "timeseries",
+      "gridPos": { "x": 12, "y": 0, "w": 12, "h": 8 },
+      "targets": [
+        { "expr": "100 * rate(gateway_error_count[5m]) / rate(gateway_request_count[5m])", "legendFormat": "gateway" },
+        { "expr": "100 * rate(auth_error_count[5m]) / clamp_min(rate(auth_request_count[5m]), 0.001)", "legendFormat": "auth" },
+        { "expr": "100 * rate(character_error_count[5m]) / clamp_min(rate(character_request_count[5m]), 0.001)", "legendFormat": "character" },
+        { "expr": "100 * rate(world_error_count[5m]) / clamp_min(rate(world_request_count[5m]), 0.001)", "legendFormat": "world" },
+        { "expr": "100 * rate(combat_error_count[5m]) / clamp_min(rate(combat_request_count[5m]), 0.001)", "legendFormat": "combat" },
+        { "expr": "100 * rate(inventory_error_count[5m]) / clamp_min(rate(inventory_request_count[5m]), 0.001)", "legendFormat": "inventory" },
+        { "expr": "100 * rate(quest_error_count[5m]) / clamp_min(rate(quest_request_count[5m]), 0.001)", "legendFormat": "quest" },
+        { "expr": "100 * rate(economy_error_count[5m]) / clamp_min(rate(economy_request_count[5m]), 0.001)", "legendFormat": "economy" },
+        { "expr": "100 * rate(crafting_error_count[5m]) / clamp_min(rate(crafting_request_count[5m]), 0.001)", "legendFormat": "crafting" }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "value": null, "color": "green" },
+              { "value": 1, "color": "yellow" },
+              { "value": 5, "color": "red" }
+            ]
+          },
+          "custom": { "lineWidth": 2 }
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Gateway p99 Latency",
+      "type": "timeseries",
+      "gridPos": { "x": 0, "y": 8, "w": 12, "h": 8 },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.99, sum(rate(gateway_request_latency_seconds_bucket[5m])) by (le))",
+          "legendFormat": "p99"
+        },
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(gateway_request_latency_seconds_bucket[5m])) by (le))",
+          "legendFormat": "p95"
+        },
+        {
+          "expr": "histogram_quantile(0.50, sum(rate(gateway_request_latency_seconds_bucket[5m])) by (le))",
+          "legendFormat": "p50"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "value": null, "color": "green" },
+              { "value": 0.25, "color": "yellow" },
+              { "value": 0.5, "color": "red" }
+            ]
+          },
+          "custom": { "lineWidth": 2 }
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Auth Failures (401/s)",
+      "type": "timeseries",
+      "gridPos": { "x": 12, "y": 8, "w": 12, "h": 8 },
+      "targets": [
+        {
+          "expr": "rate(auth_request_count{http_status=\"401\"}[5m])",
+          "legendFormat": "401 failures/s"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "reqps",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "value": null, "color": "green" },
+              { "value": 5, "color": "yellow" },
+              { "value": 20, "color": "red" }
+            ]
+          },
+          "custom": { "lineWidth": 2 }
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Service Health — Up/Down",
+      "type": "stat",
+      "gridPos": { "x": 0, "y": 16, "w": 24, "h": 4 },
+      "targets": [
+        { "expr": "up", "legendFormat": "{{job}}" }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            { "type": "value", "options": { "0": { "text": "DOWN", "color": "red" }, "1": { "text": "UP", "color": "green" } } }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "value": null, "color": "red" },
+              { "value": 1, "color": "green" }
+            ]
+          }
+        }
+      },
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] }, "colorMode": "background" }
+    },
+    {
+      "id": 6,
+      "title": "Active Requests (in-flight)",
+      "type": "timeseries",
+      "gridPos": { "x": 0, "y": 20, "w": 12, "h": 8 },
+      "targets": [
+        { "expr": "gateway_active_requests", "legendFormat": "gateway" },
+        { "expr": "auth_active_requests", "legendFormat": "auth" },
+        { "expr": "character_active_requests", "legendFormat": "character" },
+        { "expr": "world_active_requests", "legendFormat": "world" },
+        { "expr": "combat_active_requests", "legendFormat": "combat" },
+        { "expr": "inventory_active_requests", "legendFormat": "inventory" },
+        { "expr": "quest_active_requests", "legendFormat": "quest" },
+        { "expr": "economy_active_requests", "legendFormat": "economy" },
+        { "expr": "crafting_active_requests", "legendFormat": "crafting" }
+      ],
+      "fieldConfig": {
+        "defaults": { "unit": "short", "custom": { "lineWidth": 2 } }
+      }
+    },
+    {
+      "id": 7,
+      "title": "Per-Service p99 Latency",
+      "type": "timeseries",
+      "gridPos": { "x": 12, "y": 20, "w": 12, "h": 8 },
+      "targets": [
+        { "expr": "histogram_quantile(0.99, sum(rate(auth_request_latency_seconds_bucket[5m])) by (le))", "legendFormat": "auth" },
+        { "expr": "histogram_quantile(0.99, sum(rate(character_request_latency_seconds_bucket[5m])) by (le))", "legendFormat": "character" },
+        { "expr": "histogram_quantile(0.99, sum(rate(world_request_latency_seconds_bucket[5m])) by (le))", "legendFormat": "world" },
+        { "expr": "histogram_quantile(0.99, sum(rate(combat_request_latency_seconds_bucket[5m])) by (le))", "legendFormat": "combat" },
+        { "expr": "histogram_quantile(0.99, sum(rate(inventory_request_latency_seconds_bucket[5m])) by (le))", "legendFormat": "inventory" },
+        { "expr": "histogram_quantile(0.99, sum(rate(quest_request_latency_seconds_bucket[5m])) by (le))", "legendFormat": "quest" },
+        { "expr": "histogram_quantile(0.99, sum(rate(economy_request_latency_seconds_bucket[5m])) by (le))", "legendFormat": "economy" },
+        { "expr": "histogram_quantile(0.99, sum(rate(crafting_request_latency_seconds_bucket[5m])) by (le))", "legendFormat": "crafting" }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "value": null, "color": "green" },
+              { "value": 0.25, "color": "yellow" },
+              { "value": 0.5, "color": "red" }
+            ]
+          },
+          "custom": { "lineWidth": 2 }
+        }
+      }
+    }
+  ]
+}

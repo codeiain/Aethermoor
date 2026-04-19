@@ -1,0 +1,164 @@
+groups:
+  - name: aethermoor.service_health
+    rules:
+      # ── Error rate > 5% on any service (gateway is primary signal) ──────────
+      - alert: GatewayHighErrorRate
+        expr: |
+          (
+            rate(gateway_error_count[5m]) /
+            rate(gateway_request_count[5m])
+          ) > 0.05
+        for: 2m
+        labels:
+          severity: critical
+          team: backend
+        annotations:
+          summary: "Gateway error rate above 5%"
+          description: >
+            Gateway 5xx error rate is {{ $value | humanizePercentage }} over the last 5 minutes.
+            Likely indicates a downstream service failure or gateway misconfiguration.
+
+      - alert: ServiceHighErrorRate
+        expr: |
+          (
+            sum by (job) (rate(auth_error_count[5m]))        > 0
+          or
+            sum by (job) (rate(character_error_count[5m]))   > 0
+          or
+            sum by (job) (rate(world_error_count[5m]))       > 0
+          or
+            sum by (job) (rate(combat_error_count[5m]))      > 0
+          or
+            sum by (job) (rate(inventory_error_count[5m]))   > 0
+          or
+            sum by (job) (rate(quest_error_count[5m]))       > 0
+          or
+            sum by (job) (rate(economy_error_count[5m]))     > 0
+          or
+            sum by (job) (rate(crafting_error_count[5m]))    > 0
+          )
+        for: 2m
+        labels:
+          severity: warning
+          team: backend
+        annotations:
+          summary: "Service {{ $labels.job }} has 5xx errors"
+          description: "Service {{ $labels.job }} is emitting 5xx errors. Check logs in Loki."
+
+      # ── p99 latency > 500ms at the gateway ───────────────────────────────────
+      - alert: GatewayHighLatency
+        expr: |
+          histogram_quantile(0.99,
+            sum(rate(gateway_request_latency_seconds_bucket[5m])) by (le)
+          ) > 0.5
+        for: 5m
+        labels:
+          severity: warning
+          team: backend
+        annotations:
+          summary: "Gateway p99 latency above 500ms"
+          description: >
+            Gateway p99 latency is {{ $value | humanizeDuration }} over the last 5 minutes.
+            Indicates slow upstream services or DB pressure. Check cAdvisor and service metrics.
+
+      # ── Auth failure spike (401s from auth service) ───────────────────────────
+      - alert: AuthFailureSpike
+        expr: |
+          rate(auth_request_count{http_status="401"}[5m]) > 5
+        for: 2m
+        labels:
+          severity: warning
+          team: security
+        annotations:
+          summary: "Auth failure spike detected"
+          description: >
+            Auth service is receiving {{ $value | humanize }} 401 failures/second over the last 5 minutes.
+            Could indicate a credential-stuffing attack or a broken client.
+
+      - alert: AuthFailureCritical
+        expr: |
+          rate(auth_request_count{http_status="401"}[5m]) > 20
+        for: 1m
+        labels:
+          severity: critical
+          team: security
+        annotations:
+          summary: "Critical auth failure rate — possible attack"
+          description: >
+            Auth service is receiving {{ $value | humanize }} 401 failures/second.
+            Immediate review required — possible brute-force or credential-stuffing attack.
+
+  - name: aethermoor.infrastructure
+    rules:
+      # ── Service down (Prometheus can't scrape target) ─────────────────────────
+      - alert: ServiceDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: critical
+          team: ops
+        annotations:
+          summary: "Service {{ $labels.job }} is unreachable"
+          description: >
+            Prometheus cannot scrape {{ $labels.job }} at {{ $labels.instance }}.
+            The container may be crashed or the health check is failing.
+
+      # ── Container CPU throttling (Pi has limited headroom) ───────────────────
+      - alert: ContainerCpuThrottled
+        expr: |
+          rate(container_cpu_throttled_seconds_total{name!=""}[5m])
+          / rate(container_cpu_usage_seconds_total{name!=""}[5m]) > 0.5
+        for: 5m
+        labels:
+          severity: warning
+          team: ops
+        annotations:
+          summary: "Container {{ $labels.name }} is heavily CPU-throttled"
+          description: >
+            Container {{ $labels.name }} is spending >50% of CPU time throttled.
+            Consider reducing concurrency or tuning resource limits on the Pi.
+
+      # ── High memory usage (Pi RAM is scarce) ────────────────────────────────
+      - alert: ContainerHighMemory
+        expr: |
+          container_memory_usage_bytes{name!=""}
+          / container_spec_memory_limit_bytes{name!=""} > 0.85
+        for: 5m
+        labels:
+          severity: warning
+          team: ops
+        annotations:
+          summary: "Container {{ $labels.name }} memory usage above 85%"
+          description: >
+            Container {{ $labels.name }} is using {{ $value | humanizePercentage }} of its memory limit.
+            OOM kill risk on the Pi — reduce load or increase limit if headroom allows.
+
+      # ── Redis memory pressure ────────────────────────────────────────────────
+      - alert: RedisHighMemory
+        expr: redis_memory_used_bytes / redis_memory_max_bytes > 0.80
+        for: 5m
+        labels:
+          severity: warning
+          team: ops
+        annotations:
+          summary: "Redis memory above 80%"
+          description: >
+            Redis is using {{ $value | humanizePercentage }} of maxmemory (96 MB).
+            Eviction pressure may cause session loss. Review TTLs or raise the limit.
+
+      # ── Disk space (SD card wear risk) ───────────────────────────────────────
+      - alert: DiskSpaceLow
+        expr: |
+          (
+            node_filesystem_avail_bytes{fstype!~"tmpfs|devtmpfs"} /
+            node_filesystem_size_bytes{fstype!~"tmpfs|devtmpfs"}
+          ) < 0.15
+        for: 5m
+        labels:
+          severity: critical
+          team: ops
+        annotations:
+          summary: "Disk space below 15% on {{ $labels.instance }}"
+          description: >
+            Only {{ $value | humanizePercentage }} free on {{ $labels.mountpoint }}.
+            Prometheus/Loki retention is 7 days — prune old data or free space immediately.
