@@ -5,7 +5,7 @@
  * Auth token is stored in memory only (not localStorage) for security.
  */
 import { create } from "zustand";
-import type { PartyInfo, PartyInvite } from "../api/client";
+import type { PartyInfo, PartyInvite, GuildInfo, GuildInvite } from "../api/client";
 
 export type Screen =
   | "loading"
@@ -104,6 +104,10 @@ interface GameState {
   party: PartyInfo | null;
   pendingPartyInvites: PartyInvite[];
 
+  // Guild
+  guild: GuildInfo | null;
+  pendingGuildInvites: GuildInvite[];
+
   // Actions
   setScreen: (screen: Screen) => void;
   login: (token: string, userId: string, username: string) => void;
@@ -124,6 +128,9 @@ interface GameState {
   setParty: (party: PartyInfo | null) => void;
   addPendingPartyInvite: (invite: PartyInvite) => void;
   removePendingPartyInvite: (inviteId: string) => void;
+  setGuild: (guild: GuildInfo | null) => void;
+  addPendingGuildInvite: (invite: GuildInvite) => void;
+  removePendingGuildInvite: (inviteId: string) => void;
 }
 
 export const useGameStore = create<GameState>()((set) => ({
@@ -140,6 +147,8 @@ export const useGameStore = create<GameState>()((set) => ({
   chatExpanded: true,
   party: null,
   pendingPartyInvites: [],
+  guild: null,
+  pendingGuildInvites: [],
   notifications: [],
   unreadCount: 0,
 
@@ -220,5 +229,17 @@ export const useGameStore = create<GameState>()((set) => ({
   removePendingPartyInvite: (inviteId) =>
     set((state) => ({
       pendingPartyInvites: state.pendingPartyInvites.filter((i) => i.invite_id !== inviteId),
+    })),
+
+  setGuild: (guild) => set({ guild }),
+
+  addPendingGuildInvite: (invite) =>
+    set((state) => ({
+      pendingGuildInvites: [...state.pendingGuildInvites.filter((i) => i.invite_id !== invite.invite_id), invite],
+    })),
+
+  removePendingGuildInvite: (inviteId) =>
+    set((state) => ({
+      pendingGuildInvites: state.pendingGuildInvites.filter((i) => i.invite_id !== inviteId),
     })),
 }));

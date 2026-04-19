@@ -3,6 +3,7 @@ import { useGameStore } from "../store/useGameStore";
 import CraftingPanel from "./CraftingPanel";
 import SkillTreePanel from "./SkillTreePanel";
 import PartyPanel from "./PartyPanel";
+import GuildPanel from "./GuildPanel";
 
 /**
  * HUD — React overlay rendered on top of the Phaser canvas.
@@ -16,9 +17,12 @@ export default function HUD() {
   const setScreen = useGameStore((s) => s.setScreen);
   const party = useGameStore((s) => s.party);
   const pendingInvites = useGameStore((s) => s.pendingPartyInvites);
+  const guild = useGameStore((s) => s.guild);
+  const pendingGuildInvites = useGameStore((s) => s.pendingGuildInvites);
   const [craftingOpen, setCraftingOpen] = useState(false);
   const [skillTreeOpen, setSkillTreeOpen] = useState(false);
   const [partyOpen, setPartyOpen] = useState(false);
+  const [guildOpen, setGuildOpen] = useState(false);
 
   if (!char) return null;
 
@@ -94,6 +98,13 @@ export default function HUD() {
             {party ? `PARTY(${party.member_count})` : "PARTY"}
             {pendingInvites.length > 0 && ` [${pendingInvites.length}]`}
           </button>
+          <button
+            style={pendingGuildInvites.length > 0 ? S.actionBtnAlert : S.actionBtn}
+            onClick={() => setGuildOpen(true)}
+          >
+            {guild ? `[${guild.tag}]` : "GUILD"}
+            {pendingGuildInvites.length > 0 && ` [${pendingGuildInvites.length}]`}
+          </button>
           <button style={S.actionBtn} onClick={() => setScreen("character-select")}>
             MENU
           </button>
@@ -103,6 +114,7 @@ export default function HUD() {
       {craftingOpen && <CraftingPanel onClose={() => setCraftingOpen(false)} />}
       {skillTreeOpen && <SkillTreePanel onClose={() => setSkillTreeOpen(false)} />}
       {partyOpen && <PartyPanel onClose={() => setPartyOpen(false)} />}
+      {guildOpen && <GuildPanel onClose={() => setGuildOpen(false)} />}
     </>
   );
 }

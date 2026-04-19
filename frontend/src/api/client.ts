@@ -846,4 +846,118 @@ export async function setPartyLootMode(token: string, partyId: string, leaderId:
   return request<PartyInfo>("POST", `/party/${partyId}/loot-mode${qs}`, undefined, token);
 }
 
+// ── Guild ─────────────────────────────────────────────────────────────────────
+
+export type GuildRole = "member" | "officer" | "leader";
+
+export interface GuildMember {
+  character_id: string;
+  character_name: string;
+  role: GuildRole;
+  joined_at: string;
+}
+
+export interface GuildInfo {
+  guild_id: string;
+  name: string;
+  tag: string;
+  leader_id: string;
+  leader_name: string;
+  motd: string;
+  member_count: number;
+  created_at: string;
+}
+
+export interface GuildRoster {
+  guild_id: string;
+  members: GuildMember[];
+  member_count: number;
+}
+
+export interface GuildInvite {
+  invite_id: string;
+  guild_id: string;
+  guild_name: string;
+  inviter_id: string;
+  inviter_name: string;
+  target_id: string;
+  expires_in: number;
+}
+
+export interface GuildChatMessage {
+  message_id: string;
+  guild_id: string;
+  author_id: string;
+  author_name: string;
+  message: string;
+  timestamp: number;
+}
+
+export async function getGuildForCharacter(token: string, characterId: string): Promise<GuildInfo | null> {
+  try {
+    return await request<GuildInfo>("GET", `/guild/character/${characterId}`, undefined, token);
+  } catch (e) {
+    if (e instanceof ApiError && e.status === 404) return null;
+    throw e;
+  }
+}
+
+export async function getGuild(token: string, guildId: string): Promise<GuildInfo> {
+  return request<GuildInfo>("GET", `/guild/${guildId}`, undefined, token);
+}
+
+export async function getGuildByName(token: string, name: string): Promise<GuildInfo> {
+  return request<GuildInfo>("GET", `/guild/by-name/${encodeURIComponent(name)}`, undefined, token);
+}
+
+export async function createGuild(token: string, name: string, tag: string, leaderId: string, leaderName: string): Promise<GuildInfo> {
+  return request<GuildInfo>("POST", "/guild/create", { name, tag, leader_id: leaderId, leader_name: leaderName }, token);
+}
+
+export async function getGuildRoster(token: string, guildId: string): Promise<GuildRoster> {
+  return request<GuildRoster>("GET", `/guild/${guildId}/roster`, undefined, token);
+}
+
+export async function sendGuildInvite(token: string, guildId: string, inviterId: string, inviterName: string, targetId: string): Promise<GuildInvite> {
+  return request<GuildInvite>("POST", `/guild/${guildId}/invite`, { inviter_id: inviterId, inviter_name: inviterName, target_id: targetId }, token);
+}
+
+export async function acceptGuildInvite(token: string, inviteId: string, characterId: string, characterName: string): Promise<GuildInfo> {
+  const qs = `?character_id=${encodeURIComponent(characterId)}&character_name=${encodeURIComponent(characterName)}`;
+  return request<GuildInfo>("POST", `/guild/invite/${encodeURIComponent(inviteId)}/accept${qs}`, undefined, token);
+}
+
+export async function declineGuildInvite(token: string, inviteId: string, characterId: string): Promise<{ success: boolean }> {
+  const qs = `?character_id=${encodeURIComponent(characterId)}`;
+  return request<{ success: boolean }>("POST", `/guild/invite/${encodeURIComponent(inviteId)}/decline${qs}`, undefined, token);
+}
+
+export async function leaveGuild(token: string, guildId: string, characterId: string): Promise<{ success: boolean }> {
+  return request<{ success: boolean }>("POST", `/guild/${guildId}/leave`, { character_id: characterId }, token);
+}
+
+export async function kickGuildMember(token: string, guildId: string, requesterId: string, targetId: string): Promise<{ success: boolean }> {
+  return request<{ success: boolean }>("POST", `/guild/${guildId}/kick`, { requester_id: requesterId, target_id: targetId }, token);
+}
+
+export async function promoteGuildMember(token: string, guildId: string, requesterId: string, targetId: string, role: GuildRole): Promise<GuildInfo> {
+  return request<GuildInfo>("POST", `/guild/${guildId}/promote`, { requester_id: requesterId, target_id: targetId, role }, token);
+}
+
+export async function demoteGuildMember(token: string, guildId: string, requesterId: string, targetId: string): Promise<GuildInfo> {
+  return request<GuildInfo>("POST", `/guild/${guildId}/demote`, { requester_id: requesterId, target_id: targetId }, token);
+}
+
+export async function setGuildMotd(token: string, guildId: string, requesterId: string, motd: string): Promise<GuildInfo> {
+  return request<GuildInfo>("PATCH", `/guild/${guildId}/motd`, { requester_id: requesterId, motd }, token);
+}
+
+export async function postGuildChat(token: string, guildId: string, authorId: string, authorName: string, message: string): Promise<GuildChatMessage> {
+  return request<GuildChatMessage>("POST", `/guild/${guildId}/chat`, { author_id: authorId, author_name: authorName, message }, token);
+}
+
+export async function getGuildChatHistory(token: string, guildId: string): Promise<GuildChatMessage[]> {
+  return request<GuildChatMessage[]>("GET", `/guild/${guildId}/chat`, undefined, token);
+}
+
 export { ApiError };
