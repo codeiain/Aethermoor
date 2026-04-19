@@ -1,0 +1,5 @@
+<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"16\" viewBox=\"0 0 240 16\" role=\"img\" aria-label=\"HP Bar Placeholder v1\">
+  <rect x=\"0\" y=\"0\" width=\"240\" height=\"16\" rx=\"4\" fill=\"#2C1F12\"/>
+  <rect x=\"0\" y=\"0\" width=\"180\" height=\"16\" rx=\"4\" fill=\"#E74C3C\"/>
+  <rect x=\"0\" y=\"0\" width=\"240\" height=\"16\" rx=\"4\" fill=\"none\" stroke=\"#8A5A2A\"/>
+</svg>

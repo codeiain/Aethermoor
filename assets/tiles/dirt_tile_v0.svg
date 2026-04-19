@@ -1,0 +1,13 @@
+<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" role=\"img\" aria-label=\"Dirt Tile Placeholder\">
+  <!-- Simple dirt tile with speckles -->
+  <defs>
+    <linearGradient id=\"dirt\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">
+      <stop offset=\"0%\" stop-color=\"#7A5A3A\"/>
+      <stop offset=\"100%\" stop-color=\"#5A3D2E\"/>
+    </linearGradient>
+  </defs>
+  <rect width=\"32\" height=\"32\" fill=\"url(#dirt)\"/>
+  <circle cx=\"8\" cy=\"8\" r=\"1.2\" fill=\"#9B6B3A\"/>
+  <circle cx=\"20\" cy=\"18\" r=\"1.1\" fill=\"#8A5A2A\"/>
+  <circle cx=\"12\" cy=\"22\" r=\"1.4\" fill=\"#A3734A\"/>
+</svg>
