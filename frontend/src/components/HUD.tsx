@@ -4,6 +4,8 @@ import CraftingPanel from "./CraftingPanel";
 import SkillTreePanel from "./SkillTreePanel";
 import PartyPanel from "./PartyPanel";
 import GuildPanel from "./GuildPanel";
+import QuestLog from "./QuestLog";
+import QuestDialogue from "./QuestDialogue";
 
 /**
  * HUD — React overlay rendered on top of the Phaser canvas.
@@ -19,10 +21,12 @@ export default function HUD() {
   const pendingInvites = useGameStore((s) => s.pendingPartyInvites);
   const guild = useGameStore((s) => s.guild);
   const pendingGuildInvites = useGameStore((s) => s.pendingGuildInvites);
+  const activeQuests = useGameStore((s) => s.activeQuests);
   const [craftingOpen, setCraftingOpen] = useState(false);
   const [skillTreeOpen, setSkillTreeOpen] = useState(false);
   const [partyOpen, setPartyOpen] = useState(false);
   const [guildOpen, setGuildOpen] = useState(false);
+  const [questLogOpen, setQuestLogOpen] = useState(false);
 
   if (!char) return null;
 
@@ -68,6 +72,27 @@ export default function HUD() {
           </div>
         )}
 
+        {/* Bottom-left quest tracker — above zone badge */}
+        {activeQuests.length > 0 && (
+          <div style={S.questTracker}>
+            {activeQuests.slice(0, 3).map((q) => {
+              const doneObjs = q.objectives.filter((o) => o.current >= o.required).length;
+              const totalObjs = q.objectives.length;
+              const ready = q.status === "ready_to_complete";
+              return (
+                <div key={q.quest_id} style={S.questTrackerItem}>
+                  <span style={ready ? S.questTrackerTitleReady : S.questTrackerTitle}>
+                    {q.quest_title.slice(0, 22)}{q.quest_title.length > 22 ? "…" : ""}
+                  </span>
+                  <span style={S.questTrackerProgress}>
+                    {ready ? "READY" : `${doneObjs}/${totalObjs}`}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        )}
+
         {/* Party roster — top-right below minimap when in a party */}
         {party && (
           <div style={S.partyRoster}>
@@ -105,6 +130,12 @@ export default function HUD() {
             {guild ? `[${guild.tag}]` : "GUILD"}
             {pendingGuildInvites.length > 0 && ` [${pendingGuildInvites.length}]`}
           </button>
+          <button
+            style={activeQuests.some((q) => q.status === "ready_to_complete") ? S.actionBtnAlert : S.actionBtn}
+            onClick={() => setQuestLogOpen(true)}
+          >
+            {activeQuests.length > 0 ? `QUESTS(${activeQuests.length})` : "QUESTS"}
+          </button>
           <button style={S.actionBtn} onClick={() => setScreen("character-select")}>
             MENU
           </button>
@@ -115,6 +146,8 @@ export default function HUD() {
       {skillTreeOpen && <SkillTreePanel onClose={() => setSkillTreeOpen(false)} />}
       {partyOpen && <PartyPanel onClose={() => setPartyOpen(false)} />}
       {guildOpen && <GuildPanel onClose={() => setGuildOpen(false)} />}
+      {questLogOpen && <QuestLog onClose={() => setQuestLogOpen(false)} />}
+      <QuestDialogue />
     </>
   );
 }
@@ -230,6 +263,29 @@ const S = {
   },
   partyMemberIcon: { fontSize: 9, color: "#c8a84b", minWidth: 10 },
   partyMemberName: { fontSize: 9, color: "#c8d4e8" },
+  questTracker: {
+    position: "absolute" as const,
+    bottom: 100,
+    left: 10,
+    background: "rgba(0,0,0,0.55)",
+    border: "1px solid #2a3a5a",
+    borderRadius: 2,
+    padding: "6px 10px",
+    display: "flex",
+    flexDirection: "column" as const,
+    gap: 4,
+    minWidth: 140,
+    maxWidth: 200,
+  },
+  questTrackerItem: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: 8,
+  },
+  questTrackerTitle: { fontSize: 8, color: "#c8d4e8" },
+  questTrackerTitleReady: { fontSize: 8, color: "#44aa55" },
+  questTrackerProgress: { fontSize: 8, color: "#c8a84b", minWidth: 30, textAlign: "right" as const },
   zoneBadge: {
     position: "absolute" as const,
     bottom: 70,

@@ -5,7 +5,7 @@
  * Auth token is stored in memory only (not localStorage) for security.
  */
 import { create } from "zustand";
-import type { PartyInfo, PartyInvite, GuildInfo, GuildInvite } from "../api/client";
+import type { PartyInfo, PartyInvite, GuildInfo, GuildInvite, ActiveQuest, NpcDialogueResponse } from "../api/client";
 
 export type Screen =
   | "loading"
@@ -108,6 +108,10 @@ interface GameState {
   guild: GuildInfo | null;
   pendingGuildInvites: GuildInvite[];
 
+  // Quest
+  activeQuests: ActiveQuest[];
+  npcDialogue: NpcDialogueResponse | null;
+
   // Actions
   setScreen: (screen: Screen) => void;
   login: (token: string, userId: string, username: string) => void;
@@ -131,6 +135,10 @@ interface GameState {
   setGuild: (guild: GuildInfo | null) => void;
   addPendingGuildInvite: (invite: GuildInvite) => void;
   removePendingGuildInvite: (inviteId: string) => void;
+  setActiveQuests: (quests: ActiveQuest[]) => void;
+  updateQuest: (quest: ActiveQuest) => void;
+  removeQuest: (questId: string) => void;
+  setNpcDialogue: (dialogue: NpcDialogueResponse | null) => void;
 }
 
 export const useGameStore = create<GameState>()((set) => ({
@@ -149,6 +157,8 @@ export const useGameStore = create<GameState>()((set) => ({
   pendingPartyInvites: [],
   guild: null,
   pendingGuildInvites: [],
+  activeQuests: [],
+  npcDialogue: null,
   notifications: [],
   unreadCount: 0,
 
@@ -242,4 +252,18 @@ export const useGameStore = create<GameState>()((set) => ({
     set((state) => ({
       pendingGuildInvites: state.pendingGuildInvites.filter((i) => i.invite_id !== inviteId),
     })),
+
+  setActiveQuests: (quests) => set({ activeQuests: quests }),
+
+  updateQuest: (quest) =>
+    set((state) => ({
+      activeQuests: state.activeQuests.map((q) => q.quest_id === quest.quest_id ? quest : q),
+    })),
+
+  removeQuest: (questId) =>
+    set((state) => ({
+      activeQuests: state.activeQuests.filter((q) => q.quest_id !== questId),
+    })),
+
+  setNpcDialogue: (dialogue) => set({ npcDialogue: dialogue }),
 }));

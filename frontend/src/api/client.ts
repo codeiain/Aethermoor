@@ -846,6 +846,84 @@ export async function setPartyLootMode(token: string, partyId: string, leaderId:
   return request<PartyInfo>("POST", `/party/${partyId}/loot-mode${qs}`, undefined, token);
 }
 
+// ── Quest ─────────────────────────────────────────────────────────────────────
+
+export type QuestStatus = "in_progress" | "ready_to_complete" | "completed";
+export type QuestDialogueType = "offer" | "in_progress" | "ready_to_complete" | "completed";
+
+export interface QuestObjective {
+  type: string;
+  required: number;
+  current: number;
+  target?: string;
+  item_id?: string;
+  npc_id?: string;
+  zone_id?: string;
+}
+
+export interface ActiveQuest {
+  id: string;
+  character_id: string;
+  quest_id: string;
+  quest_title: string;
+  status: QuestStatus;
+  objectives: QuestObjective[];
+  xp_reward: number;
+  gold_reward: number;
+  item_reward: string | null;
+  started_at: string;
+  completed_at: string | null;
+}
+
+export interface CharacterQuestsResponse {
+  character_id: string;
+  active: ActiveQuest[];
+  completed: ActiveQuest[];
+}
+
+export interface NpcDialogueOption {
+  quest_id: string;
+  quest_title: string;
+  type: QuestDialogueType;
+  dialogue: string;
+}
+
+export interface NpcDialogueResponse {
+  npc_id: string;
+  options: NpcDialogueOption[];
+}
+
+export interface CompleteQuestResponse {
+  quest_id: string;
+  quest_title: string;
+  xp_awarded: number;
+  gold_awarded: number;
+  item_awarded: string | null;
+  message: string;
+}
+
+export async function getNpcDialogue(token: string, npcId: string, characterId: string): Promise<NpcDialogueResponse | null> {
+  try {
+    const qs = `?character_id=${encodeURIComponent(characterId)}`;
+    return await request<NpcDialogueResponse>("GET", `/quests/npc/${npcId}/dialogue${qs}`, undefined, token);
+  } catch (e) {
+    if (e instanceof ApiError && e.status === 404) return null;
+    throw e;
+  }
+}
+
+export async function getCharacterQuests(token: string, characterId: string): Promise<CharacterQuestsResponse> {
+  return request<CharacterQuestsResponse>("GET", `/quests/${characterId}`, undefined, token);
+}
+
+export async function acceptQuest(token: string, characterId: string, questId: string): Promise<ActiveQuest> {
+  return request<ActiveQuest>("POST", `/quests/${characterId}/accept/${questId}`, undefined, token);
+}
+
+export async function completeQuest(token: string, characterId: string, questId: string): Promise<CompleteQuestResponse> {
+  return request<CompleteQuestResponse>("POST", `/quests/${characterId}/complete/${questId}`, undefined, token);
+}
+
 // ── Guild ─────────────────────────────────────────────────────────────────────
 
 export type GuildRole = "member" | "officer" | "leader";

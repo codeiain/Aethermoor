@@ -1,7 +1,7 @@
 import Phaser from "phaser";
 import { useGameStore } from "../../store/useGameStore";
 import { PresenceManager } from "../PresenceManager";
-import { startCombat } from "../../api/client";
+import { startCombat, getNpcDialogue } from "../../api/client";
 import { DamageNumberLayer } from "../DamageNumberLayer";
 
 
@@ -423,6 +423,17 @@ export class WorldScene extends Phaser.Scene {
     const character = state.activeCharacter;
 
     if (!token || !character) return;
+
+    // Check for quest dialogue first; fall back to combat if none.
+    try {
+      const dialogue = await getNpcDialogue(token, npcId, character.id);
+      if (dialogue && dialogue.options.length > 0) {
+        useGameStore.getState().setNpcDialogue(dialogue);
+        return;
+      }
+    } catch {
+      // No quest dialogue — proceed to combat
+    }
 
     try {
       const combatState = await startCombat(token, npcId, character.id);
