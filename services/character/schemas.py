@@ -157,3 +157,63 @@ class CombatStatsResponse(BaseModel):
     ac: int       # 10 + DEX modifier (unarmored base)
     weapon: str   # derived from main_hand equipment slot item_id
     stats: AbilityScores
+
+
+# ── Skill Tree ────────────────────────────────────────────────────────────────
+
+class SkillResponse(BaseModel):
+    id: str
+    name: str
+    tier: int
+    tp_cost: int
+    level_requirement: int
+    prerequisites: list[str]
+    type: str
+    effect: str
+
+
+class BranchPassiveResponse(BaseModel):
+    name: str
+    effect: str
+
+
+class BranchResponse(BaseModel):
+    id: str
+    name: str
+    colour: str
+    passive: BranchPassiveResponse
+    skills: list[SkillResponse]
+
+
+class ClassPassiveResponse(BaseModel):
+    name: str
+    effect: str
+
+
+class SkillTreeResponse(BaseModel):
+    class_id: str
+    display_name: str
+    class_passive: ClassPassiveResponse
+    branches: list[BranchResponse]
+    # Player state
+    talent_points_total: int
+    talent_points_spent: int
+    unlocked_skills: list[str]
+
+
+class UnlockSkillRequest(BaseModel):
+    skill_id: str
+
+
+class UnlockSkillResponse(BaseModel):
+    skill_id: str
+    talent_points_total: int
+    talent_points_spent: int
+    unlocked_skills: list[str]
+
+
+class RespecResponse(BaseModel):
+    gold_cost: int
+    talent_points_total: int
+    talent_points_spent: int
+    unlocked_skills: list[str]

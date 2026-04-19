@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useGameStore } from "../store/useGameStore";
 import CraftingPanel from "./CraftingPanel";
+import SkillTreePanel from "./SkillTreePanel";
 
 /**
  * HUD — React overlay rendered on top of the Phaser canvas.
@@ -13,6 +14,7 @@ export default function HUD() {
   const zone = useGameStore((s) => s.currentZone);
   const setScreen = useGameStore((s) => s.setScreen);
   const [craftingOpen, setCraftingOpen] = useState(false);
+  const [skillTreeOpen, setSkillTreeOpen] = useState(false);
 
   if (!char) return null;
 
@@ -60,6 +62,9 @@ export default function HUD() {
 
         {/* Bottom-right: action buttons */}
         <div style={S.actionBar}>
+          <button style={S.actionBtn} onClick={() => setSkillTreeOpen(true)}>
+            SKILLS
+          </button>
           <button style={S.actionBtn} onClick={() => setCraftingOpen(true)}>
             CRAFT
           </button>
@@ -70,6 +75,7 @@ export default function HUD() {
       </div>
 
       {craftingOpen && <CraftingPanel onClose={() => setCraftingOpen(false)} />}
+      {skillTreeOpen && <SkillTreePanel onClose={() => setSkillTreeOpen(false)} />}
     </>
   );
 }

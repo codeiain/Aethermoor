@@ -10,7 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from prometheus_client import generate_latest, CONTENT_TYPE_LATEST, Counter, Histogram, Gauge
 
 from database import Base, engine
-from routers import internal, players
+from routers import internal, players, skills
 
 # Configure JSON logging for Promtail
 formatter = jsonlogger.JsonFormatter(
@@ -59,6 +59,7 @@ app.add_middleware(
 )
 
 app.include_router(players.router)
+app.include_router(skills.router)
 app.include_router(internal.router)
 
 REQUEST_LATENCY = Histogram('character_request_latency_seconds', 'Request latency', ['method', 'endpoint'])

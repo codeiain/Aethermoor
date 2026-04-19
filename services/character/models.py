@@ -12,6 +12,7 @@ from sqlalchemy import (
     Integer,
     SmallInteger,
     String,
+    Text,
     UniqueConstraint,
     func,
 )
@@ -94,6 +95,9 @@ class Character(Base):
     backpack: Mapped[list["BackpackItem"]] = relationship(
         back_populates="character", cascade="all, delete-orphan"
     )
+    player_skills: Mapped["PlayerSkills"] = relationship(
+        back_populates="character", uselist=False, cascade="all, delete-orphan"
+    )
 
 
 class CharacterPosition(Base):
@@ -155,3 +159,30 @@ class BackpackItem(Base):
     quantity: Mapped[int] = mapped_column(Integer, nullable=False, default=1)
 
     character: Mapped["Character"] = relationship(back_populates="backpack")
+
+
+class PlayerSkills(Base):
+    """Tracks per-character skill tree state: which skills are unlocked and TP spent."""
+
+    __tablename__ = "player_skills"
+
+    id: Mapped[str] = mapped_column(
+        String(36), primary_key=True, default=lambda: str(uuid.uuid4())
+    )
+    character_id: Mapped[str] = mapped_column(
+        String(36), ForeignKey("characters.id", ondelete="CASCADE"), nullable=False, unique=True
+    )
+    # JSON-encoded list of unlocked skill IDs, e.g. '["taunt","shield_mastery"]'
+    unlocked_skills_json: Mapped[str] = mapped_column(Text, nullable=False, default="[]")
+    talent_points_spent: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    last_respec_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        server_default=func.now(),
+        onupdate=lambda: datetime.now(timezone.utc),
+        nullable=False,
+    )
+
+    character: Mapped["Character"] = relationship(back_populates="player_skills")

@@ -687,4 +687,94 @@ export async function useItem(
   );
 }
 
+// ── Skill Tree ────────────────────────────────────────────────────────────────
+
+export interface SkillDef {
+  id: string;
+  name: string;
+  tier: number;
+  tp_cost: number;
+  level_requirement: number;
+  prerequisites: string[];
+  type: string;
+  effect: string;
+}
+
+export interface BranchPassive {
+  name: string;
+  effect: string;
+}
+
+export interface SkillBranch {
+  id: string;
+  name: string;
+  colour: string;
+  passive: BranchPassive;
+  skills: SkillDef[];
+}
+
+export interface ClassPassive {
+  name: string;
+  effect: string;
+}
+
+export interface SkillTreeResponse {
+  class_id: string;
+  display_name: string;
+  class_passive: ClassPassive;
+  branches: SkillBranch[];
+  talent_points_total: number;
+  talent_points_spent: number;
+  unlocked_skills: string[];
+}
+
+export interface UnlockSkillResponse {
+  skill_id: string;
+  talent_points_total: number;
+  talent_points_spent: number;
+  unlocked_skills: string[];
+}
+
+export interface RespecResponse {
+  gold_cost: number;
+  talent_points_total: number;
+  talent_points_spent: number;
+  unlocked_skills: string[];
+}
+
+/** Get the skill tree for a character's class with their current unlock state. */
+export async function getSkillTree(
+  token: string,
+  characterId: string,
+): Promise<SkillTreeResponse> {
+  return request<SkillTreeResponse>("GET", `/players/${characterId}/skill-tree`, undefined, token);
+}
+
+/** Unlock a skill by spending talent points. Server validates all gating rules. */
+export async function unlockSkill(
+  token: string,
+  characterId: string,
+  skillId: string,
+): Promise<UnlockSkillResponse> {
+  return request<UnlockSkillResponse>(
+    "POST",
+    `/players/${characterId}/skills/unlock`,
+    { skill_id: skillId },
+    token,
+  );
+}
+
+/** Respec: reset all skills (costs 50g × level, once per 7 days). */
+export async function respecSkills(
+  token: string,
+  characterId: string,
+): Promise<RespecResponse> {
+  return request<RespecResponse>(
+    "POST",
+    `/players/${characterId}/skills/respec`,
+    undefined,
+    token,
+  );
+}
+
 export { ApiError };
