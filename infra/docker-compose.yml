@@ -207,6 +207,7 @@ services:
       PARTY_SERVICE_URL: http://party:8011
       SOCIAL_SERVICE_URL: http://social:8012
       CRAFTING_SERVICE_URL: http://crafting:8013
+      GUILD_SERVICE_URL: http://guild:8014
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 15s
@@ -561,6 +562,32 @@ services:
       auth:
         condition: service_healthy
       character:
+        condition: service_healthy
+
+  guild:
+    <<: *service-defaults
+    build:
+      context: ../services/guild
+      dockerfile: ../../infra/Dockerfile.service
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8014"]
+    ports:
+      - "8014:8014"
+    networks:
+      - public
+      - internal
+    environment:
+      SERVICE_TOKEN: ${SERVICE_TOKEN:?}
+      REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379/9
+      AUTH_SERVICE_URL: http://auth:8001
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8014/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      redis:
+        condition: service_healthy
+      auth:
         condition: service_healthy
 
   # ── Frontend ─────────────────────────────────────────────────────────────────

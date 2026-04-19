@@ -103,6 +103,7 @@ _UPSTREAMS: dict[str, tuple[str, str]] = {
     "economy": (os.environ.get("ECONOMY_SERVICE_URL", "http://economy:8008"), "/economy"),
     "social": (os.environ.get("SOCIAL_SERVICE_URL", "http://social:8012"), "/social"),
     "party": (os.environ.get("PARTY_SERVICE_URL", "http://party:8011"), "/party"),
+    "guild": (os.environ.get("GUILD_SERVICE_URL", "http://guild:8014"), "/guild"),
 }
 
 # ── Rate limiting — in-memory sliding window ─────────────────────────────────
@@ -262,6 +263,7 @@ async def services_status() -> dict:
         ("economy", _UPSTREAMS["economy"][0], "/health"),
         ("social", _UPSTREAMS["social"][0], "/health"),
         ("party", _UPSTREAMS["party"][0], "/health"),
+        ("guild", _UPSTREAMS["guild"][0], "/health"),
     ]
 
     results = []
@@ -415,4 +417,10 @@ async def proxy_social(path: str, request: Request) -> Response:
 @app.api_route("/party/{path:path}", methods=_METHODS)
 async def proxy_party(path: str, request: Request) -> Response:
     base, prefix = _UPSTREAMS["party"]
+    return await _proxy(request, f"{base}{prefix}/{path}")
+
+
+@app.api_route("/guild/{path:path}", methods=_METHODS)
+async def proxy_guild(path: str, request: Request) -> Response:
+    base, prefix = _UPSTREAMS["guild"]
     return await _proxy(request, f"{base}{prefix}/{path}")
