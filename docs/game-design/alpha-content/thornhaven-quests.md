@@ -132,6 +132,9 @@ This quest introduces gathering mechanics and zone resource nodes. The forest fr
 ### Lore Note
 *Moonpetals grow where the soil is thin over old Aethermoor stonework. Herbalists say the flowers absorb something from the ancient foundations — a trace of the old empire's knowledge. Scholars say that is wishful thinking. Both are probably right.*
 
+### Glossary Reference
+- See RPG53 Glossary for Watcher Stone, Emperor's Path, Hartwick family, Ashroot Tower, etc.
+
 ---
 
 ## Quest 4 — "The Blacksmith Debt"
@@ -146,6 +149,10 @@ Aldous borrowed twenty gold from Mira Solten, the village merchant, to buy iron 
 This quest introduces the skill-check dialogue system with three viable paths (Persuasion, Deception, Intimidation), each with a different outcome and flavour. It also rewards players who observe both sides before committing.
 
 ### Briefing Dialogue (Aldous)
+>
+> *I've fixed blades for half the militia, made door hinges for the inn for free, and this is my thanks. I'm not a deadbeat — I'm a man who had a slow winter. If someone could make her see that, I'd owe them more than five gold.*
+>
+> *Talk to her? She's at the store on the square. I'd go myself but last time we spoke it nearly came to blows."* 
 > *"You look like someone who can see reason. Come closer — I don't want the whole square to hear this. Mira Solten has cut off my coal supply. Five gold. That's what I still owe her. Five gold, and she'll let the whole village freeze rather than wait a fortnight.*
 >
 > *I've fixed blades for half the militia, made door hinges for the inn for free, and this is my thanks. I'm not a deadbeat — I'm a man who had a slow winter. If someone could make her see that, I'd owe them more than five gold.*

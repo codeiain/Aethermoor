@@ -29,7 +29,7 @@ Goblins from the Whispering Forest have been raiding Millhaven's outlying farms 
 2. Return to Captain Aldric
 
 ### Dialogue Hook (Aldric)
-> *"Traveller — you've arrived at a bad time. Those green-skinned devils have been burning our haystacks and spoiling our wells. I've no men to spare. But you look capable. Clear them out and I'll make it worth your while."*
+> "Traveller — you've arrived at a bad time. Goblins from the Whispering Forest have been raiding our farms at night. I have no men to spare, but you look capable. Clear them out and I'll make it worth your while."
 
 ### Rewards
 - **250 XP**
@@ -59,7 +59,7 @@ A merchant caravan was ambushed on the road to Millhaven. Sera's winter supplies
 5. Return all 3 items to Sera at the inn
 
 ### Dialogue Hook (Sera)
-> *"My whole winter stock, gone! Those little monsters took everything. I can't feed my guests on charity and goodwill forever. Please — if you find those supplies, I'll give you a room and a hot meal, and more besides."*
+> "My winter stock is gone. Those goblins took everything. If you find the supplies, I'll give you a room, a hot meal, and more besides."
 
 ### Notes
 - Items are quest-specific pickups; they do not appear in normal inventory. UI shows a "Quest Items" section in inventory.
