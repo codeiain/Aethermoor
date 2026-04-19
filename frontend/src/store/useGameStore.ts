@@ -5,6 +5,7 @@
  * Auth token is stored in memory only (not localStorage) for security.
  */
 import { create } from "zustand";
+import type { PartyInfo, PartyInvite } from "../api/client";
 
 export type Screen =
   | "loading"
@@ -99,6 +100,10 @@ interface GameState {
   notifications: Notification[];
   unreadCount: number;
 
+  // Party
+  party: PartyInfo | null;
+  pendingPartyInvites: PartyInvite[];
+
   // Actions
   setScreen: (screen: Screen) => void;
   login: (token: string, userId: string, username: string) => void;
@@ -116,6 +121,9 @@ interface GameState {
   dismissNotification: (id: string) => void;
   markNotificationRead: (id: string) => void;
   clearNotifications: () => void;
+  setParty: (party: PartyInfo | null) => void;
+  addPendingPartyInvite: (invite: PartyInvite) => void;
+  removePendingPartyInvite: (inviteId: string) => void;
 }
 
 export const useGameStore = create<GameState>()((set) => ({
@@ -130,6 +138,8 @@ export const useGameStore = create<GameState>()((set) => ({
   chatMessages: [],
   chatChannel: "zone",
   chatExpanded: true,
+  party: null,
+  pendingPartyInvites: [],
   notifications: [],
   unreadCount: 0,
 
@@ -199,4 +209,16 @@ export const useGameStore = create<GameState>()((set) => ({
     })),
 
   clearNotifications: () => set({ notifications: [], unreadCount: 0 }),
+
+  setParty: (party) => set({ party }),
+
+  addPendingPartyInvite: (invite) =>
+    set((state) => ({
+      pendingPartyInvites: [...state.pendingPartyInvites.filter((i) => i.invite_id !== invite.invite_id), invite],
+    })),
+
+  removePendingPartyInvite: (inviteId) =>
+    set((state) => ({
+      pendingPartyInvites: state.pendingPartyInvites.filter((i) => i.invite_id !== inviteId),
+    })),
 }));

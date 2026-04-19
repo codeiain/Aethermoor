@@ -777,4 +777,73 @@ export async function respecSkills(
   );
 }
 
+// ── Party ─────────────────────────────────────────────────────────────────────
+
+export type LootMode = "free_for_all" | "round_robin" | "need_before_greed";
+
+export interface PartyInfo {
+  party_id: string;
+  leader_id: string;
+  leader_name: string;
+  members: string[];
+  loot_mode: LootMode;
+  member_count: number;
+  xp_multiplier: number;
+}
+
+export interface PartyInvite {
+  invite_id: string;
+  from_id: string;
+  from_name: string;
+  to_id: string;
+  expires_in: number;
+}
+
+export async function getParty(token: string, characterId: string): Promise<PartyInfo | null> {
+  try {
+    return await request<PartyInfo>("GET", `/party/${characterId}`, undefined, token);
+  } catch (e) {
+    if (e instanceof ApiError && e.status === 404) return null;
+    throw e;
+  }
+}
+
+export async function createParty(token: string, leaderId: string, leaderName: string): Promise<PartyInfo> {
+  const qs = `?leader_id=${encodeURIComponent(leaderId)}&leader_name=${encodeURIComponent(leaderName)}`;
+  return request<PartyInfo>("POST", `/party/create${qs}`, undefined, token);
+}
+
+export async function sendPartyInvite(token: string, fromId: string, fromName: string, toId: string): Promise<PartyInvite> {
+  const qs = `?from_id=${encodeURIComponent(fromId)}&from_name=${encodeURIComponent(fromName)}&to_id=${encodeURIComponent(toId)}`;
+  return request<PartyInvite>("POST", `/party/invite${qs}`, undefined, token);
+}
+
+export async function acceptPartyInvite(token: string, inviteId: string): Promise<PartyInfo> {
+  return request<PartyInfo>("POST", `/party/invite/${encodeURIComponent(inviteId)}/accept`, undefined, token);
+}
+
+export async function declinePartyInvite(token: string, inviteId: string): Promise<{ success: boolean }> {
+  return request<{ success: boolean }>("POST", `/party/invite/${encodeURIComponent(inviteId)}/decline`, undefined, token);
+}
+
+export async function leaveParty(token: string, partyId: string, characterId: string): Promise<{ success: boolean }> {
+  const qs = `?character_id=${encodeURIComponent(characterId)}`;
+  return request<{ success: boolean }>("POST", `/party/${partyId}/leave${qs}`, undefined, token);
+}
+
+export async function kickPartyMember(token: string, partyId: string, memberId: string, leaderId: string): Promise<{ success: boolean }> {
+  const qs = `?leader_id=${encodeURIComponent(leaderId)}`;
+  return request<{ success: boolean }>("POST", `/party/${partyId}/kick/${encodeURIComponent(memberId)}${qs}`, undefined, token);
+}
+
+export async function promotePartyLeader(token: string, partyId: string, newLeaderId: string, currentLeaderId: string): Promise<PartyInfo> {
+  const qs = `?current_leader_id=${encodeURIComponent(currentLeaderId)}`;
+  return request<PartyInfo>("POST", `/party/${partyId}/promote/${encodeURIComponent(newLeaderId)}${qs}`, undefined, token);
+}
+
+export async function setPartyLootMode(token: string, partyId: string, leaderId: string, lootMode: LootMode): Promise<PartyInfo> {
+  const qs = `?leader_id=${encodeURIComponent(leaderId)}&loot_mode=${encodeURIComponent(lootMode)}`;
+  return request<PartyInfo>("POST", `/party/${partyId}/loot-mode${qs}`, undefined, token);
+}
+
 export { ApiError };

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useGameStore } from "../store/useGameStore";
 import CraftingPanel from "./CraftingPanel";
 import SkillTreePanel from "./SkillTreePanel";
+import PartyPanel from "./PartyPanel";
 
 /**
  * HUD — React overlay rendered on top of the Phaser canvas.
@@ -13,8 +14,11 @@ export default function HUD() {
   const char = useGameStore((s) => s.activeCharacter);
   const zone = useGameStore((s) => s.currentZone);
   const setScreen = useGameStore((s) => s.setScreen);
+  const party = useGameStore((s) => s.party);
+  const pendingInvites = useGameStore((s) => s.pendingPartyInvites);
   const [craftingOpen, setCraftingOpen] = useState(false);
   const [skillTreeOpen, setSkillTreeOpen] = useState(false);
+  const [partyOpen, setPartyOpen] = useState(false);
 
   if (!char) return null;
 
@@ -60,6 +64,21 @@ export default function HUD() {
           </div>
         )}
 
+        {/* Party roster — top-right below minimap when in a party */}
+        {party && (
+          <div style={S.partyRoster}>
+            <div style={S.partyHeader}>
+              PARTY · XP ×{party.xp_multiplier.toFixed(2)}
+            </div>
+            {party.members.map((id) => (
+              <div key={id} style={S.partyMember}>
+                <span style={S.partyMemberIcon}>{id === party.leader_id ? "★" : "·"}</span>
+                <span style={S.partyMemberName}>{id === char?.id ? char.name : id.slice(0, 8)}</span>
+              </div>
+            ))}
+          </div>
+        )}
+
         {/* Bottom-right: action buttons */}
         <div style={S.actionBar}>
           <button style={S.actionBtn} onClick={() => setSkillTreeOpen(true)}>
@@ -67,6 +86,13 @@ export default function HUD() {
           </button>
           <button style={S.actionBtn} onClick={() => setCraftingOpen(true)}>
             CRAFT
+          </button>
+          <button
+            style={pendingInvites.length > 0 ? S.actionBtnAlert : S.actionBtn}
+            onClick={() => setPartyOpen(true)}
+          >
+            {party ? `PARTY(${party.member_count})` : "PARTY"}
+            {pendingInvites.length > 0 && ` [${pendingInvites.length}]`}
           </button>
           <button style={S.actionBtn} onClick={() => setScreen("character-select")}>
             MENU
@@ -76,6 +102,7 @@ export default function HUD() {
 
       {craftingOpen && <CraftingPanel onClose={() => setCraftingOpen(false)} />}
       {skillTreeOpen && <SkillTreePanel onClose={() => setSkillTreeOpen(false)} />}
+      {partyOpen && <PartyPanel onClose={() => setPartyOpen(false)} />}
     </>
   );
 }
@@ -165,6 +192,32 @@ const S = {
     background: "#4488ee",
     borderRadius: "50%",
   },
+  partyRoster: {
+    position: "absolute" as const,
+    top: 84,
+    right: 10,
+    background: "rgba(0,0,0,0.55)",
+    border: "1px solid #2a3a5a",
+    borderRadius: 2,
+    padding: "6px 8px",
+    display: "flex",
+    flexDirection: "column" as const,
+    gap: 3,
+    minWidth: 100,
+  },
+  partyHeader: {
+    fontSize: 8,
+    color: "#c8a84b",
+    marginBottom: 2,
+    letterSpacing: 0.5,
+  },
+  partyMember: {
+    display: "flex",
+    alignItems: "center",
+    gap: 4,
+  },
+  partyMemberIcon: { fontSize: 9, color: "#c8a84b", minWidth: 10 },
+  partyMemberName: { fontSize: 9, color: "#c8d4e8" },
   zoneBadge: {
     position: "absolute" as const,
     bottom: 70,
@@ -189,6 +242,17 @@ const S = {
     background: "rgba(0,0,0,0.55)",
     border: "1px solid #2a3a5a",
     color: "#667788",
+    fontSize: 12,
+    fontFamily: "inherit",
+    padding: "6px 10px",
+    cursor: "pointer" as const,
+    borderRadius: 2,
+    pointerEvents: "auto" as const,
+  },
+  actionBtnAlert: {
+    background: "rgba(0,0,0,0.55)",
+    border: "1px solid #c8a84b",
+    color: "#c8a84b",
     fontSize: 12,
     fontFamily: "inherit",
     padding: "6px 10px",
