@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="Shadow Wolf Idle Frame">
+  <!-- Shadow Wolf — level 5-8 enemy, idle frame, 32x32 -->
+  <!-- Body — low hunched silhouette -->
+  <rect x="6"  y="18" width="20" height="8"  rx="3" fill="#1A1A2E"/>
+  <!-- Legs -->
+  <rect x="8"  y="24" width="4"  height="6"  fill="#0D0D1C"/>
+  <rect x="20" y="24" width="4"  height="6"  fill="#0D0D1C"/>
+  <rect x="12" y="24" width="3"  height="5"  fill="#0D0D1C"/>
+  <rect x="17" y="24" width="3"  height="5"  fill="#0D0D1C"/>
+  <!-- Chest / shoulder hump -->
+  <rect x="10" y="14" width="12" height="8"  rx="2" fill="#2D2D4A"/>
+  <!-- Head -->
+  <rect x="18" y="12" width="10" height="8"  rx="2" fill="#1A1A2E"/>
+  <!-- Snout -->
+  <rect x="26" y="16" width="5"  height="3"  fill="#2D2D4A"/>
+  <!-- Ear spikes -->
+  <rect x="19" y="9"  width="3"  height="5"  fill="#0D0D1C"/>
+  <rect x="24" y="8"  width="3"  height="5"  fill="#0D0D1C"/>
+  <!-- Fur spikes along spine -->
+  <rect x="10" y="12" width="2"  height="4"  fill="#0D0D1C"/>
+  <rect x="14" y="11" width="2"  height="4"  fill="#0D0D1C"/>
+  <rect x="18" y="12" width="2"  height="3"  fill="#0D0D1C"/>
+  <!-- Tail -->
+  <rect x="2"  y="14" width="7"  height="3"  rx="1" fill="#2D2D4A"/>
+  <!-- Eyes — violet glow -->
+  <rect x="22" y="14" width="2"  height="2"  fill="#C84FC8"/>
+  <rect x="25" y="14" width="2"  height="2"  fill="#C84FC8"/>
+</svg>

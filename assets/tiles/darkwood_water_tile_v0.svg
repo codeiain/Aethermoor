@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="Darkwood Water Tile">
+  <!-- Darkwood Forest murky bog water tile, 32x32 -->
+  <rect width="32" height="32" fill="#0D1A17"/>
+  <!-- Surface ripples -->
+  <ellipse cx="10" cy="14" rx="8" ry="2" fill="#1E2E28" opacity="0.5"/>
+  <ellipse cx="22" cy="22" rx="7" ry="1.5" fill="#1E2E28" opacity="0.45"/>
+  <!-- Floating debris specks -->
+  <circle cx="5"  cy="20" r="1.2" fill="#0A1510" opacity="0.8"/>
+  <circle cx="26" cy="9"  r="1.0" fill="#0A1510" opacity="0.7"/>
+</svg>

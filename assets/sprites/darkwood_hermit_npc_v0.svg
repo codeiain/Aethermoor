@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="Forest Hermit NPC Idle Down">
+  <!-- Forest Hermit — quest giver NPC, idle facing down, 32x32 -->
+  <!-- Legs -->
+  <rect x="12" y="24" width="4" height="8" fill="#1A1030"/>
+  <rect x="17" y="24" width="4" height="8" fill="#1A1030"/>
+  <!-- Robe body — dark purple -->
+  <rect x="10" y="14" width="12" height="12" rx="2" fill="#2A1A4A"/>
+  <!-- Robe shoulder width -->
+  <rect x="8"  y="14" width="16" height="5"  rx="1" fill="#2A1A4A"/>
+  <!-- Arms / robe sleeves -->
+  <rect x="5"  y="15" width="5"  height="3"  rx="1" fill="#2A1A4A"/>
+  <rect x="22" y="15" width="5"  height="3"  rx="1" fill="#2A1A4A"/>
+  <!-- Staff — held left side -->
+  <rect x="5"  y="4"  width="2"  height="24" fill="#4A3218"/>
+  <!-- Staff orb -->
+  <circle cx="6" cy="4" r="3" fill="#7B4FC8"/>
+  <!-- Head -->
+  <rect x="12" y="6"  width="8"  height="8"  rx="1" fill="#C8A87A"/>
+  <!-- White hair -->
+  <rect x="11" y="6"  width="10" height="3"  rx="1" fill="#E8E0D0"/>
+  <!-- White beard -->
+  <rect x="12" y="12" width="8"  height="4"  rx="1" fill="#E8E0D0"/>
+  <!-- Eyes -->
+  <rect x="13" y="9"  width="2"  height="2"  fill="#3A2A1A"/>
+  <rect x="17" y="9"  width="2"  height="2"  fill="#3A2A1A"/>
+</svg>

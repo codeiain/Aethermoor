@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="Travelling Merchant NPC Idle Down">
+  <!-- Travelling Merchant — vendor NPC, idle facing down, 32x32 -->
+  <!-- Legs -->
+  <rect x="12" y="24" width="4" height="8" fill="#2A1E10"/>
+  <rect x="17" y="24" width="4" height="8" fill="#2A1E10"/>
+  <!-- Cloak body -->
+  <rect x="9"  y="12" width="14" height="13" rx="2" fill="#3A2810"/>
+  <!-- Pack on back (behind figure — rendered first) -->
+  <rect x="22" y="13" width="8"  height="10" rx="2" fill="#4A3820"/>
+  <rect x="23" y="15" width="6"  height="2"  fill="#3A2A14"/>
+  <!-- Cloak shoulders -->
+  <rect x="7"  y="12" width="18" height="5"  rx="1" fill="#3A2810"/>
+  <!-- Cloak arms -->
+  <rect x="4"  y="13" width="5"  height="4"  rx="1" fill="#3A2810"/>
+  <rect x="23" y="13" width="5"  height="4"  rx="1" fill="#3A2810"/>
+  <!-- Hood -->
+  <rect x="11" y="5"  width="10" height="9"  rx="3" fill="#2A1E10"/>
+  <!-- Face in hood shadow -->
+  <rect x="13" y="7"  width="7"  height="6"  rx="1" fill="#C8A87A"/>
+  <!-- Eyes — shadowed, wary -->
+  <rect x="14" y="9"  width="2"  height="2"  fill="#3A2A1A"/>
+  <rect x="17" y="9"  width="2"  height="2"  fill="#3A2A1A"/>
+  <!-- Pack strap across chest -->
+  <rect x="16" y="12" width="1"  height="12" fill="#2A1E10" opacity="0.8"/>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="Darkwood Tree Tile">
+  <!-- Darkwood Forest tree tile — trunk + dense canopy, 32x32 top-down -->
+  <!-- Ground base beneath tree -->
+  <rect width="32" height="32" fill="#1A1209"/>
+  <!-- Tree crown — dark dense canopy -->
+  <rect x="2"  y="2"  width="28" height="24" rx="4" fill="#0E1A08"/>
+  <rect x="4"  y="4"  width="24" height="20" rx="3" fill="#172A0E"/>
+  <!-- Crown highlight — single lighter patch (light from above-left) -->
+  <rect x="6"  y="6"  width="8"  height="6"  rx="2" fill="#243B10"/>
+  <!-- Trunk visible at base -->
+  <rect x="12" y="24" width="8"  height="8"  fill="#2B1B0C"/>
+  <!-- Bark highlight on trunk -->
+  <rect x="12" y="24" width="2"  height="8"  fill="#4A3218" opacity="0.6"/>
+</svg>

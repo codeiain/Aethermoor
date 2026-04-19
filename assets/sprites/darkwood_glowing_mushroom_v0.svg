@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="24" viewBox="0 0 16 24" role="img" aria-label="Darkwood Glowing Mushroom Prop">
+  <!-- Bioluminescent mushroom cluster — 16x24 small prop -->
+  <!-- Glow halo -->
+  <circle cx="8" cy="10" r="10" fill="#4FC87B" opacity="0.12"/>
+  <!-- Stem -->
+  <rect x="6" y="14" width="4" height="9"  fill="#0F2A15"/>
+  <!-- Cap -->
+  <ellipse cx="8" cy="14" rx="7" ry="5" fill="#1A3A20"/>
+  <!-- Cap edge highlight — eerie green rim -->
+  <ellipse cx="8" cy="18" rx="7" ry="2" fill="#4FC87B" opacity="0.6"/>
+  <!-- Cap top sheen -->
+  <ellipse cx="6" cy="11" rx="3" ry="2" fill="#2A5030" opacity="0.8"/>
+  <!-- Spore dots -->
+  <circle cx="5"  cy="20" r="1" fill="#4FC87B" opacity="0.5"/>
+  <circle cx="11" cy="21" r="1" fill="#4FC87B" opacity="0.4"/>
+  <!-- Small satellite mushroom -->
+  <rect x="12" y="19" width="2" height="5"  fill="#0F2A15"/>
+  <ellipse cx="13" cy="19" rx="3" ry="2" fill="#1A3A20"/>
+</svg>

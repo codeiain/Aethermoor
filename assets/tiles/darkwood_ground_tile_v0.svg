@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="Darkwood Ground Tile">
+  <!-- Darkwood Forest ground tile — dark compressed earth, 32x32 -->
+  <defs>
+    <linearGradient id="dw-ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1209"/>
+      <stop offset="100%" stop-color="#2A1E0E"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" fill="url(#dw-ground)"/>
+  <!-- texture specks -->
+  <circle cx="5"  cy="4"  r="1.2" fill="#3C2B14" opacity="0.6"/>
+  <circle cx="14" cy="10" r="1.0" fill="#0F0C05" opacity="0.7"/>
+  <circle cx="24" cy="7"  r="1.4" fill="#3C2B14" opacity="0.5"/>
+  <circle cx="8"  cy="22" r="1.1" fill="#0F0C05" opacity="0.6"/>
+  <circle cx="27" cy="26" r="1.3" fill="#3C2B14" opacity="0.5"/>
+  <circle cx="19" cy="28" r="1.0" fill="#0F0C05" opacity="0.7"/>
+</svg>

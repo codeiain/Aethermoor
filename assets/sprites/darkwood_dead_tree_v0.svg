@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="48" viewBox="0 0 32 48" role="img" aria-label="Darkwood Dead Tree Prop">
+  <!-- Dead gnarled tree — 32x48 tall prop (1x1.5 tiles) -->
+  <!-- Ground shadow -->
+  <ellipse cx="15" cy="46" rx="8" ry="3" fill="#0F0C05" opacity="0.5"/>
+  <!-- Trunk — slight lean left -->
+  <rect x="13" y="20" width="6" height="28" fill="#1C1208" transform="rotate(-3 16 34)"/>
+  <rect x="13" y="20" width="2" height="28" fill="#4A3218" opacity="0.5" transform="rotate(-3 16 34)"/>
+  <!-- Main branch left -->
+  <rect x="3"  y="14" width="12" height="3"  rx="1" fill="#2B1B0C" transform="rotate(-25 9 15)"/>
+  <!-- Main branch right -->
+  <rect x="16" y="12" width="12" height="3"  rx="1" fill="#2B1B0C" transform="rotate(20 22 13)"/>
+  <!-- Sub-branch left upper -->
+  <rect x="2"  y="8"  width="8"  height="2"  rx="1" fill="#3C2B14" transform="rotate(-15 6 9)"/>
+  <!-- Sub-branch right upper -->
+  <rect x="22" y="6"  width="8"  height="2"  rx="1" fill="#3C2B14" transform="rotate(30 26 7)"/>
+  <!-- Tip nubbins -->
+  <rect x="1"  y="6"  width="2"  height="3"  fill="#3C2B14"/>
+  <rect x="10" y="4"  width="2"  height="3"  fill="#3C2B14"/>
+  <rect x="28" y="3"  width="2"  height="3"  fill="#3C2B14"/>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="Giant Spider Idle Frame">
+  <!-- Giant Spider — level 6-10 enemy, idle frame, 32x32 -->
+  <!-- Web strand from abdomen -->
+  <line x1="16" y1="28" x2="16" y2="32" stroke="#C8C8C8" stroke-width="1" opacity="0.5"/>
+  <!-- Abdomen -->
+  <ellipse cx="16" cy="22" rx="7" ry="6" fill="#1A0A0A"/>
+  <ellipse cx="16" cy="22" rx="5" ry="4" fill="#2A1010"/>
+  <!-- Thorax -->
+  <ellipse cx="16" cy="13" rx="5" ry="5" fill="#1A0A0A"/>
+  <!-- Legs — 4 each side (8 total), thin 1px lines -->
+  <!-- Left legs -->
+  <line x1="11" y1="13" x2="2"  y2="8"  stroke="#2A1010" stroke-width="1.5"/>
+  <line x1="11" y1="14" x2="1"  y2="14" stroke="#2A1010" stroke-width="1.5"/>
+  <line x1="11" y1="15" x2="2"  y2="20" stroke="#2A1010" stroke-width="1.5"/>
+  <line x1="11" y1="16" x2="3"  y2="24" stroke="#2A1010" stroke-width="1.5"/>
+  <!-- Right legs -->
+  <line x1="21" y1="13" x2="30" y2="8"  stroke="#2A1010" stroke-width="1.5"/>
+  <line x1="21" y1="14" x2="31" y2="14" stroke="#2A1010" stroke-width="1.5"/>
+  <line x1="21" y1="15" x2="30" y2="20" stroke="#2A1010" stroke-width="1.5"/>
+  <line x1="21" y1="16" x2="29" y2="24" stroke="#2A1010" stroke-width="1.5"/>
+  <!-- Eyes — 6 red dots in arc on thorax -->
+  <rect x="13" y="10" width="1" height="1" fill="#F54F4F"/>
+  <rect x="15" y="9"  width="1" height="1" fill="#F54F4F"/>
+  <rect x="17" y="9"  width="1" height="1" fill="#F54F4F"/>
+  <rect x="19" y="10" width="1" height="1" fill="#F54F4F"/>
+  <rect x="14" y="12" width="1" height="1" fill="#F54F4F"/>
+  <rect x="18" y="12" width="1" height="1" fill="#F54F4F"/>
+  <!-- Fangs -->
+  <rect x="14" y="17" width="2" height="3" fill="#2A1010"/>
+  <rect x="16" y="17" width="2" height="3" fill="#1A0A0A"/>
+</svg>

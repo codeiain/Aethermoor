@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Darkwood Zone Entry Archway">
+  <!-- Zone entry/exit archway — 64x64, spans 2 tiles, boundary between Starter Zone and Darkwood -->
+  <!-- Purple aura behind arch -->
+  <ellipse cx="32" cy="36" rx="30" ry="24" fill="#7B4FC8" opacity="0.10"/>
+  <!-- Ground worn path through arch -->
+  <rect x="24" y="52" width="16" height="8" fill="#3D3020"/>
+  <!-- Left pillar -->
+  <rect x="4"  y="16" width="10" height="44" fill="#2A2A2A"/>
+  <rect x="4"  y="16" width="3"  height="44" fill="#3A3A3A" opacity="0.6"/>
+  <!-- Right pillar -->
+  <rect x="50" y="16" width="10" height="44" fill="#2A2A2A"/>
+  <rect x="57" y="16" width="3"  height="44" fill="#3A3A3A" opacity="0.6"/>
+  <!-- Lintel across top -->
+  <rect x="4"  y="8"  width="56" height="10" fill="#2A2A2A"/>
+  <rect x="4"  y="8"  width="56" height="3"  fill="#3A3A3A" opacity="0.5"/>
+  <!-- Carved skull on lintel — warning symbol -->
+  <!-- Skull dome -->
+  <ellipse cx="32" cy="11" rx="5" ry="4" fill="#D0C8B0"/>
+  <!-- Eye sockets -->
+  <rect x="28" y="10" width="3"  height="3"  fill="#2A2A2A"/>
+  <rect x="33" y="10" width="3"  height="3"  fill="#2A2A2A"/>
+  <!-- Nose cavity -->
+  <rect x="31" y="13" width="2"  height="2"  fill="#2A2A2A"/>
+  <!-- Teeth -->
+  <rect x="28" y="15" width="2"  height="2"  fill="#D0C8B0"/>
+  <rect x="31" y="15" width="2"  height="2"  fill="#D0C8B0"/>
+  <rect x="34" y="15" width="2"  height="2"  fill="#D0C8B0"/>
+  <!-- Pillar base stones -->
+  <rect x="2"  y="56" width="14" height="8"  fill="#1A1A1A"/>
+  <rect x="48" y="56" width="14" height="8"  fill="#1A1A1A"/>
+</svg>
