@@ -7,51 +7,66 @@
         href: http://dev-1.tail5b8dbe.ts.net:3000/
         description: Game UI
     - Gateway:
+        icon: swagger.png
         href: http://dev-1.tail5b8dbe.ts.net:8000
         description: API Gateway for all backend services
     - Auth Server:
+        icon: swagger.png
         href: http://dev-1.tail5b8dbe.ts.net:8001/auth/docs
         description: Authentication and user management
     - Guild Server:
+        icon: swagger.png
         href: http://dev-1.tail5b8dbe.ts.net:8014/docs
         description: Guild management and social features
     - Crafting Server:
+        icon: swagger.png
         href: http://dev-1.tail5b8dbe.ts.net:8013/crafting/docs
         description: Crafting system and item management
     - Character Server:
+        icon: swagger.png
         href: http://dev-1.tail5b8dbe.ts.net:8002/players/docs
         description: Character data and progression management
     - World Server:
+        icon: swagger.png
         href: http://dev-1.tail5b8dbe.ts.net:8003/docs
         description: Game world simulation and state management
     - Combat Server:
+        icon: swagger.png
         href: http://dev-1.tail5b8dbe.ts.net:8004/docs
         description: Combat mechanics and player interactions
     - Chat Server:
+        icon: swagger.png
         href: http://dev-1.tail5b8dbe.ts.net:8005/metrics
         description: In-game communication and messaging
     - Inventory Server:
+        icon: swagger.png
         href: http://dev-1.tail5b8dbe.ts.net:8006/docs
         description: Player inventory and item management
     - Quest Server:
+        icon: swagger.png
         href: http://dev-1.tail5b8dbe.ts.net:8007/docs
         description: Quest system and progression tracking
     - Economy Server:
+        icon: swagger.png
         href: http://dev-1.tail5b8dbe.ts.net:8008/docs
         description: In-game economy and trading system
     - Notifications Server:
+        icon: swagger.png
         href: http://dev-1.tail5b8dbe.ts.net:8009/docs
         description: Player notifications and alerts    
     - Websocket Server:
         href: http://dev-1.tail5b8dbe.ts.net:8010/docs
         description: Websocket server for real-time updates and interactions
     - Party Server:
+        icon: swagger.png
         href: http://dev-1.tail5b8dbe.ts.net:8011/docs
         description: Party and group management for players
     - Social Server:
+        icon: swagger.png
         href: http://dev-1.tail5b8dbe.ts.net:8012/docs
         description: Social features and friend management
     - Guild Server:
+        icon: swagger.png
         href: http://dev-1.tail5b8dbe.ts.net:8014/docs
         description: Guild management and social features
 
