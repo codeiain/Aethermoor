@@ -5,3 +5,9 @@
 providers:
   openweathermap: openweathermapapikey
   weatherapi: weatherapiapikey
+  
+title: Dev Homepage
+    
+background: 
+  image: https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg
+  opacity: 30 # 0-100
