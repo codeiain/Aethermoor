@@ -21,7 +21,7 @@ from main import app
 
 TEST_DATABASE_URL = os.environ.get(
     "TEST_DATABASE_URL",
-    os.environ.get("DATABASE_URL", "postgresql+asyncpg://aethermoor:aethermoor@localhost:5432/aethermoor_test"),
+    os.environ.get("DATABASE_URL", "postgresql+asyncpg://aethermoor:aethermoor@localhost:55432/aethermoor_test"),
 )
 
 if TEST_DATABASE_URL.startswith("postgresql://"):

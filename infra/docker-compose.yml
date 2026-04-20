@@ -1,3 +1,4 @@
+
 # AETHERMOOR — Docker Compose skeleton
 # Zero-trust: all inter-service calls require X-Service-Token (HMAC-SHA256)
 # Network isolation:
@@ -32,7 +33,7 @@ services:
     container_name: loki
     restart: unless-stopped
     ports:
-      - "3100:3100"
+      - "3110:3110"
     volumes:
       - ./loki/loki-config.yml:/etc/loki/local-config.yaml
       - ./loki-data:/loki
@@ -157,6 +158,8 @@ services:
       POSTGRES_DB: aethermoor
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "55432:5432"
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-aethermoor}"]
       interval: 10s
@@ -603,3 +606,26 @@ services:
     restart: unless-stopped
     depends_on:
       - gateway
+
+  # ── Homepage Dashboard ─────────────────────────────────────────────────────
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    restart: unless-stopped
+    networks:
+      - public
+    ports:
+      - "8888:3000"
+    volumes:
+      - ./infra/homepage/:/app/config
+    environment:
+      - TZ=${TZ:-UTC}
+      - HOST=0.0.0.0
+      - HOMEPAGE_ALLOWED_HOSTS=dev-1.tail5b8dbe.ts.net:8888
+    depends_on:
+      - frontend
+      - gateway
+      - grafana
+      - prometheus
+      - loki
+      - cadvisor

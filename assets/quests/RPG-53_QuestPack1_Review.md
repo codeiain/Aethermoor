@@ -87,3 +87,7 @@ Next steps
 - [ ] Boss sign-off on tone alignment
 
 (End of file)
+
+## Glossary integration note
+- Added RPG-53 Glossary at docs/game-design/alpha-content/rpg53-glossary.md to unify terms: Watcher Stone, Moonpetals, Emperor's Path, Hartwick family, Ashroot Tower, Rot Shaman, Rot Lord, Thornhaven, etc.
+- Next QA: verify glossary terms are used consistently in Starter Quests and Thornhaven Quests; validate cross-links to glossary.

@@ -13,7 +13,7 @@ import pytest_asyncio
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 # Set required env vars before any service imports
-os.environ.setdefault("DATABASE_URL", "postgresql+asyncpg://aethermoor:aethermoor@localhost:5432/aethermoor_test")
+os.environ.setdefault("DATABASE_URL", "postgresql+asyncpg://aethermoor:aethermoor@localhost:55432/aethermoor_test")
 os.environ.setdefault("REDIS_URL", "redis://localhost:6379/15")  # DB 15: test isolation
 os.environ.setdefault("SERVICE_TOKEN", "test-service-token-for-world-tests")
 os.environ.setdefault("AUTH_SERVICE_URL", "http://auth:8001")

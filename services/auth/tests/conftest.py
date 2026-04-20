@@ -13,7 +13,7 @@ from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_asyn
 # Environment — integration tests read from environment (populated by docker-compose or CI)
 TEST_DATABASE_URL = os.environ.get(
     "TEST_DATABASE_URL",
-    os.environ.get("DATABASE_URL", "postgresql+asyncpg://aethermoor:aethermoor@localhost:5432/aethermoor"),
+    os.environ.get("DATABASE_URL", "postgresql+asyncpg://aethermoor:aethermoor@localhost:55432/aethermoor"),
 ).replace("postgresql://", "postgresql+asyncpg://", 1)
 
 TEST_REDIS_URL = os.environ.get(

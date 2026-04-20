@@ -171,7 +171,7 @@ const S = {
     border: "1px solid #2a3a5a",
     transition: "background 0.2s",
   }),
-  arrow: (dir: string) => ({
+  arrow: (_dir?: string) => ({
     fontSize: 28,
     color: "#c8a84b",
     textAlign: "center" as const,

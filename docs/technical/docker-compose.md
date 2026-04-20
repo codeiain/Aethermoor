@@ -32,7 +32,7 @@ The stack starts all services. On first run, each service creates its database s
 | Notification | 8009 | Stub |
 | Prometheus | 9090 | Metrics collection |
 | Grafana | 5007 (configurable) | Dashboards — default `admin`/`admin` |
-| Loki | 3100 | Log aggregation |
+| Loki | 3110 | Log aggregation |
 | cAdvisor | 8080 | Container metrics |
 | Redis Exporter | 9121 | Redis Prometheus metrics |
 
