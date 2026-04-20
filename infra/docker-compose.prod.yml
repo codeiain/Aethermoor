@@ -23,9 +23,11 @@ networks:
   internal:
     internal: true
 
+
 volumes:
   postgres_data:
   redis_data:
+  dockge-data:
 
 x-service-defaults: &service-defaults
   restart: always
@@ -41,6 +43,27 @@ x-service-defaults: &service-defaults
 
 services:
   # ── Monitoring ─────────────────────────────────────────────────────────────
+
+  # ── Dockge (Docker Compose UI) ─────────────────────────────────────────────
+  dockge:
+    image: louislam/dockge:latest
+    container_name: dockge
+    restart: always
+    ports:
+      - "5001:5001"  # Only accessible via localhost for security
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - dockge-data:/app/data
+    environment:
+      - DOCKGE_STACKS_DIR=/app/data/stacks
+      - TZ=${TZ:-UTC}
+    networks:
+      - internal
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "3"
 
   loki:
     image: grafana/loki:3.0.0

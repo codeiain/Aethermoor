@@ -1,0 +1,99 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+
+- Game Services:
+    - Frontend:
+        href: http://dev-1.tail5b8dbe.ts.net:3000/
+        description: Game UI
+    - Gateway:
+        href: http://dev-1.tail5b8dbe.ts.net:8000
+        description: API Gateway for all backend services
+    - Auth Server:
+        href: http://dev-1.tail5b8dbe.ts.net:8001/docs
+        description: Authentication and user management
+    - Guild Server:
+        href: http://dev-1.tail5b8dbe.ts.net:8014/docs
+        description: Guild management and social features
+    - Crafting Server:
+        href: http://dev-1.tail5b8dbe.ts.net:8013/docs
+        description: Crafting system and item management
+    - Character Server:
+        href: http://dev-1.tail5b8dbe.ts.net:8002/docs
+        description: Character data and progression management
+    - World Server:
+        href: http://dev-1.tail5b8dbe.ts.net:8003/docs
+        description: Game world simulation and state management
+    - Combat Server:
+        href: http://dev-1.tail5b8dbe.ts.net:8004/docs
+        description: Combat mechanics and player interactions
+    - Chat Server:
+        href: http://dev-1.tail5b8dbe.ts.net:8005/docs
+        description: In-game communication and messaging
+    - Inventory Server:
+        href: http://dev-1.tail5b8dbe.ts.net:8006/docs
+        description: Player inventory and item management
+    - Quest Server:
+        href: http://dev-1.tail5b8dbe.ts.net:8007/docs
+        description: Quest system and progression tracking
+    - Economy Server:
+        href: http://dev-1.tail5b8dbe.ts.net:8008/docs
+        description: In-game economy and trading system
+    - Notifications Server:
+        href: http://dev-1.tail5b8dbe.ts.net:8009/docs
+        description: Player notifications and alerts    
+    - Websocket Server:
+        href: http://dev-1.tail5b8dbe.ts.net:8010/docs
+        description: Websocket server for real-time updates and interactions
+    - Party Server:
+        href: http://dev-1.tail5b8dbe.ts.net:8011/docs
+        description: Party and group management for players
+    - Social Server:
+        href: http://dev-1.tail5b8dbe.ts.net:8012/docs
+        description: Social features and friend management
+    - Guild Server:
+        href: http://dev-1.tail5b8dbe.ts.net:8014/docs
+        description: Guild management and social features
+
+- Infrastructure Services:
+    - Grafana:
+        icon: grafana.png
+        href: http://dev-1.tail5b8dbe.ts.net:5007/
+        description: Monitoring and visualization
+        widget:
+            type: grafana
+            alerts: alertmanager
+            url: http://dev-1.tail5b8dbe.ts.net:5007
+    - Prometheus:
+        icon: prometheus.png
+        href: http://dev-1.tail5b8dbe.ts.net:33010/query
+        description: Metrics collection and alerting
+        widget: 
+            type: prometheus
+            url: http://dev-1.tail5b8dbe.ts.net:33010
+    - Loki:
+        icon: loki.png
+        href: http://dev-1.tail5b8dbe.ts.net:3110
+        description: Log aggregation and querying
+    - cAdvisor:
+        icon: cadvisor.png
+        href: http://dev-1.tail5b8dbe.ts.net:8080
+        description: Container resource usage and performance analysis
+    
+
+
+- Tools:
+    - VSCode:
+        icon: vscode.png
+        href: http://dev-1.tail5b8dbe.ts.net:8081
+        description: VS Code Remote Development
+    - PaperclipAI:
+        href: http://dev-1.tail5b8dbe.ts.net:3100
+        description: AI-powered code assistant for developers
+    - portainer:
+        icon: portainer.png
+        href: http://dev-1.tail5b8dbe.ts.net:9900
+        description: Docker management and orchestration
+        widget:
+            type: portainer
+            url: http://dev-1.tail5b8dbe.ts.net:9900

@@ -13,6 +13,7 @@ networks:
 volumes:
   postgres_data:
   redis_data:
+  portainer_data:
 
 x-service-defaults: &service-defaults
   restart: unless-stopped
@@ -27,6 +28,27 @@ x-service-defaults: &service-defaults
       max-file: "3"
 
 services:
+  # ── Portainer (Docker Management UI) ──────────────────────────────────────
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    restart: unless-stopped
+    ports:
+      - "9900:9000"  # Portainer UI
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    environment:
+      - TZ=${TZ:-UTC}
+    networks:
+      - public
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+ 
   # ── Monitoring ─────────────────────────────────────────────────────────────
   loki:
     image: grafana/loki:3.0.0
@@ -617,7 +639,7 @@ services:
     ports:
       - "8888:3000"
     volumes:
-      - ./infra/homepage/:/app/config
+      - ./homepage/:/app/config
     environment:
       - TZ=${TZ:-UTC}
       - HOST=0.0.0.0
