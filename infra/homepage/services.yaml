@@ -4,6 +4,7 @@
 
 - Game Services:
     - Frontend:
+        icon: reactjs.png
         href: http://dev-1.tail5b8dbe.ts.net:3000/
         description: Game UI
     - Gateway:
