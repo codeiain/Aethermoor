@@ -10,16 +10,16 @@
         href: http://dev-1.tail5b8dbe.ts.net:8000
         description: API Gateway for all backend services
     - Auth Server:
-        href: http://dev-1.tail5b8dbe.ts.net:8001/docs
+        href: http://dev-1.tail5b8dbe.ts.net:8001/auth/docs
         description: Authentication and user management
     - Guild Server:
         href: http://dev-1.tail5b8dbe.ts.net:8014/docs
         description: Guild management and social features
     - Crafting Server:
-        href: http://dev-1.tail5b8dbe.ts.net:8013/docs
+        href: http://dev-1.tail5b8dbe.ts.net:8013/crafting/docs
         description: Crafting system and item management
     - Character Server:
-        href: http://dev-1.tail5b8dbe.ts.net:8002/docs
+        href: http://dev-1.tail5b8dbe.ts.net:8002/players/docs
         description: Character data and progression management
     - World Server:
         href: http://dev-1.tail5b8dbe.ts.net:8003/docs
@@ -28,7 +28,7 @@
         href: http://dev-1.tail5b8dbe.ts.net:8004/docs
         description: Combat mechanics and player interactions
     - Chat Server:
-        href: http://dev-1.tail5b8dbe.ts.net:8005/docs
+        href: http://dev-1.tail5b8dbe.ts.net:8005/metrics
         description: In-game communication and messaging
     - Inventory Server:
         href: http://dev-1.tail5b8dbe.ts.net:8006/docs
