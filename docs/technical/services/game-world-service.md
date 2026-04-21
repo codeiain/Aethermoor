@@ -1,3 +1,10 @@
+---
+tags:
+  - world
+  - zones
+  - npc
+---
+
 # Game World Service
 
 **Port:** 8003  

@@ -35,28 +35,29 @@ Benchmarks are collected after `docker compose -f docker-compose.prod.yml up -d 
 
 ## Per-Service Resource Targets (Pi 4, idle + 5 players)
 
-| Service | Port | Expected CPU% | Expected RAM |
-|---|---|---|---|
-| postgres | — | 1–3% | 64–128 MB |
-| redis | — | < 1% | 16–32 MB |
-| gateway | 8000 | 2–5% | 64–96 MB |
-| auth | 8001 | 1–3% | 64–96 MB |
-| character | 8002 | 1–3% | 64–96 MB |
-| world | 8003 | 2–5% | 64–128 MB |
-| combat | 8004 | 1–3% | 64–96 MB |
-| chat | 8005 | 1–2% | 32–64 MB |
-| inventory | 8006 | 1–2% | 64–96 MB |
-| quest | 8007 | 1–2% | 64–96 MB |
-| economy | 8008 | 1–3% | 64–96 MB |
-| notification | 8009 | < 1% | 32–64 MB |
-| websocket-gateway | 8010 | 1–3% | 32–64 MB |
-| party | 8011 | 1–2% | 32–64 MB |
-| social | 8012 | 1–2% | 32–64 MB |
-| crafting | 8013 | 1–2% | 64–96 MB |
-| loki | — | 1–2% | 64–128 MB |
-| prometheus | — | 1–3% | 64–128 MB |
-| grafana | — | 1–2% | 64–128 MB |
-| **TOTAL** | — | **~30–50%** | **~1.2–1.8 GB** |
+| Service           | Port  | Expected CPU% | Expected RAM |
+|-------------------|-------|---------------|-------------|
+| postgres          | —     | 1–3%          | 64–128 MB   |
+| redis             | —     | < 1%          | 16–32 MB    |
+| gateway           | 8000  | 2–5%          | 64–96 MB    |
+| auth              | 8001  | 1–3%          | 64–96 MB    |
+| character         | 8002  | 1–3%          | 64–96 MB    |
+| world             | 8003  | 2–5%          | 64–128 MB   |
+| combat            | 8004  | 1–3%          | 64–96 MB    |
+| chat              | 8005  | 1–2%          | 32–64 MB    |
+| inventory         | 8006  | 1–2%          | 64–96 MB    |
+| quest             | 8007  | 1–2%          | 64–96 MB    |
+| economy           | 8008  | 1–3%          | 64–96 MB    |
+| notification      | 8009  | < 1%          | 32–64 MB    |
+| websocket-gateway | 8010  | 1–3%          | 32–64 MB    |
+| party             | 8011  | 1–2%          | 32–64 MB    |
+| social            | 8012  | 1–2%          | 32–64 MB    |
+| crafting          | 8013  | 1–2%          | 64–96 MB    |
+| notediscovery     | 8800  | 1–2%          | 32–64 MB    |
+| loki              | —     | 1–2%          | 64–128 MB   |
+| prometheus        | —     | 1–3%          | 64–128 MB   |
+| grafana           | —     | 1–2%          | 64–128 MB   |
+| **TOTAL**         | —     | **~30–50%**   | **~1.2–1.8 GB** |
 
 Total expected RAM leaves ~2 GB headroom on a 4 GB Pi for OS, page cache, and traffic bursts.
 

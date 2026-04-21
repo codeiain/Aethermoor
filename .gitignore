@@ -35,3 +35,6 @@ infra/loki-data/
 infra/prometheus-data/
 # Added by code-review-graph
 .code-review-graph/
+
+infra/homepage/**/*.*
+infra/homepage/services.yaml

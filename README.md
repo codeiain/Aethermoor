@@ -1,3 +1,45 @@
+## Per-Service Breakdown
+
+Below is a summary of every service in the Docker Compose stack, including infrastructure, monitoring, and application services.
+
+### Application & Game Services
+
+- **gateway** (8000): API gateway, rate limiting, zero-trust token injection. Entry point for all API traffic.
+- **auth** (8001): Authentication (register, login, JWT refresh). Depends on postgres, redis.
+- **character** (8002): Player character management. Depends on auth, postgres.
+- **world** (8003): Game world, zones, NPCs, presence. Depends on character, auth, postgres, redis.
+- **combat** (8004): Turn-based combat logic. Depends on postgres, redis.
+- **chat** (8005): Zone and party chat (Redis pub/sub). Depends on postgres, redis.
+- **inventory** (8006): Item storage, equipment, loot. Depends on postgres.
+- **quest** (8007): Quest catalogue and progress. Depends on postgres.
+- **economy** (8008): Gold balances, marketplace. Depends on postgres, redis, auth.
+- **notification** (8009): Push notifications, in-game alerts. Depends on postgres, redis.
+- **websocket-gateway** (8010): Multiplayer WebSocket relay. Depends on redis.
+- **party** (8011): Party formation, invites, group state. Depends on redis, auth.
+- **social** (8012): Friends list, blocks, social graph. Depends on redis, auth.
+- **crafting** (8013): Recipe catalogue, item crafting. Depends on postgres, auth, character.
+- **guild** (8014): Guild management. Depends on redis, auth.
+- **frontend** (3000): React + Phaser.js game client, served by Nginx. Depends on gateway.
+
+### Notes, Dashboard, and Management
+
+- **notediscovery** (8800): Self-hosted Markdown notes, plugins, AI assistant integration. Data volume: `/app/data`.
+- **homepage** (8888): Self-hosted dashboard (Homepage). Config volume: `/app/config`.
+- **portainer** (9900): Docker management UI. Volumes: Docker socket, portainer_data.
+
+### Monitoring & Observability
+
+- **loki** (3110): Log aggregation (Grafana Loki). Data volume: `/loki`.
+- **promtail**: Log shipping agent for Loki. Reads Docker logs.
+- **redis-exporter** (9121): Redis Prometheus metrics exporter.
+- **prometheus** (9090): Metrics collection and monitoring. Data volume: `/prometheus`.
+- **grafana** (5007): Dashboards and visualization. Data volume: `/var/lib/grafana`.
+- **cadvisor** (8080): Container metrics (cAdvisor). Reads Docker and system metrics.
+
+### Databases
+
+- **postgres** (55432): PostgreSQL 16 database. Data volume: `postgres_data`.
+- **redis**: Redis 7 database. Data volume: `redis_data`.
 # AETHERMOOR
 
 Cross-platform 2D MMO RPG — Zelda-style exploration × D&D mechanics.
@@ -11,11 +53,23 @@ cp .env.example .env       # edit secrets
 docker compose up --build
 ```
 
-| Service | URL |
-|---|---|
-| Frontend | http://localhost:3000 |
-| API Gateway | http://localhost:8000 |
-| Grafana | http://localhost:5007 |
+| Service           | URL                       |
+|-------------------|---------------------------|
+| Frontend          | http://localhost:3000     |
+| API Gateway       | http://localhost:8000     |
+| Grafana           | http://localhost:5007     |
+| NoteDiscovery     | http://localhost:8800     |
+## NoteDiscovery (Self-Hosted Notes)
+
+NoteDiscovery is a lightweight, self-hosted Markdown note-taking app with AI assistant integration (MCP). It runs as a Docker service and is accessible at [http://localhost:8800](http://localhost:8800) (default port, see docker-compose for mapping).
+
+- **Features:** Markdown notes, tags, search, plugins, graph view, AI assistant (Claude, Cursor, etc.)
+- **Data:** All notes are stored as plain text in the container volume (`data/`)
+- **Security:** Password protection and API key support (see NoteDiscovery docs)
+- **MCP:** Can be used as a knowledge base for AI agents
+
+**To enable/disable authentication or set an API key, see the NoteDiscovery documentation or set environment variables in the Compose file.**
+
 
 ## Production Deployment (Raspberry Pi)
 
@@ -133,23 +187,35 @@ docker compose -f docker-compose.prod.yml up -d --build
 
 ## Services
 
-| Service | Port (dev) | Description |
-|---|---|---|
-| `gateway` | 8000 | API gateway — single entry point, rate limiting, zero-trust token injection |
-| `auth` | 8001 | Authentication — register, login, JWT refresh |
-| `character` | 8002 | Player characters — create, stats, position, tutorial |
-| `world` | 8003 | Game world — zones, tilemaps, NPCs, presence WebSocket |
-| `combat` | 8004 | Turn-based combat — D&D 5e rules, Redis state |
-| `chat` | 8005 | Zone and party chat over Redis pub/sub |
-| `inventory` | 8006 | Item storage, equipment, loot distribution |
-| `quest` | 8007 | Quest catalogue, acceptance, progress, completion |
-| `economy` | 8008 | Gold balances, marketplace listings, transactions |
-| `notification` | 8009 | Push notifications and in-game alerts |
-| `websocket-gateway` | 8010 | Multiplayer WebSocket relay |
-| `party` | 8011 | Party formation, invites, group state |
-| `social` | 8012 | Friends list, blocks, social graph |
-| `crafting` | 8013 | Recipe catalogue, item crafting |
-| `frontend` | 3000 | React + Phaser.js game client (served by Nginx) |
+| Service              | Port (dev) | Description |
+|----------------------|------------|---------------------------------------------------------------|
+| `gateway`            | 8000       | API gateway — single entry point, rate limiting, zero-trust token injection |
+| `auth`               | 8001       | Authentication — register, login, JWT refresh |
+| `character`          | 8002       | Player characters — create, stats, position, tutorial |
+| `world`              | 8003       | Game world — zones, tilemaps, NPCs, presence WebSocket |
+| `combat`             | 8004       | Turn-based combat — D&D 5e rules, Redis state |
+| `chat`               | 8005       | Zone and party chat over Redis pub/sub |
+| `inventory`          | 8006       | Item storage, equipment, loot distribution |
+| `quest`              | 8007       | Quest catalogue, acceptance, progress, completion |
+| `economy`            | 8008       | Gold balances, marketplace listings, transactions |
+| `notification`       | 8009       | Push notifications and in-game alerts |
+| `websocket-gateway`  | 8010       | Multiplayer WebSocket relay |
+| `party`              | 8011       | Party formation, invites, group state |
+| `social`             | 8012       | Friends list, blocks, social graph |
+| `crafting`           | 8013       | Recipe catalogue, item crafting |
+| `guild`              | 8014       | Guild management and features |
+| `frontend`           | 3000       | React + Phaser.js game client (served by Nginx) |
+| `notediscovery`      | 8800       | Self-hosted Markdown notes, plugins, AI assistant integration |
+| `homepage`           | 8888       | Self-hosted dashboard (Homepage) |
+| `portainer`          | 9900       | Docker management UI |
+| `loki`               | 3110       | Log aggregation (Grafana Loki) |
+| `promtail`           | —          | Log shipping agent for Loki |
+| `redis-exporter`     | 9121       | Redis Prometheus metrics exporter |
+| `prometheus`         | 9090       | Metrics collection and monitoring |
+| `grafana`            | 5007       | Dashboards and visualization |
+| `cadvisor`           | 8080       | Container metrics (cAdvisor) |
+| `postgres`           | 55432      | PostgreSQL database (internal only) |
+| `redis`              | —          | Redis database (internal only) |
 
 In production (`docker-compose.prod.yml`) only ports **3000**, **8000**, and **8010** are exposed to the host. All other services communicate on the internal Docker network.
 

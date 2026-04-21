@@ -325,3 +325,1785 @@
   }
 ]
 [2026-04-20T14:26:38.106Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:34:40.039Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:34:40.055Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:34:40.543Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:34:40.546Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:34:40.851Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:34:50.936Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:35:06.021Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:46:13.900Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:46:14.053Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:46:14.056Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:46:16.051Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:46:16.054Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:46:16.192Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:46:21.362Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:46:40.079Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:46:40.084Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:46:40.821Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:46:42.370Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:46:42.381Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:46:42.583Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:46:48.072Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:46:48.074Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:46:48.213Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:46:52.670Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:46:53.393Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:48:30.175Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:48:30.177Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:48:30.303Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:48:36.111Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:48:36.113Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:48:36.147Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:48:40.402Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:48:41.309Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:48:42.137Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:48:42.144Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:48:42.333Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:48:48.942Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:48:48.946Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:48:49.042Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:48:52.531Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:51:17.009Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:51:17.298Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:51:17.300Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:51:17.386Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:51:22.484Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:51:32.116Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:52:58.662Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:52:58.901Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:52:58.905Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:53:04.011Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:53:04.015Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:53:04.230Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:53:14.333Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:53:55.126Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:53:55.319Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:53:55.322Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:53:56.339Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:53:56.342Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:53:56.494Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:54:01.593Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:54:02.783Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:54:02.785Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:54:02.929Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:54:09.821Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:54:09.824Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:54:09.933Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:54:13.029Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:54:15.021Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:54:16.944Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:54:16.948Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:54:17.048Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:54:22.187Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:54:28.184Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:54:28.655Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:54:28.658Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:54:28.748Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:54:38.501Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:54:38.504Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:54:38.667Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:54:38.823Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:54:48.910Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:55:02.319Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:55:20.445Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:55:20.447Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:55:20.489Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:55:51.802Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T14:55:52.179Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T14:55:52.184Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T14:56:06.963Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:16:59.558Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T15:16:59.564Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T15:16:59.744Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:17:04.820Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:17:29.492Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:17:34.514Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T15:17:34.517Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T15:17:34.556Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:17:39.724Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:17:42.114Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T15:17:42.117Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T15:17:42.157Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:18:24.521Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:22:00.742Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T15:22:00.746Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T15:22:00.827Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:22:05.971Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:37:30.316Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T15:37:30.348Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T15:37:31.318Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:43:43.463Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:45:10.421Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T15:45:10.425Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T15:45:10.454Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:45:15.638Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:47:32.593Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T15:47:32.597Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T15:47:32.701Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:47:38.637Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:50:00.850Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T15:50:00.852Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T15:50:00.873Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:50:05.960Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:50:16.041Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:50:56.135Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:51:39.906Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T15:51:39.914Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T15:51:40.032Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:51:45.661Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T15:51:45.663Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T15:51:45.678Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:51:51.140Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T15:51:51.144Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T15:51:51.220Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:51:55.788Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:51:57.577Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T15:51:57.580Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T15:51:57.638Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:52:01.299Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:52:02.733Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:52:12.817Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:52:16.224Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:52:26.379Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:52:32.907Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:52:46.568Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:53:22.987Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:54:17.194Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T15:54:17.197Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T15:54:17.262Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:54:22.628Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:55:32.587Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:57:09.228Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T15:59:50.690Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T15:59:50.706Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T15:59:53.138Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:00:04.025Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:00:04.060Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:00:04.461Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:00:09.542Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:00:21.413Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:00:21.564Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:00:22.561Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:00:22.568Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:00:34.667Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:01:09.636Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:01:09.638Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:01:10.397Z] error: bad indentation of a sequence entry (10:15)
+
+  7 |         - abbr: GH
+  8 |           href: https://github.com/
+  9 |     - Paperclipai
+ 10 |         - abbr: GH
+--------------------^
+ 11 |           href: https://github.com/paperclipa ...
+ 12 | 
+[2026-04-20T16:01:10.478Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:01:10.895Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:01:10.935Z] error: bad indentation of a sequence entry (10:15)
+
+  7 |         - abbr: GH
+  8 |           href: https://github.com/
+  9 |     - Paperclipai
+ 10 |         - abbr: GH
+--------------------^
+ 11 |           href: https://github.com/paperclipa ...
+ 12 | 
+[2026-04-20T16:01:10.941Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:01:10.943Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:01:11.171Z] error: <index> YAMLException: bad indentation of a sequence entry (10:15)
+
+  7 |         - abbr: GH
+  8 |           href: https://github.com/
+  9 |     - Paperclipai
+ 10 |         - abbr: GH
+--------------------^
+ 11 |           href: https://github.com/paperclipa ...
+ 12 | 
+    at generateError (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:1289:10)
+    at throwError (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:1293:9)
+    at readBlockSequence (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2111:7)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2536:12)
+    at readBlockMapping (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2260:11)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2537:12)
+    at readBlockSequence (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2104:5)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2536:12)
+    at readDocument (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2721:3)
+    at loadDocuments (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2784:5)
+[2026-04-20T16:01:11.937Z] error: bad indentation of a sequence entry (10:15)
+
+  7 |         - abbr: GH
+  8 |           href: https://github.com/
+  9 |     - Paperclipai
+ 10 |         - abbr: GH
+--------------------^
+ 11 |           href: https://github.com/paperclipa ...
+ 12 | 
+[2026-04-20T16:01:32.372Z] error: <index> YAMLException: bad indentation of a sequence entry (10:15)
+
+  7 |         - abbr: GH
+  8 |           href: https://github.com/
+  9 |     - Paperclipai
+ 10 |         - abbr: GH
+--------------------^
+ 11 |           href: https://github.com/
+ 12 | 
+    at generateError (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:1289:10)
+    at throwError (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:1293:9)
+    at readBlockSequence (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2111:7)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2536:12)
+    at readBlockMapping (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2260:11)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2537:12)
+    at readBlockSequence (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2104:5)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2536:12)
+    at readDocument (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2721:3)
+    at loadDocuments (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2784:5)
+[2026-04-20T16:01:32.530Z] error: bad indentation of a sequence entry (10:15)
+
+  7 |         - abbr: GH
+  8 |           href: https://github.com/
+  9 |     - Paperclipai
+ 10 |         - abbr: GH
+--------------------^
+ 11 |           href: https://github.com/
+ 12 | 
+[2026-04-20T16:01:41.411Z] error: <index> YAMLException: bad indentation of a sequence entry (10:15)
+
+  7 |         - abbr: GH
+  8 |           href: https://github.com/
+  9 |     - Paperclipai
+ 10 |         - abbr: PC
+--------------------^
+ 11 |           href: https://github.com/
+ 12 | 
+    at generateError (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:1289:10)
+    at throwError (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:1293:9)
+    at readBlockSequence (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2111:7)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2536:12)
+    at readBlockMapping (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2260:11)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2537:12)
+    at readBlockSequence (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2104:5)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2536:12)
+    at readDocument (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2721:3)
+    at loadDocuments (file:///app/node_modules/.pnpm/js-yaml@4.1.1/node_modules/js-yaml/dist/js-yaml.mjs:2784:5)
+[2026-04-20T16:01:41.769Z] error: bad indentation of a sequence entry (10:15)
+
+  7 |         - abbr: GH
+  8 |           href: https://github.com/
+  9 |     - Paperclipai
+ 10 |         - abbr: PC
+--------------------^
+ 11 |           href: https://github.com/
+ 12 | 
+[2026-04-20T16:01:54.389Z] error: bad indentation of a sequence entry (10:15)
+
+  7 |         - abbr: GH
+  8 |           href: https://github.com/
+  9 |     - Paperclipai
+ 10 |         - abbr: PC
+--------------------^
+ 11 |           href: https://github.com/
+ 12 | 
+[2026-04-20T16:01:58.778Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:01:58.787Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:01:59.155Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:02:04.235Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:02:12.199Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:02:12.202Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:02:12.246Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:02:12.625Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:02:12.628Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:02:12.651Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:02:17.744Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:02:25.931Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:02:25.934Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:02:25.974Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:02:26.871Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:02:26.881Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:02:27.133Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:02:37.239Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:02:41.989Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:02:41.991Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:02:42.113Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:02:42.527Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:02:42.529Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:02:42.602Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:02:53.690Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:03:20.738Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:03:20.743Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:03:20.818Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:03:21.451Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:03:21.454Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:03:21.730Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:03:26.820Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:03:37.175Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:03:37.179Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:03:37.328Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:03:37.332Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:03:37.405Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:03:42.508Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:03:57.602Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:03:58.120Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:03:58.122Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:03:58.522Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:03:58.525Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:03:58.541Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:04:03.627Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:04:10.800Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:04:10.811Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:04:11.073Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:04:21.430Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:04:21.436Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:04:21.475Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:04:23.348Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:04:23.355Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:04:23.540Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:04:29.841Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:36:04.618Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:36:04.644Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:36:06.060Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:37:31.602Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:37:31.614Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:37:33.257Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T16:42:11.591Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T16:42:11.629Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T16:42:13.228Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:01:25.963Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:01:25.992Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:01:26.311Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:01:28.670Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:01:28.685Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:01:28.925Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:07:19.946Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:07:19.957Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:07:20.110Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:07:21.296Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:07:21.300Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:07:21.431Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:07:31.714Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:11:55.864Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:11:55.872Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:11:55.898Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:12:06.773Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:19:25.276Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:19:25.280Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:19:25.366Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:19:30.665Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:20:53.584Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:20:53.590Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:20:53.644Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:21:04.701Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:21:45.172Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:21:45.176Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:21:45.241Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:21:46.445Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:21:46.448Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:21:46.587Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:21:52.642Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:22:00.837Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:22:00.840Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:22:00.881Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:22:01.962Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:22:01.967Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:22:02.137Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:22:07.658Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:22:14.002Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:22:14.005Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:22:14.068Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:22:24.797Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:22:43.612Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:22:43.624Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:22:43.763Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:22:44.631Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:22:44.634Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:22:44.746Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:22:55.233Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:23:00.801Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:23:00.803Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:23:00.828Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:23:02.020Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:23:02.026Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:23:02.254Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:23:11.674Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:23:11.678Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:23:11.694Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:23:12.422Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:23:17.644Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:23:23.649Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:23:41.636Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:23:41.639Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:23:41.754Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:23:47.657Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:24:14.620Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:24:14.624Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:24:14.729Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:24:15.803Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:24:15.808Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:24:16.006Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:24:25.326Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:24:25.329Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:24:25.406Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:24:26.160Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:24:30.637Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:24:38.972Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:24:38.974Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:24:39.090Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:24:40.108Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:24:40.113Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:24:40.362Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:24:45.505Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:25:05.809Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:26:21.225Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:26:21.231Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:26:21.262Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:26:26.631Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:26:42.268Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:26:42.273Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:26:42.335Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:26:43.746Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:26:43.751Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:26:43.898Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:26:49.623Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:29:00.370Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:29:00.372Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:29:00.436Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:29:01.746Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:29:01.754Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:29:01.900Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:29:09.292Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:29:09.295Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:29:09.307Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:29:12.167Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:32:41.053Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T17:32:41.057Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T17:32:41.259Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:32:51.418Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T17:33:16.649Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T18:26:53.706Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T18:26:53.711Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T18:26:53.850Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T18:26:58.942Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T18:26:59.220Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T18:26:59.223Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T18:27:26.231Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T18:27:26.236Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T18:27:26.608Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T18:27:31.760Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T18:33:48.981Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T18:33:48.986Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T18:33:49.045Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T18:35:30.418Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T18:35:30.421Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T18:35:30.473Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T18:35:40.582Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T18:46:18.777Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T18:46:18.782Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T18:46:18.832Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T18:46:24.552Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T19:10:28.078Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T19:10:28.082Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T19:10:28.159Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T19:10:38.579Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T19:42:13.990Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T19:42:13.992Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T19:42:14.245Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T19:42:24.513Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T19:48:49.178Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T19:48:49.184Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T19:48:49.276Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T19:48:59.360Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T19:50:41.783Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T19:50:41.785Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T19:50:41.854Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T19:50:51.904Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T19:50:58.508Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T19:50:58.516Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T19:50:58.564Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T19:51:02.027Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T19:57:40.148Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T19:57:40.151Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T19:57:40.258Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T20:14:05.332Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T20:14:05.335Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T20:35:38.865Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T20:42:11.088Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T20:42:11.090Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T20:42:11.392Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T20:56:13.258Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T20:56:13.262Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T20:56:13.619Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T21:18:29.304Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-20T21:18:29.308Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-20T21:18:29.357Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-20T21:18:34.410Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T07:04:24.385Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-21T07:04:24.388Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-21T07:04:24.425Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T07:04:29.594Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T07:06:36.665Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-21T07:06:36.668Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-21T07:06:36.725Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T07:06:41.777Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T07:06:46.904Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-21T07:06:46.906Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-21T07:06:46.937Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T07:06:56.874Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T07:07:01.456Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-21T07:07:01.458Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-21T07:07:01.578Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T07:07:06.628Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T07:07:45.503Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T07:07:45.704Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-21T07:07:45.706Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-21T08:03:32.013Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-21T08:03:32.018Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-21T08:03:32.042Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:03:42.909Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:14:57.128Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-21T08:14:57.133Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-21T08:14:57.224Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:15:02.874Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:15:04.020Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-21T08:15:04.022Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-21T08:15:04.089Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:15:09.886Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:16:34.669Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-21T08:16:34.671Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-21T08:16:34.700Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:16:39.756Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:16:53.455Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-21T08:16:53.460Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-21T08:16:53.557Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:16:54.458Z] error: <httpProxy> Error calling http://dev-1.tail5b8dbe.ts.net:33010/api/v1/targets...
+[2026-04-21T08:16:54.461Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 100.117.234.81:33010
+      at <unknown> (Error: connect ECONNREFUSED 100.117.234.81:33010) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '100.117.234.81',
+    port: 33010
+  }
+]
+[2026-04-21T08:16:54.542Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:17:04.920Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:17:09.879Z] error: <servicesProxy> TypeError: Cannot read properties of undefined (reading 'replace')
+    at d (/app/.next/server/chunks/4856.js:1:1792)
+    at String.replace (<anonymous>)
+    at d (/app/.next/server/chunks/4856.js:1:1840)
+    at l (/app/.next/server/pages/api/services/proxy.js:55:5571)
+    at async l (/app/.next/server/pages/api/services/proxy.js:55:2377)
+    at async tN (/app/node_modules/.pnpm/next@16.1.7_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:99046)
+    at async tI.render (/app/node_modules/.pnpm/next@16.1.7_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:99761)
+    at async Module.n (/app/.next/server/pages/api/services/proxy.js:82:13408)
+    at async NextNodeServer.runApi (/app/node_modules/.pnpm/next@16.1.7_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/next-server.js:747:9)
+    at async NextNodeServer.handleCatchallRenderRequest (/app/node_modules/.pnpm/next@16.1.7_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/next-server.js:392:37)
+[2026-04-21T08:17:10.063Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:17:10.722Z] error: <servicesProxy> TypeError: Cannot read properties of undefined (reading 'replace')
+    at d (/app/.next/server/chunks/4856.js:1:1792)
+    at String.replace (<anonymous>)
+    at d (/app/.next/server/chunks/4856.js:1:1840)
+    at l (/app/.next/server/pages/api/services/proxy.js:55:5571)
+    at async l (/app/.next/server/pages/api/services/proxy.js:55:2377)
+    at async tN (/app/node_modules/.pnpm/next@16.1.7_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:99046)
+    at async tI.render (/app/node_modules/.pnpm/next@16.1.7_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:99761)
+    at async Module.n (/app/.next/server/pages/api/services/proxy.js:82:13408)
+    at async NextNodeServer.runApi (/app/node_modules/.pnpm/next@16.1.7_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/next-server.js:747:9)
+    at async NextNodeServer.handleCatchallRenderRequest (/app/node_modules/.pnpm/next@16.1.7_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/next-server.js:392:37)
+[2026-04-21T08:17:10.891Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:17:16.884Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:17:17.370Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:17:17.767Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:17:27.901Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:17:32.024Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:17:32.508Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:17:37.875Z] error: <credentialedProxyHandler> HTTP Error 404 calling http://dev-1.tail5b8dbe.ts.net:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:17:43.757Z] error: <httpProxy> Error calling http://localhost:9900/api/endpoints//docker/containers/json...
+[2026-04-21T08:17:43.762Z] error: <httpProxy> [
+  500,
+  AggregateError: 
+      at ignore-listed frames {
+    code: 'ECONNREFUSED'
+  }
+]
+[2026-04-21T08:17:43.763Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://localhost:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:17:44.506Z] error: <httpProxy> Error calling http://localhost:9900/api/endpoints//docker/containers/json...
+[2026-04-21T08:17:44.508Z] error: <httpProxy> [
+  500,
+  AggregateError: 
+      at ignore-listed frames {
+    code: 'ECONNREFUSED'
+  }
+]
+[2026-04-21T08:17:44.509Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://localhost:9900/api/endpoints//docker/containers/json?all=1
+[2026-04-21T08:17:51.017Z] error: <httpProxy> Error calling http://localhost:9900/api/endpoints//docker/containers/json...
+[2026-04-21T08:17:51.019Z] error: <httpProxy> [
+  500,
+  AggregateError: 
+      at ignore-listed frames {
+    code: 'ECONNREFUSED'
+  }
+]
+[2026-04-21T08:17:51.020Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://localhost:9900/api/endpoints//docker/containers/json?all=1

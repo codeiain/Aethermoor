@@ -33,7 +33,14 @@ async def lifespan(app: FastAPI):
     yield
     logger.info("Notification service stopped")
 
-app = FastAPI(title="aethermoor-notification", version="0.1.0", lifespan=lifespan)
+app = FastAPI(
+    title="aethermoor-notification",
+    version="0.1.0",
+    docs_url="/notification/docs",
+    redoc_url="/notification/redoc",
+    openapi_url="/notification/openapi.json",
+    lifespan=lifespan,
+)
 
 SERVICE_TOKEN = os.environ["SERVICE_TOKEN"]
 

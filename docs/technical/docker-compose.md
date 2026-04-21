@@ -17,24 +17,35 @@ The stack starts all services. On first run, each service creates its database s
 
 ## Service Ports (Host-Accessible)
 
-| Service | Host Port | Notes |
-|---|---|---|
-| Frontend (Nginx) | 3000 | SPA — main entry point |
-| Gateway | 8000 | API entry point for external clients |
-| Auth | 8001 | Direct access for debugging; normally via gateway |
-| Character | 8002 | Direct access for debugging |
-| World | 8003 | Direct access for debugging |
-| Combat | 8004 | Stub |
-| Chat | 8005 | Stub |
-| Inventory | 8006 | Stub |
-| Quest | 8007 | Stub |
-| Economy | 8008 | Stub |
-| Notification | 8009 | Stub |
-| Prometheus | 9090 | Metrics collection |
-| Grafana | 5007 (configurable) | Dashboards — default `admin`/`admin` |
-| Loki | 3110 | Log aggregation |
-| cAdvisor | 8080 | Container metrics |
-| Redis Exporter | 9121 | Redis Prometheus metrics |
+| Service              | Host Port | Notes |
+|----------------------|-----------|-------------------------------------------------------------|
+| Frontend (Nginx)     | 3000      | SPA — main entry point |
+| Gateway              | 8000      | API entry point for external clients |
+| Auth                 | 8001      | Direct access for debugging; normally via gateway |
+| Character            | 8002      | Direct access for debugging |
+| World                | 8003      | Direct access for debugging |
+| Combat               | 8004      | Turn-based combat (D&D 5e rules) |
+| Chat                 | 8005      | Zone and party chat over Redis pub/sub |
+| Inventory            | 8006      | Item storage, equipment, loot distribution |
+| Quest                | 8007      | Quest catalogue, acceptance, progress, completion |
+| Economy              | 8008      | Gold balances, marketplace listings, transactions |
+| Notification         | 8009      | Push notifications and in-game alerts |
+| Websocket-Gateway    | 8010      | Multiplayer WebSocket relay |
+| Party                | 8011      | Party formation, invites, group state |
+| Social               | 8012      | Friends list, blocks, social graph |
+| Crafting             | 8013      | Recipe catalogue, item crafting |
+| Guild                | 8014      | Guild management and features |
+| NoteDiscovery        | 8800      | Self-hosted Markdown notes, plugins, AI assistant integration |
+| Homepage             | 8888      | Self-hosted dashboard (Homepage) |
+| Portainer            | 9900      | Docker management UI |
+| Loki                 | 3110      | Log aggregation (Grafana Loki) |
+| Promtail             | —         | Log shipping agent for Loki |
+| Redis Exporter       | 9121      | Redis Prometheus metrics exporter |
+| Prometheus           | 9090      | Metrics collection and monitoring |
+| Grafana              | 5007      | Dashboards and visualization |
+| cAdvisor             | 8080      | Container metrics (cAdvisor) |
+| Postgres             | 55432     | PostgreSQL database (internal only) |
+| Redis                | —         | Redis database (internal only) |
 
 Backend services on the `internal` network are only reachable from within Docker. The host-port mappings above exist for debugging; in production they should be removed and all traffic routed through the gateway.
 
@@ -42,15 +53,18 @@ Backend services on the `internal` network are only reachable from within Docker
 
 Copy `infra/.env.example` to `infra/.env`. Never commit `.env`.
 
-| Variable | Required | Description |
-|---|---|---|
-| `JWT_SECRET` | Yes | HS256 signing secret — `openssl rand -hex 64` |
-| `SERVICE_TOKEN` | Yes | Inter-service HMAC secret — `openssl rand -hex 32` |
-| `POSTGRES_USER` | Yes | PostgreSQL username |
-| `POSTGRES_PASSWORD` | Yes | PostgreSQL password |
-| `REDIS_PASSWORD` | Yes | Redis `requirepass` value |
-| `GRAFANA_PORT` | No | Grafana host port (default `5007`) |
-| `TZ` | No | Timezone for containers (default `UTC`) |
+| Variable                  | Required | Description |
+|---------------------------|----------|---------------------------------------------------------------|
+| `JWT_SECRET`              | Yes      | HS256 signing secret — `openssl rand -hex 64` |
+| `SERVICE_TOKEN`           | Yes      | Inter-service HMAC secret — `openssl rand -hex 32` |
+| `POSTGRES_USER`           | Yes      | PostgreSQL username |
+| `POSTGRES_PASSWORD`       | Yes      | PostgreSQL password |
+| `REDIS_PASSWORD`          | Yes      | Redis `requirepass` value |
+| `GRAFANA_PORT`            | No       | Grafana host port (default `5007`) |
+| `TZ`                      | No       | Timezone for containers (default `UTC`) |
+| `NOTEDISCOVERY_PORT`      | No       | NoteDiscovery HTTP port (default `8800`) |
+| `NOTEDISCOVERY_PASSWORD`  | No       | NoteDiscovery login password (set for auth) |
+| `NOTEDISCOVERY_API_KEY`   | No       | API key for NoteDiscovery (for MCP/AI integration) |
 
 ## Startup Order
 

@@ -28,6 +28,26 @@ x-service-defaults: &service-defaults
       max-file: "3"
 
 services:
+
+  notediscovery:
+    image: ghcr.io/gamosoft/notediscovery:latest
+    container_name: notediscovery
+    ports:
+      - "8880:8000"
+    volumes:
+      # Required: Your notes
+      - ./../docs:/app/data/Aethermoor-Docs
+      - /home/iain/Notes:/app/data/Notes
+      # - ./../legal:/app/data
+      # Optional: Uncomment to customize (file/folder must exist with content!)
+      # - ./config.yaml:/app/config.yaml
+      # - ./themes:/app/themes
+      # - ./plugins:/app/plugins
+      # - ./locales:/app/locales
+    restart: unless-stopped
+    environment:
+      - TZ=UTC
+
   # ── Portainer (Docker Management UI) ──────────────────────────────────────
   portainer:
     image: portainer/portainer-ce:latest
@@ -55,7 +75,7 @@ services:
     container_name: loki
     restart: unless-stopped
     ports:
-      - "3110:3110"
+      - "3110:3100"
     volumes:
       - ./loki/loki-config.yml:/etc/loki/local-config.yaml
       - ./loki-data:/loki

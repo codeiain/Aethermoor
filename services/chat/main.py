@@ -33,7 +33,14 @@ async def lifespan(app: FastAPI):
     yield
     logger.info("Chat service stopped")
 
-app = FastAPI(title="aethermoor-chat", version="0.1.0", lifespan=lifespan)
+app = FastAPI(
+    title="aethermoor-chat",
+    version="0.1.0",
+    docs_url="/chat/docs",
+    redoc_url="/chat/redoc",
+    openapi_url="/chat/openapi.json",
+    lifespan=lifespan,
+)
 
 SERVICE_TOKEN = os.environ["SERVICE_TOKEN"]
 

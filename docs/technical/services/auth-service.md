@@ -1,3 +1,10 @@
+---
+tags:
+  - auth
+  - jwt
+  - users
+---
+
 # Auth Service
 
 **Port:** 8001  
@@ -99,4 +106,3 @@ pytest tests/test_unit.py -v
 TEST_DATABASE_URL=postgresql+asyncpg://aethermoor:pass@localhost:5432/aethermoor \
 TEST_REDIS_URL=redis://:pass@localhost:6379/1 \
 pytest tests/test_integration.py -v
-```

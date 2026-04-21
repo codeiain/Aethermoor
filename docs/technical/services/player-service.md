@@ -1,3 +1,10 @@
+---
+tags:
+  - player
+  - character
+  - stats
+---
+
 # Player (Character) Service
 
 **Port:** 8002  

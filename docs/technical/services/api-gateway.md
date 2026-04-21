@@ -1,3 +1,10 @@
+---
+tags:
+  - gateway
+  - proxy
+  - security
+---
+
 # API Gateway
 
 **Port:** 8000  

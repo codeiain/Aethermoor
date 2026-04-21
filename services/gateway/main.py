@@ -56,7 +56,14 @@ async def lifespan(app: FastAPI):
         await _http_client.aclose()
     logger.info("Gateway service stopped")
 
-app = FastAPI(title="aethermoor-gateway", version="1.0.0", lifespan=lifespan)
+app = FastAPI(
+    title="aethermoor-gateway",
+    version="1.0.0",
+    docs_url="/gateway/docs",
+    redoc_url="/gateway/redoc",
+    openapi_url="/gateway/openapi.json",
+    lifespan=lifespan,
+)
 
 # ── CORS ─────────────────────────────────────────────────────────────────────
 # In production the nginx frontend proxy handles same-origin; CORS headers

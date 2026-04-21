@@ -7,13 +7,29 @@
 
 ## 1. Stack Access
 
-| Tool | Access |
-|---|---|
-| Grafana | `ssh -L 3001:127.0.0.1:3001 pi@<host>` then `http://localhost:3001` |
-| Prometheus | `ssh -L 9090:prometheus:9090 pi@<host>` (or via Grafana datasource) |
-| Alertmanager | `ssh -L 9093:alertmanager:9093 pi@<host>` then `http://localhost:9093` |
-| Loki logs | Via Grafana → Explore → Loki datasource |
-| Services | All internal; SSH into Pi and use `docker logs <container>` |
+| Tool           | Access |
+|----------------|---------------------------------------------------------------|
+| Grafana        | `ssh -L 3001:127.0.0.1:3001 pi@<host>` then `http://localhost:3001` |
+| Prometheus     | `ssh -L 9090:prometheus:9090 pi@<host>` (or via Grafana datasource) |
+| Alertmanager   | `ssh -L 9093:alertmanager:9093 pi@<host>` then `http://localhost:9093` |
+| Loki logs      | Via Grafana → Explore → Loki datasource |
+| NoteDiscovery  | `http://localhost:8800` (default; see Compose for mapping) |
+| Services       | All internal; SSH into Pi and use `docker logs <container>` |
+---
+
+## NoteDiscovery
+
+**Purpose:** Self-hosted Markdown notes, plugins, and AI assistant integration (MCP).
+
+- **Access:** http://localhost:8800 (default; see Compose for mapping)
+- **Logs:** `docker logs notediscovery` (or container name in Compose)
+- **Auth:** Password and/or API key can be set via environment variables
+- **Troubleshooting:**
+   - Health: `curl http://localhost:8800/health`
+   - Restart: `docker compose restart notediscovery`
+   - Data: Notes stored in the container volume (`data/`)
+
+See NoteDiscovery documentation for advanced configuration and security best practices.
 
 Grafana credentials: `GRAFANA_USER` / `GRAFANA_PASSWORD` from `infra/.env`.
 

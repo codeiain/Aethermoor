@@ -131,7 +131,14 @@ async def lifespan(app: FastAPI):
     logger.info("WebSocket Gateway stopped")
 
 
-app = FastAPI(title="aethermoor-websocket-gateway", version="1.0.0", lifespan=lifespan)
+app = FastAPI(
+    title="aethermoor-websocket-gateway",
+    version="1.0.0",
+    docs_url="/websocket/docs",
+    redoc_url="/websocket/redoc",
+    openapi_url="/websocket/openapi.json",
+    lifespan=lifespan,
+)
 
 
 @app.get("/health")

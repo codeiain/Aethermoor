@@ -7,6 +7,16 @@
         - abbr: GH
           href: https://github.com/
 
+
+- AI tools:
+    - PaperclipAI:
+        - abbr: GH
+          href: https://github.com/paperclipai/paperclip
+    - Mempalace:
+        - abbr: GH
+          href: https://github.com/mempalace/mempalace
+
+
 - Social:
     - Reddit:
         - abbr: RE
